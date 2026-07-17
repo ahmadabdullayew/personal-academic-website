@@ -1,0 +1,53 @@
+name: personal-academic-website
+
+services:
+  postgres:
+    image: postgres:18.4-bookworm@sha256:16fa100a3a6e92c0556632870455e7f8c6f3df5cefddd67d6b95292732bd7ff0
+    platform: linux/amd64
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-paw}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-paw_development}
+      POSTGRES_USER: ${POSTGRES_USER:-paw}
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}']
+      interval: 2s
+      timeout: 3s
+      retries: 30
+    ports:
+      - '127.0.0.1:5432:5432'
+    restart: unless-stopped
+    volumes:
+      - postgres18-data:/var/lib/postgresql
+
+  localstack:
+    image: localstack/localstack:4.7.0@sha256:67739ef77133396bc952cee9140fe40ce8301a3d8036078a7709ea000e791a25
+    platform: linux/amd64
+    environment:
+      AWS_DEFAULT_REGION: ${AWS_REGION:-us-east-1}
+      DEBUG: '0'
+      PERSISTENCE: '1'
+      S3_BUCKET_PRIVATE: ${S3_BUCKET_PRIVATE:-paw-private-local}
+      S3_BUCKET_PUBLIC: ${S3_BUCKET_PUBLIC:-paw-public-local}
+      S3_BUCKET_QUARANTINE: ${S3_BUCKET_QUARANTINE:-paw-quarantine-local}
+      SERVICES: s3,sqs
+      SQS_QUEUE_URL: ${SQS_QUEUE_URL:-http://127.0.0.1:4566/000000000000/paw-jobs-local}
+    healthcheck:
+      test:
+        [
+          'CMD-SHELL',
+          'curl -fsS http://localhost:4566/_localstack/init | grep -q ''"state":
+          "SUCCESSFUL"''',
+        ]
+      interval: 2s
+      timeout: 3s
+      retries: 60
+    ports:
+      - '127.0.0.1:4566:4566'
+    restart: unless-stopped
+    volumes:
+      - ./scripts/localstack-init.sh:/etc/localstack/init/ready.d/10-paw-init.sh:ro
+      - localstack-data:/var/lib/localstack
+
+volumes:
+  localstack-data:
+  postgres18-data:

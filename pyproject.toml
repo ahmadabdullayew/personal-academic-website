@@ -1,0 +1,95 @@
+[project]
+name = "personal-academic-website"
+version = "0.1.0"
+description = "Evidence-led personal academic and professional website"
+readme = "README.md"
+requires-python = ">=3.13,<3.14"
+dependencies = [
+  "boto3==1.43.50",
+  "celery[sqs]==5.6.3",
+  "django==5.2.16",
+  "django-storages[s3]==1.14.6",
+  "djangorestframework==3.17.1",
+  "drf-spectacular==0.30.0",
+  "gunicorn==26.0.0",
+  "jsonschema==4.26.0",
+  "psycopg[binary,pool]==3.3.4",
+  "uvicorn[standard]==0.51.0",
+]
+
+[dependency-groups]
+dev = [
+  "djangorestframework-stubs==3.16.9",
+  "django-stubs==5.2.9",
+  "mypy==1.20.2",
+  "pytest==9.1.1",
+  "pytest-cov==7.1.0",
+  "pytest-django==4.12.0",
+  "ruff==0.15.22",
+  "types-jsonschema==4.26.0.20260518",
+]
+
+[tool.uv]
+default-groups = ["dev"]
+
+[tool.ruff]
+target-version = "py313"
+line-length = 100
+src = ["src", "scripts", "tests"]
+
+[tool.ruff.lint]
+select = ["B", "DJ", "E", "F", "I", "SIM", "UP"]
+
+[tool.ruff.lint.per-file-ignores]
+"src/paw/settings/*.py" = ["F403", "F405"]
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "paw.settings.test"
+addopts = [
+  "--strict-config",
+  "--strict-markers",
+  "--cov=src",
+  "--cov-branch",
+  "--cov-report=term-missing",
+  "--cov-report=xml",
+  "--cov-fail-under=90",
+]
+pythonpath = ["src"]
+testpaths = ["src", "tests"]
+
+[tool.coverage.run]
+branch = true
+source = ["src"]
+omit = [
+  "*/tests/*",
+  "src/paw/asgi.py",
+  "src/paw/settings/*",
+  "src/paw/wsgi.py",
+]
+
+[tool.coverage.report]
+exclude_also = [
+  "if TYPE_CHECKING:",
+  "if __name__ == .__main__.:",
+]
+show_missing = true
+
+[tool.mypy]
+python_version = "3.13"
+plugins = ["mypy_django_plugin.main", "mypy_drf_plugin.main"]
+strict = true
+mypy_path = "src"
+files = ["src", "scripts", "tests"]
+
+[tool.django-stubs]
+django_settings_module = "paw.settings.test"
+
+[[tool.mypy.overrides]]
+module = [
+  "boto3.*",
+  "celery.*",
+  "drf_spectacular.*",
+  "rest_framework.*",
+  "storages.*",
+]
+ignore_missing_imports = true

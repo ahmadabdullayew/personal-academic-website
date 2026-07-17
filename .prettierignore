@@ -1,0 +1,7 @@
+.venv
+node_modules
+src/static_dist
+uv.lock
+package-lock.json
+htmlcov
+coverage-js

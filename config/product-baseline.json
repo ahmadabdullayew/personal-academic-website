@@ -1,0 +1,293 @@
+{
+  "baseline_version": "1.0.0",
+  "effective_date": "2026-07-17",
+  "snapshot_status": "owner-directed-foundation-public-snapshot",
+  "default_public_language": "en",
+  "source_documents": [
+    {
+      "id": "website-srs",
+      "filename": "personal_academic_professional_website_srs.pdf",
+      "sha256": "976ba51a785d27d37117655a4a508eb5133edb36e988966ce31e8878a78eb9e7",
+      "role": "product, audience, governance and quality requirements",
+      "page_reference_model": "printed PDF page numbers"
+    },
+    {
+      "id": "backend-specification",
+      "filename": "personal_academic_website_backend_specification.pdf",
+      "sha256": "1eca221859e9379cadd3d3e192bd35b68a7e0010ae15f8de53e539e1782c31b5",
+      "role": "backend profile and implementation constraints",
+      "page_reference_model": "printed PDF page numbers"
+    }
+  ],
+  "owner": {
+    "full_name": "Ahmad Abdullayev",
+    "represented_person": "Ahmad Abdullayev",
+    "final_decision_authority": true,
+    "identification_basis": [
+      "owner-directed implementation request recorded 2026-07-17",
+      "local Git identity Ahmad Abdullayev",
+      "operating-system account and project path ahmad-abdullayev",
+      "supplied specifications define a single represented website owner"
+    ],
+    "unsupported_attributes_must_not_be_inferred": [
+      "academic_title",
+      "biography",
+      "degree",
+      "discipline",
+      "institutional_affiliation"
+    ]
+  },
+  "approvers": {
+    "accessibility": {
+      "name": "Ahmad Abdullayev",
+      "role": "Accessibility Approver",
+      "evidence_refs": ["website-srs:p225", "website-srs:p271"]
+    },
+    "content": {
+      "name": "Ahmad Abdullayev",
+      "role": "Academic Content Approver",
+      "evidence_refs": [
+        "website-srs:p15",
+        "website-srs:p33",
+        "website-srs:p292"
+      ]
+    },
+    "operations": {
+      "name": "Ahmad Abdullayev",
+      "role": "Technical Operations Approver",
+      "evidence_refs": ["website-srs:p253", "website-srs:p292"]
+    },
+    "privacy": {
+      "name": "Ahmad Abdullayev",
+      "role": "Privacy Approver",
+      "evidence_refs": ["website-srs:p271", "website-srs:p292"]
+    },
+    "product": {
+      "name": "Ahmad Abdullayev",
+      "role": "Website Owner and Product Approver",
+      "evidence_refs": ["website-srs:p15", "website-srs:p253"]
+    },
+    "security": {
+      "name": "Ahmad Abdullayev",
+      "role": "Security Approver",
+      "evidence_refs": ["website-srs:p271", "backend-specification:p23"]
+    }
+  },
+  "approval_policy": {
+    "applicable_p0_waiver_allowed": false,
+    "approval_by_silence": false,
+    "conditional_features_default_enabled": false,
+    "required_domains": [
+      "product",
+      "content",
+      "accessibility",
+      "security",
+      "privacy",
+      "operations"
+    ],
+    "separate_role_records_required": true
+  },
+  "ranking_method": {
+    "method": "requirements-first ordinal ranking",
+    "criteria_in_order": [
+      "explicit prominence in the SRS purpose and homepage requirements",
+      "task criticality to truthful identification and evidence assessment",
+      "breadth across named audience groups",
+      "risk if the task or owner outcome is not achieved"
+    ],
+    "tie_break_rule": "prefer the goal that enables the other goal; otherwise preserve the SRS purpose sequence",
+    "constraint_rule": "truthfulness, accessibility, security, privacy and recoverability are not traded away by rank",
+    "validation_status": "owner-directed foundation baseline; revisit with approved user research and privacy-governed analytics"
+  },
+  "audiences": {
+    "primary": [
+      {
+        "id": "academic-peers-and-collaborators",
+        "name": "Academic peers and prospective collaborators",
+        "definition": "Researchers, engineers and prospective collaborators assessing research, methods, contributions, outputs, software and data.",
+        "rank": 1,
+        "evidence_refs": [
+          "website-srs:p6",
+          "website-srs:p53",
+          "website-srs:p64"
+        ]
+      },
+      {
+        "id": "academic-evaluators",
+        "name": "Academic evaluators and decision makers",
+        "definition": "Reviewers, funders, supervisors, panels and institutional evaluators requiring evidence-backed identity, roles, outputs and impact.",
+        "rank": 2,
+        "evidence_refs": [
+          "website-srs:p6",
+          "website-srs:p33",
+          "website-srs:p64"
+        ]
+      },
+      {
+        "id": "students-and-early-career-researchers",
+        "name": "Students and early-career researchers",
+        "definition": "Learners seeking understandable research, methods, resources, mentoring information and suitable contact routes.",
+        "rank": 3,
+        "evidence_refs": [
+          "website-srs:p6",
+          "website-srs:p42",
+          "website-srs:p53"
+        ]
+      }
+    ],
+    "secondary": [
+      {
+        "id": "professional-opportunity-evaluators",
+        "name": "Professional opportunity evaluators",
+        "definition": "Recruiters, employers and clients assessing expertise, experience, projects, contributions and the current CV.",
+        "rank": 1,
+        "evidence_refs": ["website-srs:p6", "website-srs:p35"]
+      },
+      {
+        "id": "event-and-communication-intermediaries",
+        "name": "Event and communication intermediaries",
+        "definition": "Event organizers and media representatives seeking accurate biography material, topics, approved assets and contact.",
+        "rank": 2,
+        "evidence_refs": ["website-srs:p6", "website-srs:p42"]
+      },
+      {
+        "id": "general-public",
+        "name": "General public visitors",
+        "definition": "Non-specialists seeking an understandable account of the owner, the work and its public significance.",
+        "rank": 3,
+        "evidence_refs": ["website-srs:p6", "website-srs:p42"]
+      },
+      {
+        "id": "machine-audiences",
+        "name": "Search, scholarly-discovery and citation systems",
+        "definition": "Search engines, scholarly crawlers, citation tools and metadata services requiring stable truthful machine-readable records.",
+        "rank": 4,
+        "evidence_refs": ["website-srs:p6", "website-srs:p35"]
+      }
+    ]
+  },
+  "visitor_goals": [
+    {
+      "id": "identify-owner",
+      "rank": 1,
+      "statement": "Identify Ahmad Abdullayev unambiguously.",
+      "evidence_refs": ["website-srs:FR-HOME-01:p33"]
+    },
+    {
+      "id": "understand-current-focus",
+      "rank": 2,
+      "statement": "Understand the owner's current focus and value quickly.",
+      "evidence_refs": ["website-srs:FR-HOME-02:p34"]
+    },
+    {
+      "id": "discover-research",
+      "rank": 3,
+      "statement": "Discover and evaluate research areas, methods, activities and evidence.",
+      "evidence_refs": ["website-srs:FR-HOME-03:p35", "website-srs:p53"]
+    },
+    {
+      "id": "assess-scholarly-outputs",
+      "rank": 4,
+      "statement": "Find and assess scholarly outputs and their status.",
+      "evidence_refs": ["website-srs:FR-HOME-03:p35", "website-srs:p64"]
+    },
+    {
+      "id": "inspect-projects",
+      "rank": 5,
+      "statement": "Inspect projects and the owner's concrete contributions.",
+      "evidence_refs": ["website-srs:FR-HOME-03:p35"]
+    },
+    {
+      "id": "retrieve-resources",
+      "rank": 6,
+      "statement": "Retrieve approved, reusable documents and research resources.",
+      "evidence_refs": ["website-srs:FR-HOME-03:p35"]
+    },
+    {
+      "id": "evaluate-opportunity-fit",
+      "rank": 7,
+      "statement": "Evaluate fit for collaboration, research and professional opportunities.",
+      "evidence_refs": ["website-srs:p1", "website-srs:p6"]
+    },
+    {
+      "id": "make-contact",
+      "rank": 8,
+      "statement": "Use the appropriate contact route with clear privacy expectations.",
+      "evidence_refs": ["website-srs:p1", "website-srs:p35"]
+    },
+    {
+      "id": "verify-trust",
+      "rank": 9,
+      "statement": "Verify currency, provenance and trustworthiness.",
+      "evidence_refs": ["website-srs:p1", "website-srs:p6"]
+    },
+    {
+      "id": "complete-task-inclusively",
+      "rank": 10,
+      "statement": "Complete every applicable task inclusively across supported devices and access methods.",
+      "evidence_refs": ["website-srs:p225", "website-srs:p271"]
+    }
+  ],
+  "owner_goals": [
+    {
+      "id": "truthful-identity",
+      "rank": 1,
+      "statement": "Maintain one truthful, owner-controlled public identity.",
+      "evidence_refs": ["website-srs:p1", "website-srs:p6"]
+    },
+    {
+      "id": "accurate-current-work",
+      "rank": 2,
+      "statement": "Communicate current research and professional work accurately.",
+      "evidence_refs": ["website-srs:p1"]
+    },
+    {
+      "id": "evidence-backed-outputs",
+      "rank": 3,
+      "statement": "Expose evidence-backed outputs and contributions.",
+      "evidence_refs": ["website-srs:p1", "website-srs:p64"]
+    },
+    {
+      "id": "discoverable-reusable-work",
+      "rank": 4,
+      "statement": "Make the work discoverable, understandable, citable and reusable.",
+      "evidence_refs": ["website-srs:p1", "website-srs:p35"]
+    },
+    {
+      "id": "appropriate-opportunities",
+      "rank": 5,
+      "statement": "Generate appropriate academic and professional opportunities.",
+      "evidence_refs": ["website-srs:p1", "website-srs:p6"]
+    },
+    {
+      "id": "consistent-facts",
+      "rank": 6,
+      "statement": "Keep facts synchronized without conflicting manual copies.",
+      "evidence_refs": ["website-srs:p6", "website-srs:p7"]
+    },
+    {
+      "id": "protect-non-public-information",
+      "rank": 7,
+      "statement": "Prevent private, restricted, embargoed, revoked or outdated information from becoming public.",
+      "evidence_refs": ["website-srs:p6", "website-srs:p7"]
+    },
+    {
+      "id": "inclusive-service",
+      "rank": 8,
+      "statement": "Serve disabled, multilingual, mobile and non-specialist visitors effectively.",
+      "evidence_refs": ["website-srs:p225", "website-srs:p271"]
+    },
+    {
+      "id": "preserve-trust",
+      "rank": 9,
+      "statement": "Preserve stable routes, correction history, provenance and long-term trust.",
+      "evidence_refs": ["website-srs:p6", "website-srs:p7"]
+    },
+    {
+      "id": "low-burden-operations",
+      "rank": 10,
+      "statement": "Operate a reproducible, secure, recoverable and maintainable website with low owner burden.",
+      "evidence_refs": ["website-srs:p271", "website-srs:p292"]
+    }
+  ]
+}

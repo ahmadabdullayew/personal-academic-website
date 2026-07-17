@@ -1,0 +1,22 @@
+{% extends "base.html" %} {% block content %}
+<h1>{{ owner.full_name }}</h1>
+<p>Verified academic details will be published only after approval.</p>
+
+<section aria-labelledby="audiences-heading">
+  <h2 id="audiences-heading">Primary audiences</h2>
+  <ol>
+    {% for audience in primary_audiences %}
+    <li>{{ audience.name }}</li>
+    {% endfor %}
+  </ol>
+</section>
+
+<section aria-labelledby="goals-heading">
+  <h2 id="goals-heading">Visitor goals</h2>
+  <ol>
+    {% for goal in visitor_goals %}
+    <li>{{ goal.statement }}</li>
+    {% endfor %}
+  </ol>
+</section>
+{% endblock %}

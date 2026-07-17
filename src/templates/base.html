@@ -1,0 +1,26 @@
+{% load vite %}
+<!doctype html>
+<html lang="{{ site_language }}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Personal academic and professional website foundation for {{ site_owner_name }}."
+    />
+    <title>{% block title %}{{ site_owner_name }}{% endblock %}</title>
+    {% vite_assets %}
+  </head>
+  <body>
+    <a href="#main-content">Skip to main content</a>
+    <header>
+      <p><a href="/">{{ site_owner_name }}</a></p>
+    </header>
+    <main id="main-content" tabindex="-1">
+      {% block content %}{% endblock %}
+    </main>
+    <footer>
+      <p>Owner-controlled, evidence-led public information.</p>
+    </footer>
+  </body>
+</html>

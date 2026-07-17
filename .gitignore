@@ -1,0 +1,32 @@
+# Local secrets and environment overrides
+.env
+.env.local
+.env.*.local
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Node and built assets
+node_modules/
+src/static_dist/*
+!src/static_dist/.gitkeep
+coverage-js/
+
+# Django runtime data
+db.sqlite3
+media/
+staticfiles/
+
+# Test and tool output
+playwright-report/
+test-results/
+.DS_Store
+*.log
