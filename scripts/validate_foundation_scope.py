@@ -81,7 +81,9 @@ def _validate_owner_and_approvals(
     if len(approval_by_id) != len(governance["approval_records"]):
         raise ValueError("governance approval IDs are not unique")
     try:
-        current_approvals = [approval_by_id[approval_id] for approval_id in manifest["approval_ids"]]
+        current_approvals = [
+            approval_by_id[approval_id] for approval_id in manifest["approval_ids"]
+        ]
     except KeyError as error:
         raise ValueError("manifest references an unknown governance approval") from error
     governance_approvals = {record["domain"]: record for record in current_approvals}
@@ -102,9 +104,7 @@ def _validate_owner_and_approvals(
         if record["result"] != "approved-for-foundation-scope":
             raise ValueError(f"{domain} current decision does not approve foundation scope")
         domain_records = [
-            approval
-            for approval in governance["approval_records"]
-            if approval["domain"] == domain
+            approval for approval in governance["approval_records"] if approval["domain"] == domain
         ]
         if domain_records[-1]["id"] != record["id"]:
             raise ValueError(f"manifest does not select the latest {domain} approval")
@@ -173,9 +173,7 @@ def _validate_deployment_and_features(product: dict[str, Any], governance: dict[
     if "not a legal basis" not in features["contact"]["privacy_acknowledgement_semantics"]:
         raise ValueError("contact acknowledgement is incorrectly represented as legal consent")
     minimization = controls["data_minimization_and_incidental_data"]
-    if minimization["raw_search_query_persistence"] != features["search"][
-        "raw_query_persistence"
-    ]:
+    if minimization["raw_search_query_persistence"] != features["search"]["raw_query_persistence"]:
         raise ValueError("raw search-query retention differs between scope records")
 
 
@@ -188,9 +186,7 @@ def _validate_effective_time(
     product_date = product["effective_date"]
     if matrix["effective_date"] != product_date:
         raise ValueError("matrix and product effective dates differ")
-    governance_instant = datetime.fromisoformat(
-        governance["effective_at"].replace("Z", "+00:00")
-    )
+    governance_instant = datetime.fromisoformat(governance["effective_at"].replace("Z", "+00:00"))
     if governance_instant.date().isoformat() != product_date:
         raise ValueError("governance, product and matrix effective dates differ")
     manifest_instant = datetime.fromisoformat(manifest["effective_at"].replace("Z", "+00:00"))
@@ -278,7 +274,9 @@ def validate_foundation_scope(
     _validate_deployment_templates(product)
     missing_documents = [path.name for path in REQUIRED_DOCUMENTS if not path.is_file()]
     if missing_documents:
-        raise ValueError("foundation decision documents are missing: " + ", ".join(missing_documents))
+        raise ValueError(
+            "foundation decision documents are missing: " + ", ".join(missing_documents)
+        )
 
 
 def main() -> None:

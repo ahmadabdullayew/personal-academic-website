@@ -404,9 +404,7 @@ def append_version_1_0_1(baseline: dict[str, Any]) -> None:
         "operations",
     ):
         previous = next(
-            approval
-            for approval in baseline["approval_records"]
-            if approval["domain"] == domain
+            approval for approval in baseline["approval_records"] if approval["domain"] == domain
         )
         approval = deepcopy(previous)
         approval.update(

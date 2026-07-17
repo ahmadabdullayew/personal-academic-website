@@ -123,7 +123,9 @@ EXPECTED_COMPONENTS = (
 # Independent pin for the canonical manifest projection with
 # bundle_projection_sha256 omitted. It is populated only after every component
 # digest and the approval/revision linkage have been reviewed together.
-EXPECTED_BUNDLE_PROJECTION_SHA256 = "938d4e0dcec2dd593c96c60b6995c17be1dc3c157c3514f5e0cee81c17603c00"
+EXPECTED_BUNDLE_PROJECTION_SHA256 = (
+    "938d4e0dcec2dd593c96c60b6995c17be1dc3c157c3514f5e0cee81c17603c00"
+)
 
 
 def _read_object(path: Path) -> dict[str, Any]:
@@ -254,16 +256,16 @@ def validate_foundation_manifest(manifest: dict[str, Any]) -> None:
         raise ValueError("foundation manifest revision ID is absent from governance")
     if set(manifest["approval_ids"]) - approval_ids:
         raise ValueError("foundation manifest approval IDs are absent from governance")
-    if governance["revision_history"][-1]["logical_artifact_id"] != manifest[
-        "logical_artifact_id"
-    ]:
+    if governance["revision_history"][-1]["logical_artifact_id"] != manifest["logical_artifact_id"]:
         raise ValueError("current governance revision and manifest logical IDs differ")
 
     actual_projection_digest = manifest_projection_sha256(manifest)
     if manifest["bundle_projection_sha256"] != actual_projection_digest:
         raise ValueError("foundation manifest bundle projection digest is internally incorrect")
     if actual_projection_digest != EXPECTED_BUNDLE_PROJECTION_SHA256:
-        raise ValueError("foundation manifest bundle projection differs from approved version 1.0.0")
+        raise ValueError(
+            "foundation manifest bundle projection differs from approved version 1.0.0"
+        )
 
 
 def main() -> None:

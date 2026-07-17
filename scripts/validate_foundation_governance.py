@@ -237,11 +237,15 @@ def _validate_inventory_reference(reference: str, product: dict[str, Any]) -> No
     if prefix in SOURCE_PRINTED_PAGE_BOUNDS:
         match = re.fullmatch(r"p([1-9][0-9]*)(?:-p([1-9][0-9]*))?", target)
         if match is None:
-            raise ValueError(f"specification reference has invalid printed-page syntax: {reference}")
+            raise ValueError(
+                f"specification reference has invalid printed-page syntax: {reference}"
+            )
         start_page = int(match.group(1))
         end_page = int(match.group(2) or start_page)
         if start_page > end_page or end_page > SOURCE_PRINTED_PAGE_BOUNDS[prefix]:
-            raise ValueError(f"specification reference is outside reviewed page bounds: {reference}")
+            raise ValueError(
+                f"specification reference is outside reviewed page bounds: {reference}"
+            )
         return
     if prefix == "owner-directive":
         if target not in OWNER_DIRECTIVE_IDS:
@@ -346,9 +350,7 @@ def _validate_legal_sources(baseline: dict[str, Any]) -> None:
             )
 
 
-def _validate_jurisdiction(
-    baseline: dict[str, Any], *, as_of: date | None = None
-) -> None:
+def _validate_jurisdiction(baseline: dict[str, Any], *, as_of: date | None = None) -> None:
     jurisdiction = baseline["jurisdiction"]
     selected_baseline = jurisdiction["selected_project_governance_baseline"]
     applicability = jurisdiction["applicability_determination"]
@@ -634,11 +636,10 @@ def _validate_inventory(baseline: dict[str, Any], *, as_of: date | None = None) 
 
         public_state = item["target_state"] in {"approved-public", "temporary-public"}
         approved_reviewed_state = public_state or item["target_state"] == "approved-internal"
-        if public_state:
-            if item["source_status"] == "not-supplied" or item["rights_status"] == "undetermined":
-                raise ValueError(
-                    f"{item['id']} cannot publish unverified or rights-unknown content"
-                )
+        if public_state and (
+            item["source_status"] == "not-supplied" or item["rights_status"] == "undetermined"
+        ):
+            raise ValueError(f"{item['id']} cannot publish unverified or rights-unknown content")
         if approved_reviewed_state:
             if item["last_reviewed_on"] is None or item["review_due_on"] is None:
                 raise ValueError(f"{item['id']} approved content requires review dates")
@@ -745,9 +746,7 @@ def _validate_revisions(baseline: dict[str, Any]) -> None:
     current = revisions[-1]
     if current["version"] != baseline["baseline_version"]:
         raise ValueError("the current revision version must equal the governance baseline version")
-    if current["logical_artifact_id"] != (
-        f"foundation-items-11-23@{baseline['baseline_version']}"
-    ):
+    if current["logical_artifact_id"] != (f"foundation-items-11-23@{baseline['baseline_version']}"):
         raise ValueError("the current revision must use the deterministic scope artifact ID")
     if not current["restoration_locator"].strip():
         raise ValueError("the current revision requires a restoration locator")
@@ -779,13 +778,14 @@ def _validate_approvals(baseline: dict[str, Any]) -> None:
     for domain, expected_role in APPROVAL_ROLES.items():
         records = by_domain[domain]
         expected_ids = [
-            f"APR-{domain.upper()}-{number:03d}"
-            for number in range(1, len(records) + 1)
+            f"APR-{domain.upper()}-{number:03d}" for number in range(1, len(records) + 1)
         ]
         if [approval["id"] for approval in records] != expected_ids:
             raise ValueError(f"{domain} approval IDs must be consecutive and ordered")
         if records[0]["id"] != INITIAL_APPROVAL_IDS[domain] or records[0]["supersedes"] is not None:
-            raise ValueError(f"{domain} initial approval must be deterministic and supersede nothing")
+            raise ValueError(
+                f"{domain} initial approval must be deterministic and supersede nothing"
+            )
         for previous, current in zip(records[:-1], records[1:], strict=True):
             if current["supersedes"] != previous["id"]:
                 raise ValueError(f"{current['id']} must supersede the prior {domain} decision")
