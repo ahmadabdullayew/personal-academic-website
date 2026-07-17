@@ -123,7 +123,7 @@ EXPECTED_COMPONENTS = (
 # Independent pin for the canonical manifest projection with
 # bundle_projection_sha256 omitted. It is populated only after every component
 # digest and the approval/revision linkage have been reviewed together.
-EXPECTED_BUNDLE_PROJECTION_SHA256 = "TO_BE_REPLACED"
+EXPECTED_BUNDLE_PROJECTION_SHA256 = "938d4e0dcec2dd593c96c60b6995c17be1dc3c157c3514f5e0cee81c17603c00"
 
 
 def _read_object(path: Path) -> dict[str, Any]:

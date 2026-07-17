@@ -1,0 +1,168 @@
+{
+  "$schema": "./foundation-scope-manifest.schema.json",
+  "schema_version": "1.0.0",
+  "logical_artifact_id": "foundation-items-11-23@1.0.0",
+  "artifact_version": "1.0.0",
+  "effective_at": "2026-07-17T08:33:00Z",
+  "status": "approved-for-foundation-scope",
+  "scope_items": [
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23
+  ],
+  "source_documents": [
+    {
+      "id": "website-srs",
+      "filename": "personal_academic_professional_website_srs.pdf",
+      "sha256": "976ba51a785d27d37117655a4a508eb5133edb36e988966ce31e8878a78eb9e7"
+    },
+    {
+      "id": "backend-specification",
+      "filename": "personal_academic_website_backend_specification.pdf",
+      "sha256": "1eca221859e9379cadd3d3e192bd35b68a7e0010ae15f8de53e539e1782c31b5"
+    }
+  ],
+  "components": [
+    {
+      "id": "product-baseline",
+      "path": "config/product-baseline.json",
+      "version": "2.0.0",
+      "digest_kind": "canonical-json-sha256",
+      "projection": null,
+      "sha256": "6336e99bbb961293e5d54aa0bed56439d4e90f77b505918c89f590ca7be2debb"
+    },
+    {
+      "id": "product-baseline-schema",
+      "path": "config/product-baseline.schema.json",
+      "version": "1.0.0",
+      "digest_kind": "raw-file-sha256",
+      "projection": null,
+      "sha256": "81b0030ea3ecb0754812066041ad9db3534a4e20b611b0458ec87a3f6a4966cf"
+    },
+    {
+      "id": "foundation-governance-core",
+      "path": "config/foundation-governance.json",
+      "version": "1.0.0",
+      "digest_kind": "canonical-json-projection-sha256",
+      "projection": "exclude:revision_history,approval_records",
+      "sha256": "c2f1ebabc0d7acb16979168e5d9bf9316649c63cbbb3ca0a4d2daa5ac52abcfb"
+    },
+    {
+      "id": "foundation-governance-schema",
+      "path": "config/foundation-governance.schema.json",
+      "version": "1.0.0",
+      "digest_kind": "raw-file-sha256",
+      "projection": null,
+      "sha256": "28691e68dac5294e3916880d8a9696b6a67f87fd1069c8e085c83e4383c65d7c"
+    },
+    {
+      "id": "requirements-matrix",
+      "path": "config/requirements-matrix.json",
+      "version": "2.0.0",
+      "digest_kind": "canonical-json-sha256",
+      "projection": null,
+      "sha256": "022d75908f45f31c5ebf07bd65705aecaee072206a8f4775209fe6e2bd492e6a"
+    },
+    {
+      "id": "requirements-matrix-schema",
+      "path": "config/requirements-matrix.schema.json",
+      "version": "1.0.0",
+      "digest_kind": "raw-file-sha256",
+      "projection": null,
+      "sha256": "4c3b98563729443deb560e8d79c4b222bdd56702aa4856f6aeaf2fc3b12c31de"
+    },
+    {
+      "id": "scope-evidence-ledger",
+      "path": "config/scope-evidence-ledger.json",
+      "version": "1.0.0",
+      "digest_kind": "canonical-json-sha256",
+      "projection": null,
+      "sha256": "f0c3e8c499af2708f9ab69ea33aa37234b5b40d77a55c603874aa85718efea93"
+    },
+    {
+      "id": "scope-evidence-ledger-schema",
+      "path": "config/scope-evidence-ledger.schema.json",
+      "version": "1.0.0",
+      "digest_kind": "raw-file-sha256",
+      "projection": null,
+      "sha256": "dfb4e04e4877203837e48b42b3af67d18e399c7aa6d57623902d2edb20925a77"
+    },
+    {
+      "id": "env-preview-template",
+      "path": ".env.preview.example",
+      "version": "2.0.0",
+      "digest_kind": "raw-file-sha256",
+      "projection": null,
+      "sha256": "6736a9af55d395254631d50f0ab99d570cd4c31b1489e0b154aada298a4512b5"
+    },
+    {
+      "id": "env-staging-template",
+      "path": ".env.staging.example",
+      "version": "2.0.0",
+      "digest_kind": "raw-file-sha256",
+      "projection": null,
+      "sha256": "e6b1c40ae0b43d5cb36c6c2b761d88985f072a49142c81b5eaeb9fb32c8025ca"
+    },
+    {
+      "id": "env-production-template",
+      "path": ".env.production.example",
+      "version": "2.0.0",
+      "digest_kind": "raw-file-sha256",
+      "projection": null,
+      "sha256": "131773b736024c32f44b9b5da0e0a803f87cdd7b78f19c9f8a70287c9fa4e380"
+    },
+    {
+      "id": "runtime-environment-contract",
+      "path": "src/paw/environment.py",
+      "version": "2.0.0",
+      "digest_kind": "raw-file-sha256",
+      "projection": null,
+      "sha256": "1903630c347ccd412c37e6ef08994713092874b3b544943bd5a7fcb69a3b5541"
+    },
+    {
+      "id": "preview-settings",
+      "path": "src/paw/settings/preview.py",
+      "version": "2.0.0",
+      "digest_kind": "raw-file-sha256",
+      "projection": null,
+      "sha256": "506db080cead9258c60766abdab7572900d75f7d55b31422ba30181d4a758f40"
+    },
+    {
+      "id": "staging-settings",
+      "path": "src/paw/settings/staging.py",
+      "version": "2.0.0",
+      "digest_kind": "raw-file-sha256",
+      "projection": null,
+      "sha256": "506db080cead9258c60766abdab7572900d75f7d55b31422ba30181d4a758f40"
+    },
+    {
+      "id": "production-settings",
+      "path": "src/paw/settings/production.py",
+      "version": "2.0.0",
+      "digest_kind": "raw-file-sha256",
+      "projection": null,
+      "sha256": "1261c5c4155bf6141a4ab572c5995ee084ae8abb240aab5d96792832d458040a"
+    }
+  ],
+  "revision_id": "REV-002",
+  "approval_ids": [
+    "APR-PRODUCT-001",
+    "APR-CONTENT-001",
+    "APR-ACCESSIBILITY-001",
+    "APR-SECURITY-001",
+    "APR-PRIVACY-001",
+    "APR-OPERATIONS-001"
+  ],
+  "scope_limit": "This manifest approves only foundation scope items 11-23. It does not assert downstream implementation, production deployment, or release completion.",
+  "bundle_projection_sha256": "938d4e0dcec2dd593c96c60b6995c17be1dc3c157c3514f5e0cee81c17603c00"
+}

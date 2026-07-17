@@ -63,6 +63,7 @@ scope-check:
 	$(UV_RUN) python scripts/validate_product_baseline.py
 	$(UV_RUN) python scripts/validate_foundation_governance.py
 	$(UV_RUN) python scripts/validate_requirements_matrix.py
+	$(UV_RUN) python scripts/validate_foundation_manifest.py
 	$(UV_RUN) python scripts/validate_foundation_scope.py
 
 django-check:
