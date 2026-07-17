@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ahmadabdullayev.com/schemas/foundation-scope-manifest.schema.json",
+  "title": "Foundation items 11-23 immutable artifact manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "schema_version",
+    "logical_artifact_id",
+    "artifact_version",
+    "effective_at",
+    "status",
+    "scope_items",
+    "source_documents",
+    "components",
+    "revision_id",
+    "approval_ids",
+    "bundle_projection_sha256",
+    "scope_limit"
+  ],
+  "properties": {
+    "$schema": { "const": "./foundation-scope-manifest.schema.json" },
+    "schema_version": { "const": "1.0.0" },
+    "logical_artifact_id": { "const": "foundation-items-11-23@1.0.0" },
+    "artifact_version": { "const": "1.0.0" },
+    "effective_at": { "type": "string", "format": "date-time" },
+    "status": { "const": "approved-for-foundation-scope" },
+    "scope_items": {
+      "const": [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+    },
+    "source_documents": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": { "$ref": "#/$defs/sourceDocument" }
+    },
+    "components": {
+      "type": "array",
+      "minItems": 15,
+      "maxItems": 15,
+      "items": { "$ref": "#/$defs/component" }
+    },
+    "revision_id": { "const": "REV-002" },
+    "approval_ids": {
+      "const": [
+        "APR-PRODUCT-001",
+        "APR-CONTENT-001",
+        "APR-ACCESSIBILITY-001",
+        "APR-SECURITY-001",
+        "APR-PRIVACY-001",
+        "APR-OPERATIONS-001"
+      ]
+    },
+    "bundle_projection_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "scope_limit": { "$ref": "#/$defs/nonEmptyString" }
+  },
+  "$defs": {
+    "nonEmptyString": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": ".*\\S.*"
+    },
+    "sourceDocument": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "filename", "sha256"],
+      "properties": {
+        "id": { "enum": ["website-srs", "backend-specification"] },
+        "filename": { "$ref": "#/$defs/nonEmptyString" },
+        "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+      }
+    },
+    "component": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "path", "version", "digest_kind", "projection", "sha256"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z][a-z0-9-]+$" },
+        "path": { "$ref": "#/$defs/nonEmptyString" },
+        "version": { "$ref": "#/$defs/nonEmptyString" },
+        "digest_kind": {
+          "enum": ["canonical-json-sha256", "canonical-json-projection-sha256", "raw-file-sha256"]
+        },
+        "projection": {
+          "oneOf": [{ "$ref": "#/$defs/nonEmptyString" }, { "type": "null" }]
+        },
+        "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+      }
+    }
+  }
+}

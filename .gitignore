@@ -1,7 +1,8 @@
 # Local secrets and environment overrides
 .env
-.env.local
-.env.*.local
+.env.*
+!.env.example
+!.env.*.example
 
 # Python
 .venv/

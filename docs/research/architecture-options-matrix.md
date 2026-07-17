@@ -131,7 +131,7 @@ and
 
 | Option                             |   F |   I |   S |   O |   U |   P |   C | Total | Disposition                                      |
 | ---------------------------------- | --: | --: | --: | --: | --: | --: | --: | ----: | ------------------------------------------------ |
-| AWS managed stack                  |   5 |   5 |   5 |   4 |   5 |   3 |   2 |    90 | selected pending region/cost approval            |
+| AWS managed stack                  |   5 |   5 |   5 |   4 |   5 |   3 |   2 |    90 | selected in `eu-central-1`; cost remains a deployment input |
 | Self-managed Kubernetes            |   5 |   5 |   4 |   1 |   5 |   5 |   1 |    81 | disproportionate one-owner burden                |
 | Render managed services            |   4 |   4 |   4 |   5 |   4 |   2 |   4 |    79 | lower-burden alternative/different exit boundary |
 | Fly.io Machines/managed PostgreSQL |   4 |   4 |   4 |   4 |   4 |   3 |   4 |    78 | viable PaaS alternative                          |
@@ -172,21 +172,22 @@ tested profiles. Queue and hosting are sensitive: SQS wins with meaningful
 operations weight; PostgreSQL polling wins cost/exit cases. AWS wins the
 requirements/security/operations cases, while cost-first and exit-first weights
 promote options that transfer substantially more labor to the owner. Therefore
-region, cost envelope and owner-operations capacity remain hosting/queue
-approval gates.
+the cost envelope and owner-operations capacity remain hosting/queue deployment
+gates. The region decision is resolved as `eu-central-1`.
 
 ## Cost record and missing inputs
 
-A defensible monthly total requires region, request/peak load, web/worker sizes,
+A defensible monthly total requires request/peak load, web/worker sizes,
 database size/IOPS/retention/availability, storage/requests/egress, queue retry
 volume, observability retention, deployment frequency, recovery objectives and a
 value for owner maintenance time.
 
-An AWS estimate must include ALB hours/capacity, Fargate runtime, RDS
+An AWS estimate for the selected `eu-central-1` region must include ALB
+hours/capacity, Fargate runtime, RDS
 primary/standby/storage/backups, S3 storage/requests/egress, SQS, CloudFront,
 WAF, KMS, Secrets Manager, CloudWatch, ECR, networking, Route 53 and backup
 copies. Use the [AWS Pricing Calculator](https://calculator.aws/#/) only after
-those inputs and region are recorded.
+those workload and retention inputs are recorded.
 
 PaaS headline compute can omit highly available databases, workers, private
 networking, backup retention, egress, logs and support. Self-hosted software can

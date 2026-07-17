@@ -48,17 +48,39 @@ def valid_production_environment() -> MutableMapping[str, str]:
             "APP_ENV": "production",
             "DJANGO_SETTINGS_MODULE": "paw.settings.production",
             "DJANGO_SECRET_KEY": "s" * 64,
-            "DJANGO_ALLOWED_HOSTS": "example.invalid",
-            "DJANGO_CSRF_TRUSTED_ORIGINS": "https://example.invalid",
-            "SITE_BASE_URL": "https://example.invalid",
+            "DJANGO_ALLOWED_HOSTS": "ahmadabdullayev.com",
+            "DJANGO_CSRF_TRUSTED_ORIGINS": "https://ahmadabdullayev.com",
+            "SITE_BASE_URL": "https://ahmadabdullayev.com",
             "DATABASE_URL": (
                 "postgresql://user:password@db.example.invalid/website?sslmode=require"
             ),
             "AWS_ACCESS_KEY_ID": "",
             "AWS_SECRET_ACCESS_KEY": "",
-            "S3_ENDPOINT_URL": "https://s3.example.invalid",
-            "SQS_ENDPOINT_URL": "https://sqs.example.invalid",
-            "SQS_QUEUE_URL": "https://sqs.example.invalid/000000000000/jobs",
+            "AWS_REGION": "eu-central-1",
+            "S3_ENDPOINT_URL": "https://s3.eu-central-1.amazonaws.com",
+            "SQS_ENDPOINT_URL": "https://sqs.eu-central-1.amazonaws.com",
+            "SQS_QUEUE_URL": ("https://sqs.eu-central-1.amazonaws.com/000000000000/jobs"),
+            "CONTACT_DELIVERY_MODE": "ses",
+        }
+    )
+    return values
+
+
+def valid_deployed_environment(app_env: str) -> MutableMapping[str, str]:
+    values = valid_production_environment()
+    host = {
+        "preview": "pr-1.preview.ahmadabdullayev.com",
+        "staging": "staging.ahmadabdullayev.com",
+        "production": "ahmadabdullayev.com",
+    }[app_env]
+    values.update(
+        {
+            "APP_ENV": app_env,
+            "DJANGO_SETTINGS_MODULE": f"paw.settings.{app_env}",
+            "DJANGO_ALLOWED_HOSTS": host,
+            "DJANGO_CSRF_TRUSTED_ORIGINS": f"https://{host}",
+            "SITE_BASE_URL": f"https://{host}",
+            "CONTACT_DELIVERY_MODE": "ses" if app_env == "production" else "disabled",
         }
     )
     return values
@@ -106,7 +128,7 @@ def test_environment_rejects_a_non_boolean_value() -> None:
 @pytest.mark.parametrize(
     ("key", "value", "message"),
     [
-        ("APP_ENV", "staging", "must be one of"),
+        ("APP_ENV", "sandbox", "must be one of"),
         ("DJANGO_SETTINGS_MODULE", "paw.settings.production", "must be paw.settings.test"),
         ("CONTACT_DELIVERY_MODE", "smtp", "must be one of"),
         ("LOG_LEVEL", "TRACE", "must be one of"),
@@ -201,7 +223,7 @@ def test_environment_rejects_sqlite_outside_tests() -> None:
     ("key", "value", "message"),
     [
         ("DJANGO_ALLOWED_HOSTS", "other.invalid", "must include"),
-        ("DJANGO_ALLOWED_HOSTS", "example.invalid,*", "must not contain"),
+        ("DJANGO_ALLOWED_HOSTS", "ahmadabdullayev.com,*", "must not contain"),
         ("DJANGO_CSRF_TRUSTED_ORIGINS", "https://other.invalid", "must include"),
         ("DATABASE_URL", "mysql://db.example.invalid/website", "must use PostgreSQL"),
         ("S3_ENDPOINT_URL", "http://s3.example.invalid", "must use HTTPS"),
@@ -227,12 +249,74 @@ def test_environment_accepts_a_strict_production_contract() -> None:
     assert environment.app_env == "production"
 
 
+@pytest.mark.parametrize("app_env", ["preview", "staging"])
+def test_environment_accepts_each_strict_preproduction_contract(app_env: str) -> None:
+    values = valid_deployed_environment(app_env)
+
+    environment = RuntimeEnvironment.from_mapping(values)
+
+    assert environment.app_env == app_env
+
+
+@pytest.mark.parametrize("app_env", ["preview", "staging"])
+def test_preproduction_environments_apply_deployed_security_boundaries(app_env: str) -> None:
+    values = valid_deployed_environment(app_env)
+    values["SITE_BASE_URL"] = "http://example.invalid"
+
+    with pytest.raises(EnvironmentConfigurationError, match="must use HTTPS"):
+        RuntimeEnvironment.from_mapping(values)
+
+
 def test_environment_rejects_static_aws_credentials_in_production() -> None:
     values = valid_production_environment()
     values["AWS_ACCESS_KEY_ID"] = "static-key"
     values["AWS_SECRET_ACCESS_KEY"] = "static-secret"
 
     with pytest.raises(EnvironmentConfigurationError, match="must use an IAM role"):
+        RuntimeEnvironment.from_mapping(values)
+
+
+@pytest.mark.parametrize(
+    ("app_env", "key", "value", "message"),
+    [
+        ("production", "SITE_BASE_URL", "https://wrong.example", "selected production origin"),
+        (
+            "preview",
+            "SITE_BASE_URL",
+            "https://preview.ahmadabdullayev.com",
+            "selected preview origin",
+        ),
+        ("staging", "AWS_REGION", "us-west-2", "must be eu-central-1"),
+        ("production", "DEFAULT_LANGUAGE", "az", "only the selected en locale"),
+        ("production", "SUPPORTED_LANGUAGES", "en,az", "only the selected en locale"),
+        ("production", "CONTACT_DELIVERY_MODE", "disabled", "must be ses"),
+        ("staging", "CONTACT_DELIVERY_MODE", "ses", "must be disabled"),
+        ("production", "ORCID_ENABLED", "true", "must remain false"),
+        ("preview", "CROSSREF_ENABLED", "true", "must remain false"),
+        (
+            "production",
+            "SQS_ENDPOINT_URL",
+            "https://sqs.us-west-2.amazonaws.com",
+            "selected eu-central-1 AWS endpoint",
+        ),
+    ],
+)
+def test_environment_rejects_deployed_scope_drift(
+    app_env: str,
+    key: str,
+    value: str,
+    message: str,
+) -> None:
+    values = valid_deployed_environment(app_env)
+    values[key] = value
+    if key == "SITE_BASE_URL":
+        host = value.removeprefix("https://")
+        values["DJANGO_ALLOWED_HOSTS"] = host
+        values["DJANGO_CSRF_TRUSTED_ORIGINS"] = value
+    if key == "DEFAULT_LANGUAGE":
+        values["SUPPORTED_LANGUAGES"] = value
+
+    with pytest.raises(EnvironmentConfigurationError, match=message):
         RuntimeEnvironment.from_mapping(values)
 
 

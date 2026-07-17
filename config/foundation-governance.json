@@ -1,0 +1,1644 @@
+{
+  "baseline_version": "1.0.0",
+  "effective_at": "2026-07-17T08:33:00Z",
+  "status": "approved-foundation-baseline",
+  "scope_items": [19, 20, 21, 22],
+  "source_documents": [
+    {
+      "id": "website-srs",
+      "filename": "personal_academic_professional_website_srs.pdf",
+      "sha256": "976ba51a785d27d37117655a4a508eb5133edb36e988966ce31e8878a78eb9e7",
+      "page_reference_model": "printed PDF page numbers",
+      "evidence_refs": [
+        "website-srs:p15-p23",
+        "website-srs:p266-p268",
+        "website-srs:p292-p304",
+        "website-srs:p311-p313"
+      ]
+    },
+    {
+      "id": "backend-specification",
+      "filename": "personal_academic_website_backend_specification.pdf",
+      "sha256": "1eca221859e9379cadd3d3e192bd35b68a7e0010ae15f8de53e539e1782c31b5",
+      "page_reference_model": "printed PDF page numbers",
+      "evidence_refs": [
+        "backend-specification:p4-p13",
+        "backend-specification:p34-p36"
+      ]
+    }
+  ],
+  "stakeholders": [
+    {
+      "id": "STK-001",
+      "name": "Ahmad Abdullayev",
+      "relationship": "website owner and represented person",
+      "roles": [
+        "Website Owner and Product Approver",
+        "Academic Content Approver",
+        "Accessibility Approver",
+        "Security Approver",
+        "Privacy Approver",
+        "Technical Operations Approver"
+      ],
+      "authority": "final decision authority for the foundation selections",
+      "evidence_refs": [
+        "product-baseline:owner",
+        "owner-directive:2026-07-17-items-19-22"
+      ]
+    }
+  ],
+  "jurisdiction": {
+    "selected_project_governance_baseline": {
+      "country_code": "AZ",
+      "country_name": "Republic of Azerbaijan",
+      "status": "provisional-pending-nexus-and-applicable-law-determination",
+      "purpose": "internal engineering and governance baseline only",
+      "mandatory_law_savings": true,
+      "choice_of_law_enforceability_asserted": false,
+      "court_forum_established": false
+    },
+    "applicability_determination": {
+      "controller_establishment_and_activity_nexus_status": "unverified",
+      "owner_residence_or_citizenship_asserted": false,
+      "actual_applicable_law_determination": "required-before-production-personal-data-processing",
+      "visitor_targeting_and_monitoring_assessment": "required-before-production-personal-data-processing",
+      "household_or_personal_use_exception": "not-relied-upon-without-clause-specific-determination",
+      "gdpr_status": "contingent-pending-article-3-analysis",
+      "germany_hosting_alone_triggers_gdpr": false
+    },
+    "legal_source_provenance": {
+      "current_review_content_digest_status": "not-recorded",
+      "immutable_source_verification_claimed": false,
+      "production_reliance_gate": "retrieve-current-official-text-and-record-content-sha256-or-stable-instrument-or-archive-identity",
+      "required_archive_metadata": [
+        "source-id",
+        "official-url",
+        "retrieval-timestamp",
+        "content-sha256-or-stable-instrument-or-archive-identity",
+        "official-language-and-translation-status",
+        "amendment-through-or-source-currency-status"
+      ]
+    },
+    "selected_hosting": {
+      "provider": "Amazon Web Services",
+      "region": "eu-central-1",
+      "region_name": "Europe (Frankfurt)",
+      "country_code": "DE",
+      "deployment_state": "selected-not-deployed-or-evidenced",
+      "regional_configuration_requirement": "regional-resources-must-use-eu-central-1",
+      "application_managed_cross_region_replication": "prohibited-unless-separately-approved-and-documented",
+      "service_specific_location_and_transfer_evidence_required": true,
+      "outbound_email_recipient_system_processing_must_be_disclosed": true,
+      "global_or_out_of_region_service_processing_must_be_disclosed": true,
+      "provider_service_and_legal_exceptions_must_be_disclosed": true,
+      "personal_data_in_resource_names_tags_or_free_form_metadata": "prohibited",
+      "service_assessment_required_for": [
+        "application-runtime-and-relational-data",
+        "object-storage-and-backups",
+        "queues-and-job-payloads",
+        "application-security-and-audit-logs",
+        "amazon-ses-identities-suppression-feedback-and-delivery-events",
+        "dns-cdn-certificates-and-edge-processing",
+        "control-plane-resource-identifiers-tags-and-metadata",
+        "support-access-subprocessors-and-legal-demands",
+        "aws-account-billing-and-diagnostic-information",
+        "recipient-mailbox-provider-and-mailbox-location"
+      ],
+      "ses_controls": {
+        "engagement_tracking": "disabled",
+        "delivery_tls": "require-tls-or-send-only-minimal-notification-with-secure-admin-retrieval",
+        "message_body_personal_data": "minimized",
+        "recipient_mail_system_assessment_required": true
+      }
+    },
+    "activated_processing_snapshot": {
+      "contact_form": "active-direct-submission-channel-with-aws-ses",
+      "operational_security_logs": "active-minimized-redacted-fixed-retention",
+      "public_search": "active-public-content-only-no-raw-query-retention",
+      "atom_feed": "active-public-content-only",
+      "static_social_previews": "active-public-content-only",
+      "ses_engagement_tracking": "inactive",
+      "analytics": "inactive",
+      "nonessential_cookies": "inactive",
+      "third_party_embeds": "inactive",
+      "orcid_synchronization": "inactive",
+      "crossref_synchronization": "inactive"
+    },
+    "personal_data_controls": {
+      "information_system_owner": "Ahmad Abdullayev",
+      "registration": {
+        "decision": "register-before-production-unless-a-documented-clause-specific-legal-determination-establishes-an-exemption",
+        "exemption_status": "none-relied-upon",
+        "competent_authority_guidance_if_needed": true,
+        "evidence_required_before_collection": true
+      },
+      "licensing": {
+        "article_9_14_applicability_status": "undetermined",
+        "determination_and_evidence_required_before_operation": true,
+        "registration_does_not_resolve_licensing": true
+      },
+      "consent": {
+        "privacy_acknowledgement_is_legal_consent": false,
+        "article_8_6_ehis_applicability_status": "undetermined",
+        "ehis_or_digital_consent_determination_required_before_collection": true,
+        "consent_evidence_required_when_consent_is_the_basis": true,
+        "withdrawal_mechanism_must_match_applicable_legal_channel": true
+      },
+      "certification_and_state_expertise": {
+        "conformity_certificate_applicability_status": "undetermined",
+        "state_expert_examination_applicability_status": "undetermined",
+        "system_and_project_documentation_status": "not-yet-evidenced",
+        "determination_and_evidence_required_before_operation": true,
+        "status_disclosure_required_at_collection": true
+      },
+      "cross_border_transfer": {
+        "status": "blocked-pending-article-14-and-actual-transfer-facts",
+        "crossing_azerbaijan_state_border_fact_status": "undetermined",
+        "article_14_findings": {
+          "article_14_2_1_national_security_threat": "undetermined",
+          "article_14_2_2_receiving_law_equivalence": "undetermined",
+          "article_14_3_consent_or_life_health_exception": "undetermined",
+          "article_14_4_security_safeguards": "undetermined"
+        },
+        "aws_processing_paths_assessed": false,
+        "recipient_mailbox_paths_assessed": false,
+        "gdpr_is_not_itself_an_article_14_equivalence_determination": true,
+        "security_safeguards_evidence_required": true
+      },
+      "provider_contract_and_processing_terms_required": true,
+      "purpose_and_field_inventory_before_collection": true,
+      "retention_and_deletion_rules_before_collection": true,
+      "collection_notice": {
+        "status": "required-before-collection",
+        "required_fields": [
+          "owner-or-operator-identity",
+          "processing-purpose-and-legal-basis",
+          "information-system-protection-level",
+          "conformity-certificate-and-state-expertise-status",
+          "intended-users-and-information-exchange-systems",
+          "statutory-data-subject-rights"
+        ]
+      },
+      "data_subject_rights": {
+        "workflow_status": "required-before-collection",
+        "request_channels": [
+          "paper-written-application-with-identity-document",
+          "electronic-request-with-enhanced-electronic-signature"
+        ],
+        "response_deadline_working_days": 7,
+        "third_party_consultation_extension_working_days": 7,
+        "reasoned_refusal_deadline_working_days": 5,
+        "prior_recipient_notification_deadline_working_days": 3,
+        "identity_document_minimization_and_secure_handling_required": true,
+        "responses_must_exclude_other_persons_personal_data": true
+      },
+      "security": {
+        "decision_161_clause_mapping_required": true,
+        "required_evidence": [
+          "threat-and-protection-level-assessment",
+          "approved-software-and-operating-instructions",
+          "restoration-and-continuity-controls",
+          "protection-and-system-project-documentation",
+          "access-security-and-control-audit-registers",
+          "physical-and-data-centre-controls",
+          "licensed-software-evidence",
+          "role-based-access-authentication-and-authorization",
+          "decision-161-encryption-control-including-256-bit-key-requirement",
+          "conformity-certification-and-state-expertise-evidence"
+        ]
+      },
+      "data_minimization_and_incidental_data": {
+        "only_direct_visitor_submission_channel": "contact-form",
+        "security_logs_and_search_queries_are_potential_personal_data": true,
+        "raw_search_query_persistence": "prohibited",
+        "query_string_and_secret_redaction_required": true,
+        "access_log_field_minimization_and_fixed_retention_required": true,
+        "special_category_data_policy": "not-requested-and-prohibited-by-policy",
+        "free_text_may_receive_special_category_data": true,
+        "inadvertent_special_category_response": "restrict-quarantine-escalate-and-delete"
+      },
+      "automated_decision_making": "prohibited",
+      "sale_or_brokerage": "prohibited"
+    },
+    "publication_controls": {
+      "privacy_notice": "required-before-contact-form-production-activation",
+      "cookie_or_storage_notice": "no-public-consent-interface-while-nonessential-public-storage-is-inactive; disclose-and-assess-admin-session-cookies-and-server-processing",
+      "rights_licence_and_attribution_notice": "required-before-third-party-content-publication",
+      "rights_privacy_impersonation_and_accuracy_reporting_route": "required-at-public-launch",
+      "terms_notice": "site-use-and-rights-notice-required-at-public-launch; no-ecommerce-or-account-contract-terms-active",
+      "policy_language": "English",
+      "policy_versioning": "append-only-version-record-with-effective-date"
+    },
+    "review": {
+      "scheduled_interval_days": 90,
+      "next_scheduled_review_on": "2026-10-15",
+      "event_triggers": [
+        "change-in-applicable-law-or-authoritative-guidance",
+        "new-country-targeting-or-new-data-subject-population",
+        "provider-contract-region-subprocessor-or-service-change",
+        "activation-of-analytics-cookies-embeds-or-external-synchronization",
+        "new-personal-data-field-purpose-recipient-or-retention-period",
+        "rights-privacy-security-or-takedown-incident"
+      ],
+      "review_owner_role": "Privacy Approver"
+    }
+  },
+  "legal_sources": [
+    {
+      "id": "LAW-AZ-CONSTITUTION-30-32",
+      "authority": "President of the Republic of Azerbaijan official website",
+      "title": "Constitution of the Republic of Azerbaijan",
+      "url": "https://president.az/en/pages/view/azerbaijan/constitution/",
+      "jurisdiction": "AZ",
+      "source_type": "primary-law",
+      "provisions": ["Article 30", "Article 32"],
+      "project_proposition": "Intellectual property is protected; private-life information and personal information receive constitutional protection, including correction or elimination of inaccurate or unlawfully collected information.",
+      "proposition_mappings": [
+        {"provision": "Article 30", "proposition": "Intellectual property is protected."},
+        {"provision": "Article 32", "proposition": "Private life and personal information are protected, with correction or elimination remedies for inaccurate or unlawfully collected information."}
+      ],
+      "official_language": "English",
+      "translation_status": "official-English-version",
+      "currency_note": "Official constitutional text published by the President of the Republic of Azerbaijan.",
+      "reviewed_on": "2026-07-17",
+      "retrieved_on": "2026-07-17"
+    },
+    {
+      "id": "LAW-AZ-PERSONAL-DATA-998-IIIQ",
+      "authority": "Unified Electronic Database of Legal Acts of the Republic of Azerbaijan",
+      "title": "Law of the Republic of Azerbaijan on Personal Data, No. 998-IIIQ",
+      "url": "https://frameworks.e-qanun.az/19/f_19675.html",
+      "jurisdiction": "AZ",
+      "source_type": "primary-law",
+      "provisions": [
+        "Articles 2 to 17",
+        "Article 3.3",
+        "Article 7.5",
+        "Article 8.6",
+        "Article 9.12",
+        "Article 9.14",
+        "Article 11.2",
+        "Article 12.4 to 12.6",
+        "Article 14.2 to 14.4",
+        "Article 15"
+      ],
+      "project_proposition": "Before production personal-data processing, the project must determine legal applicability, purpose and basis, the Article 8.6 consent channel, licensing, collection disclosures, rights channels and deadlines, security and audit controls, Article 14 transfer findings, and registration or a documented clause-specific exemption.",
+      "proposition_mappings": [
+        {"provision": "Article 3.3", "proposition": "The household or personal-use exception is fact-specific and is not assumed for this public professional website."},
+        {"provision": "Articles 7.5, 11.2, and 12.4 to 12.6", "proposition": "The collection notice and rights workflow must implement statutory fields, request channels, and working-day deadlines."},
+        {"provision": "Articles 8.6 and 9.14", "proposition": "EHIS consent-channel and licensing applicability require explicit determinations before processing or operation."},
+        {"provision": "Articles 14 and 15", "proposition": "Cross-border findings and registration or clause-specific exemption evidence are release gates."}
+      ],
+      "official_language": "Azerbaijani",
+      "translation_status": "project-English-paraphrase-of-official-Azerbaijani-source",
+      "currency_note": "Current consolidated official e-qanun text reviewed, including Article 8.6.",
+      "reviewed_on": "2026-07-17",
+      "retrieved_on": "2026-07-17"
+    },
+    {
+      "id": "LAW-AZ-CABINET-237",
+      "authority": "Unified Electronic Database of Legal Acts of the Republic of Azerbaijan",
+      "title": "Cabinet of Ministers Decision No. 237 on personal-data information systems not requiring state registration",
+      "url": "https://frameworks.e-qanun.az/21/f_21060.html",
+      "jurisdiction": "AZ",
+      "source_type": "secondary-law",
+      "provisions": ["Clauses 2.1 to 2.7"],
+      "project_proposition": "Registration exemptions are purpose- and fact-specific; the project records an exemption only with evidence matching the applicable clause and otherwise follows the registration path.",
+      "proposition_mappings": [
+        {"provision": "Clauses 2.1 to 2.7", "proposition": "An exemption requires a documented match to the applicable purpose, subject category, subject-count and other clause conditions; project size alone is insufficient."}
+      ],
+      "official_language": "Azerbaijani",
+      "translation_status": "project-English-paraphrase-of-official-Azerbaijani-source",
+      "currency_note": "Current consolidated official text, replacing the stale Ministry PDF and including the 29 December 2024 amendment to clause 2.3.",
+      "reviewed_on": "2026-07-17",
+      "retrieved_on": "2026-07-17"
+    },
+    {
+      "id": "LAW-AZ-CABINET-149",
+      "authority": "Ministry of Digital Development and Transport of the Republic of Azerbaijan",
+      "title": "Cabinet of Ministers Decision No. 149 on state registration and cancellation of personal-data information systems",
+      "url": "https://mincom.gov.az/storage/pages/649/9b0e869640ba56d43615eef7906a4d08.pdf",
+      "jurisdiction": "AZ",
+      "source_type": "secondary-law",
+      "provisions": ["Clauses 1.1 to 1.7", "Section 2"],
+      "project_proposition": "The registration evidence package must identify the system owner, processing basis and purposes, data and subject categories, safeguards, users, transfers, audit, and rights procedures; the current Ministry name is supplied by the tracked 2022 amendment.",
+      "proposition_mappings": [
+        {"provision": "Clauses 1.1 to 1.7 and Section 2", "proposition": "The project must prepare the registration application, evidence package, review inputs and change/cancellation controls before production collection."}
+      ],
+      "official_language": "Azerbaijani",
+      "translation_status": "project-English-paraphrase-of-official-Azerbaijani-source",
+      "currency_note": "Official Ministry PDF must be read with LAW-AZ-CABINET-149-161-2022-AMENDMENT because its authority-name amendment list is not current.",
+      "reviewed_on": "2026-07-17",
+      "retrieved_on": "2026-07-17"
+    },
+    {
+      "id": "LAW-AZ-CABINET-149-161-2022-AMENDMENT",
+      "authority": "Unified Electronic Database of Legal Acts of the Republic of Azerbaijan",
+      "title": "Cabinet of Ministers Decision No. 137 of 8 April 2022 amending Decisions No. 149 and No. 161",
+      "url": "https://e-qanun.az/framework/49396",
+      "jurisdiction": "AZ",
+      "source_type": "secondary-law",
+      "provisions": ["Clauses 1 and 2"],
+      "project_proposition": "References in Decisions No. 149 and No. 161 to the predecessor ministry are read as references to the Ministry of Digital Development and Transport.",
+      "proposition_mappings": [
+        {"provision": "Clauses 1 and 2", "proposition": "The current competent-ministry name is used in registration and security governance records."}
+      ],
+      "official_language": "Azerbaijani",
+      "translation_status": "project-English-paraphrase-of-official-Azerbaijani-source",
+      "currency_note": "Official amendment text affecting both Decision No. 149 and Decision No. 161.",
+      "reviewed_on": "2026-07-17",
+      "retrieved_on": "2026-07-17"
+    },
+    {
+      "id": "LAW-AZ-CABINET-161",
+      "authority": "Ministry of Digital Development and Transport of the Republic of Azerbaijan",
+      "title": "Cabinet of Ministers Decision No. 161 approving Requirements for the Protection of Personal Data",
+      "url": "https://mincom.gov.az/storage/pages/648/4b2105426aa7138d97d78c9e1cfb91c4.pdf",
+      "jurisdiction": "AZ",
+      "source_type": "secondary-law",
+      "provisions": ["Operative protection requirements, read with current amendments"],
+      "project_proposition": "Production requires a clause-mapped security evidence package covering threats and protection level, approved software and instructions, restoration, system and protection documentation, access and audit registers, physical controls, authentication and authorization, encryption, certification and state expertise as applicable.",
+      "proposition_mappings": [
+        {"provision": "Operative protection requirements", "proposition": "A generic security assertion is insufficient; each applicable Decision No. 161 control requires implementation evidence and amendment-aware review."}
+      ],
+      "official_language": "Azerbaijani",
+      "translation_status": "project-English-paraphrase-of-official-Azerbaijani-source",
+      "currency_note": "Official Ministry text; repealed or amended clauses must be excluded through a current clause-level review, including the 2022 authority-name amendment.",
+      "reviewed_on": "2026-07-17",
+      "retrieved_on": "2026-07-17"
+    },
+    {
+      "id": "LAW-AZ-EHIS-DIGITAL-CONSENT",
+      "authority": "President of the Republic of Azerbaijan official website",
+      "title": "Regulation on the Electronic Government Information System, including the Digital Consent subsystem",
+      "url": "https://president.az/az/articles/view/69619",
+      "jurisdiction": "AZ",
+      "source_type": "secondary-law",
+      "provisions": ["Digital Consent subsystem provisions"],
+      "project_proposition": "If Article 8.6 applies, the consent and withdrawal design must use the legally required EHIS or Digital Consent channel; an ordinary privacy acknowledgment is not substituted for that determination.",
+      "proposition_mappings": [
+        {"provision": "Digital Consent subsystem provisions", "proposition": "EHIS/Digital Consent integration and evidence requirements are resolved before consent-dependent collection is activated."}
+      ],
+      "official_language": "Azerbaijani",
+      "translation_status": "project-English-paraphrase-of-official-Azerbaijani-source",
+      "currency_note": "Current official Presidential publication reviewed together with Personal Data Law Article 8.6.",
+      "reviewed_on": "2026-07-17",
+      "retrieved_on": "2026-07-17"
+    },
+    {
+      "id": "AUTHORITY-AZ-PERSONAL-DATA-LICENSING",
+      "authority": "Ministry of Digital Development and Transport of the Republic of Azerbaijan",
+      "title": "Licensing information for formation of personal-data resources and creation or servicing of information systems",
+      "url": "https://mincom.gov.az/az/qanunvericilik/lisenziyalasdirma/rabite-ve-informasiya-texnologiyalari-sahesinde-lisenziyalarin-verilmesi/lisenziya/ferdi-sahibkarlar-ucun",
+      "jurisdiction": "AZ",
+      "source_type": "official-guidance",
+      "provisions": ["Personal-data system licensing service and application requirements"],
+      "project_proposition": "The project must determine and evidence whether its formation, creation or servicing activities require a special permission or licence; registration does not answer that separate question.",
+      "proposition_mappings": [
+        {"provision": "Licensing service and application requirements", "proposition": "No personal-data information system is operated until Article 9.14 licensing applicability and any required evidence are resolved."}
+      ],
+      "official_language": "Azerbaijani",
+      "translation_status": "project-English-paraphrase-of-official-Azerbaijani-source",
+      "currency_note": "Current Ministry service page; substantive applicability remains a recorded legal determination rather than an assumption from the page alone.",
+      "reviewed_on": "2026-07-17",
+      "retrieved_on": "2026-07-17"
+    },
+    {
+      "id": "AUTHORITY-AZ-PERSONAL-DATA-REGISTRY",
+      "authority": "Ministry of Digital Development and Transport of the Republic of Azerbaijan",
+      "title": "Current official personal-data information-system registry page",
+      "url": "https://mincom.gov.az/az/qanunvericilik/reyestrler/reyestrler",
+      "jurisdiction": "AZ",
+      "source_type": "official-guidance",
+      "provisions": ["Personal-data information-system registry"],
+      "project_proposition": "The current competent-authority registry and registration route must be checked and archived before any registration-dependent production activation.",
+      "proposition_mappings": [
+        {"provision": "Personal-data information-system registry", "proposition": "Registration evidence refers to the current Ministry registry rather than only a historical procedure PDF."}
+      ],
+      "official_language": "Azerbaijani",
+      "translation_status": "project-English-paraphrase-of-official-Azerbaijani-source",
+      "currency_note": "Mutable official authority page; re-retrieve and archive it at the release review.",
+      "reviewed_on": "2026-07-17",
+      "retrieved_on": "2026-07-17"
+    },
+    {
+      "id": "LAW-AZ-PRIVATE-INTERNATIONAL-LAW",
+      "authority": "Unified Electronic Database of Legal Acts of the Republic of Azerbaijan",
+      "title": "Law of the Republic of Azerbaijan on Private International Law",
+      "url": "https://frameworks.e-qanun.az/0/f_509.html",
+      "jurisdiction": "AZ",
+      "source_type": "primary-law",
+      "provisions": ["Articles 1 and 24 to 27"],
+      "project_proposition": "Azerbaijan is a provisional internal governance baseline; applicable law, contractual choice-of-law effect, mandatory rules and any court forum require a separate nexus and enforceability determination.",
+      "proposition_mappings": [
+        {"provision": "Articles 1 and 24 to 27", "proposition": "The project does not convert an internal baseline or unilateral informational notice into a conclusive applicable-law or forum determination."}
+      ],
+      "official_language": "Azerbaijani",
+      "translation_status": "project-English-paraphrase-of-official-Azerbaijani-source",
+      "currency_note": "Current consolidated official e-qanun text reviewed for the limited project proposition stated here.",
+      "reviewed_on": "2026-07-17",
+      "retrieved_on": "2026-07-17"
+    },
+    {
+      "id": "LAW-AZ-COPYRIGHT-115-IQ",
+      "authority": "Unified Electronic Database of Legal Acts of the Republic of Azerbaijan",
+      "title": "Law of the Republic of Azerbaijan on Copyright and Related Rights, No. 115-IQ",
+      "url": "https://frameworks.e-qanun.az/4/f_4167.html",
+      "jurisdiction": "AZ",
+      "source_type": "primary-law",
+      "provisions": [
+        "Articles 1 to 4 and Article 5.3 to 5.4",
+        "Articles 14 to 16",
+        "Articles 25 to 27",
+        "Articles 44 to 47"
+      ],
+      "project_proposition": "Publication requires a recorded rights basis, licence and attribution where applicable; possession of an asset is not treated as ownership of copyright.",
+      "proposition_mappings": [
+        {"provision": "Article 5.3 to 5.4", "proposition": "Copyright protects expression rather than ideas or methods, and ownership or possession of a copy does not itself transfer copyright."},
+        {"provision": "Articles 14 to 16 and 44 to 47", "proposition": "Publication and enforcement controls require item-level authorship, licence and attribution evidence."}
+      ],
+      "official_language": "Azerbaijani",
+      "translation_status": "project-English-paraphrase-of-official-Azerbaijani-source",
+      "currency_note": "Current consolidated official e-qanun text.",
+      "reviewed_on": "2026-07-17",
+      "retrieved_on": "2026-07-17"
+    },
+    {
+      "id": "LAW-EU-GDPR-2016-679",
+      "authority": "EUR-Lex",
+      "title": "Regulation (EU) 2016/679",
+      "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj",
+      "jurisdiction": "EU",
+      "source_type": "primary-law",
+      "provisions": ["Article 3", "Articles 5, 6, 12 to 22, 25, 28, and 32"],
+      "project_proposition": "GDPR applicability to the owner or controller is contingent on the Article 3 establishment, offering-of-goods-or-services, or monitoring tests; choosing a German AWS region alone does not establish that applicability and does not itself satisfy Azerbaijan Article 14.",
+      "proposition_mappings": [
+        {"provision": "Article 3", "proposition": "The GDPR territorial-scope determination remains pending; German hosting alone is not recorded as a trigger."},
+        {"provision": "Articles 5, 6, 12 to 22, 25, 28, and 32", "proposition": "If the GDPR applies, its substantive controller and processor duties enter the release control set."}
+      ],
+      "official_language": "English",
+      "translation_status": "official-English-version",
+      "currency_note": "Official consolidated EU regulation; applicability remains contingent pending the Article 3 facts.",
+      "reviewed_on": "2026-07-17",
+      "retrieved_on": "2026-07-17"
+    },
+    {
+      "id": "GUIDANCE-EU-EDPB-ARTICLE-3",
+      "authority": "European Data Protection Board",
+      "title": "Guidelines 3/2018 on the territorial scope of the GDPR (Article 3), Version 2.1",
+      "url": "https://www.edpb.europa.eu/documents/guideline/guidelines-32018-on-the-territorial-scope-of-the-gdpr-article-3-version-adopted_en",
+      "jurisdiction": "EU",
+      "source_type": "official-guidance",
+      "provisions": ["Article 3 establishment, targeting and monitoring guidance"],
+      "project_proposition": "The owner/controller territorial-scope analysis must use establishment, targeting and monitoring facts and may not infer GDPR scope solely from infrastructure location.",
+      "proposition_mappings": [
+        {"provision": "Article 3 guidance", "proposition": "A documented factual territorial-scope analysis is a production gate if EU-facing processing is contemplated."}
+      ],
+      "official_language": "English",
+      "translation_status": "official-English-version",
+      "currency_note": "Final adopted EDPB guidance supporting interpretation of GDPR Article 3.",
+      "reviewed_on": "2026-07-17",
+      "retrieved_on": "2026-07-17"
+    },
+    {
+      "id": "PROVIDER-AWS-REGIONS",
+      "authority": "Amazon Web Services",
+      "title": "AWS Regions and Availability Zones",
+      "url": "https://docs.aws.amazon.com/global-infrastructure/latest/regions/aws-regions.html",
+      "jurisdiction": "PROVIDER",
+      "source_type": "provider-documentation",
+      "provisions": ["eu-central-1 region entry"],
+      "project_proposition": "AWS identifies eu-central-1 as Europe (Frankfurt), Germany, with three Availability Zones; this establishes region identity, not end-to-end data residency.",
+      "proposition_mappings": [
+        {"provision": "eu-central-1 region entry", "proposition": "Regional resources selected by the project must use eu-central-1 and separately prove each service's actual processing paths."}
+      ],
+      "official_language": "English",
+      "translation_status": "original-English",
+      "currency_note": "Current official AWS region catalogue.",
+      "reviewed_on": "2026-07-17",
+      "retrieved_on": "2026-07-17"
+    },
+    {
+      "id": "PROVIDER-AWS-DATA-PRIVACY",
+      "authority": "Amazon Web Services",
+      "title": "AWS Data Privacy FAQ",
+      "url": "https://aws.amazon.com/compliance/data-privacy-faq/",
+      "jurisdiction": "PROVIDER",
+      "source_type": "provider-documentation",
+      "provisions": ["Customer content region choice", "Account information and resource-identifier qualifications", "Legal request qualifications"],
+      "project_proposition": "AWS states that customers select the region for customer content, while account information, resource identifiers, service behavior and legal demands require separate treatment; the project therefore records service-specific evidence instead of asserting an absolute region lock.",
+      "proposition_mappings": [
+        {"provision": "Customer-content and account-information explanations", "proposition": "Provider documentation, applicable terms and actual service configuration must be archived for each processing path."}
+      ],
+      "official_language": "English",
+      "translation_status": "original-English",
+      "currency_note": "Mutable official provider page; re-retrieve it and the applicable contract terms at release review.",
+      "reviewed_on": "2026-07-17",
+      "retrieved_on": "2026-07-17"
+    },
+    {
+      "id": "PROVIDER-AWS-SES-REGIONS",
+      "authority": "Amazon Web Services",
+      "title": "Amazon SES regions and regional resource behavior",
+      "url": "https://docs.aws.amazon.com/ses/latest/dg/regions.html",
+      "jurisdiction": "PROVIDER",
+      "source_type": "provider-documentation",
+      "provisions": ["Region-specific endpoints, identities, credentials, suppression and feedback settings"],
+      "project_proposition": "SES identities, credentials and operational settings are region-specific, but outbound delivery reaches recipient infrastructure and must not be described as region-confined.",
+      "proposition_mappings": [
+        {"provision": "Amazon SES regional behavior", "proposition": "Use eu-central-1 settings and inventory delivery events, feedback paths and recipient systems separately."}
+      ],
+      "official_language": "English",
+      "translation_status": "original-English",
+      "currency_note": "Current official Amazon SES regional documentation.",
+      "reviewed_on": "2026-07-17",
+      "retrieved_on": "2026-07-17"
+    },
+    {
+      "id": "PROVIDER-AWS-SES-DATA-PROTECTION",
+      "authority": "Amazon Web Services",
+      "title": "Data protection in Amazon Simple Email Service",
+      "url": "https://docs.aws.amazon.com/ses/latest/dg/data-protection.html",
+      "jurisdiction": "PROVIDER",
+      "source_type": "provider-documentation",
+      "provisions": ["Sensitive data in tags and names", "Encryption in transit and opportunistic TLS"],
+      "project_proposition": "Personal data is prohibited in SES tags or resource-name fields, engagement tracking is disabled, and delivery must require TLS or carry only a minimal notification whose substantive content remains in a secured administrative system.",
+      "proposition_mappings": [
+        {"provision": "Sensitive metadata and encryption-in-transit guidance", "proposition": "The release evidence must prove metadata minimization and the selected delivery-TLS or minimal-notification control."}
+      ],
+      "official_language": "English",
+      "translation_status": "original-English",
+      "currency_note": "Current official Amazon SES data-protection documentation; SES uses opportunistic TLS by default unless stricter behavior is configured.",
+      "reviewed_on": "2026-07-17",
+      "retrieved_on": "2026-07-17"
+    }
+  ],
+  "content_governance": {
+    "canonical_editorial_owner": "Ahmad Abdullayev",
+    "role_assignments": [
+      {
+        "role": "Content Maintainer",
+        "assignee": "Ahmad Abdullayev",
+        "accountability": "prepare canonical drafts, evidence and provenance"
+      },
+      {
+        "role": "Academic Content Approver",
+        "assignee": "Ahmad Abdullayev",
+        "accountability": "approve factual meaning, currency and public claims"
+      },
+      {
+        "role": "Privacy Approver",
+        "assignee": "Ahmad Abdullayev",
+        "accountability": "approve personal-data, rights, consent, retention and policy effects"
+      },
+      {
+        "role": "Technical Operations Approver",
+        "assignee": "Ahmad Abdullayev",
+        "accountability": "publish only the approved immutable revision and preserve rollback"
+      }
+    ],
+    "workflow": [
+      "draft",
+      "fact-review",
+      "rights-privacy-review",
+      "approved",
+      "published",
+      "superseded-or-archived"
+    ],
+    "rules": [
+      "one canonical record per authoritative fact",
+      "no public claim without an owner-approved source and provenance",
+      "no third-party asset without recorded rights, licence and attribution",
+      "no third-party personal data without a recorded lawful publication basis",
+      "draft, private, restricted, embargoed, revoked and unapproved values never enter public derivatives",
+      "approval and publication are separately timestamped decisions even when one person fills both roles",
+      "missing evidence results in omission or an explicit draft state, never invented content",
+      "material correction preserves the previous revision and publishes a correction record when public trust requires it"
+    ],
+    "required_record_fields": [
+      "canonical_key",
+      "editorial_owner",
+      "source_and_provenance",
+      "rights_status",
+      "privacy_classification",
+      "lifecycle_and_visibility",
+      "review_schedule",
+      "last_reviewed_by_and_at",
+      "approval_record",
+      "revision_identifier"
+    ],
+    "review_schedules": [
+      {
+        "id": "RG-030",
+        "name": "current and release-sensitive",
+        "maximum_interval_days": 30,
+        "applies_to": "contact routes, current opportunities, temporary launch copy, active calls to action and incident-sensitive notices",
+        "overdue_action": "remove or unpublish time-sensitive claims until reviewed"
+      },
+      {
+        "id": "RG-090",
+        "name": "active academic, identity, legal and policy",
+        "maximum_interval_days": 90,
+        "applies_to": "identity, current roles, research state, publications, CV, privacy and legal controls",
+        "overdue_action": "block new release and mark the record for owner review"
+      },
+      {
+        "id": "RG-180",
+        "name": "assets, licences and stable supporting material",
+        "maximum_interval_days": 180,
+        "applies_to": "media, documents, licences, attribution, localized variants and stable supporting copy",
+        "overdue_action": "block replacement publication and review continued public availability"
+      },
+      {
+        "id": "RG-365",
+        "name": "historical and archival",
+        "maximum_interval_days": 365,
+        "applies_to": "completed education, historical roles, archived activities and other stable dated records",
+        "overdue_action": "queue content audit before the next release"
+      }
+    ],
+    "event_review_triggers": [
+      {
+        "id": "ER-001",
+        "trigger": "owner or subject reports an inaccuracy",
+        "response": "contain misleading publication immediately and complete triage within two business days"
+      },
+      {
+        "id": "ER-002",
+        "trigger": "role, affiliation, contact route, availability or opportunity changes",
+        "response": "review every dependent page and derivative before or at the effective time"
+      },
+      {
+        "id": "ER-003",
+        "trigger": "publication correction, withdrawal, retraction or identifier conflict",
+        "response": "freeze automatic propagation and complete owner review before republication"
+      },
+      {
+        "id": "ER-004",
+        "trigger": "rights, privacy, consent-withdrawal, impersonation or takedown concern",
+        "response": "acknowledge within two business days, restrict when risk warrants, preserve evidence and record the decision"
+      },
+      {
+        "id": "ER-005",
+        "trigger": "law, jurisdiction, provider, region, subprocessor, purpose or data-field change",
+        "response": "complete legal-privacy impact review before the changed processing activates"
+      },
+      {
+        "id": "ER-006",
+        "trigger": "security incident or unauthorized public exposure",
+        "response": "contain immediately, preserve an audit record and initiate the incident workflow"
+      },
+      {
+        "id": "ER-007",
+        "trigger": "canonical route, external destination or downloadable asset becomes unavailable",
+        "response": "restore, redirect or remove the broken claim without losing canonical history"
+      }
+    ]
+  },
+  "content_inventory": [
+    {
+      "id": "CI-001",
+      "canonical_key": "identity.owner-name",
+      "label": "Canonical owner name",
+      "content_type": "person-profile",
+      "source_refs": ["product-baseline:owner.full_name"],
+      "source_status": "verified",
+      "editorial_owner": "Ahmad Abdullayev",
+      "approval_domains": ["content"],
+      "review_schedule_id": "RG-090",
+      "rights_status": "owner-provided",
+      "privacy_classification": "public-owner-data",
+      "migration_disposition": "import-verified",
+      "target_state": "approved-public",
+      "migration_order": 1,
+      "last_reviewed_on": "2026-07-17",
+      "review_due_on": "2026-10-15",
+      "publication_gate": "canonical value equals Ahmad Abdullayev in every public and machine-readable representation"
+    },
+    {
+      "id": "CI-002",
+      "canonical_key": "foundation.temporary-verification-notice",
+      "label": "Temporary verified-details notice",
+      "content_type": "temporary-home-copy",
+      "source_refs": ["repository:src/templates/home.html"],
+      "source_status": "repository-observed",
+      "editorial_owner": "Ahmad Abdullayev",
+      "approval_domains": ["content"],
+      "review_schedule_id": "RG-030",
+      "rights_status": "repository-controlled",
+      "privacy_classification": "none",
+      "migration_disposition": "retire-temporary",
+      "target_state": "temporary-public",
+      "migration_order": 2,
+      "last_reviewed_on": "2026-07-17",
+      "review_due_on": "2026-08-16",
+      "publication_gate": "remove when approved biography and positioning content launch"
+    },
+    {
+      "id": "CI-003",
+      "canonical_key": "foundation.temporary-primary-audiences",
+      "label": "Temporary public primary-audience list",
+      "content_type": "temporary-home-copy",
+      "source_refs": [
+        "product-baseline:audiences.primary",
+        "repository:src/templates/home.html"
+      ],
+      "source_status": "repository-observed",
+      "editorial_owner": "Ahmad Abdullayev",
+      "approval_domains": ["product", "content"],
+      "review_schedule_id": "RG-030",
+      "rights_status": "repository-controlled",
+      "privacy_classification": "none",
+      "migration_disposition": "retire-temporary",
+      "target_state": "temporary-public",
+      "migration_order": 3,
+      "last_reviewed_on": "2026-07-17",
+      "review_due_on": "2026-08-16",
+      "publication_gate": "remove from the public homepage before content-complete launch"
+    },
+    {
+      "id": "CI-004",
+      "canonical_key": "foundation.temporary-visitor-goals",
+      "label": "Temporary public visitor-goal list",
+      "content_type": "temporary-home-copy",
+      "source_refs": [
+        "product-baseline:visitor_goals",
+        "repository:src/templates/home.html"
+      ],
+      "source_status": "repository-observed",
+      "editorial_owner": "Ahmad Abdullayev",
+      "approval_domains": ["product", "content"],
+      "review_schedule_id": "RG-030",
+      "rights_status": "repository-controlled",
+      "privacy_classification": "none",
+      "migration_disposition": "retire-temporary",
+      "target_state": "temporary-public",
+      "migration_order": 4,
+      "last_reviewed_on": "2026-07-17",
+      "review_due_on": "2026-08-16",
+      "publication_gate": "remove from the public homepage before content-complete launch"
+    },
+    {
+      "id": "CI-005",
+      "canonical_key": "shell.foundation-description-and-footer",
+      "label": "Generic foundation metadata description and footer copy",
+      "content_type": "site-shell-copy",
+      "source_refs": ["repository:src/templates/base.html"],
+      "source_status": "repository-observed",
+      "editorial_owner": "Ahmad Abdullayev",
+      "approval_domains": ["content"],
+      "review_schedule_id": "RG-030",
+      "rights_status": "repository-controlled",
+      "privacy_classification": "none",
+      "migration_disposition": "replace-with-approved",
+      "target_state": "temporary-public",
+      "migration_order": 5,
+      "last_reviewed_on": "2026-07-17",
+      "review_due_on": "2026-08-16",
+      "publication_gate": "replace with accurate owner-approved positioning and policy navigation before launch"
+    },
+    {
+      "id": "CI-006",
+      "canonical_key": "identity.names-and-disambiguation",
+      "label": "Preferred name forms and public disambiguation",
+      "content_type": "person-identity",
+      "source_refs": ["source-gap:no-owner-approved-source-supplied"],
+      "source_status": "not-supplied",
+      "editorial_owner": "Ahmad Abdullayev",
+      "approval_domains": ["content", "privacy"],
+      "review_schedule_id": "RG-090",
+      "rights_status": "undetermined",
+      "privacy_classification": "confidential-until-reviewed",
+      "migration_disposition": "hold-unpublished",
+      "target_state": "omitted-until-approved",
+      "migration_order": 6,
+      "last_reviewed_on": null,
+      "review_due_on": null,
+      "publication_gate": "owner-approved non-sensitive disambiguation evidence exists"
+    },
+    {
+      "id": "CI-007",
+      "canonical_key": "identity.titles-roles-affiliations",
+      "label": "Current and historical titles, roles and affiliations",
+      "content_type": "affiliation-records",
+      "source_refs": ["source-gap:no-owner-approved-source-supplied"],
+      "source_status": "not-supplied",
+      "editorial_owner": "Ahmad Abdullayev",
+      "approval_domains": ["content"],
+      "review_schedule_id": "RG-090",
+      "rights_status": "undetermined",
+      "privacy_classification": "confidential-until-reviewed",
+      "migration_disposition": "hold-unpublished",
+      "target_state": "omitted-until-approved",
+      "migration_order": 7,
+      "last_reviewed_on": null,
+      "review_due_on": null,
+      "publication_gate": "each role has owner-approved organization, title, dates, state and evidence"
+    },
+    {
+      "id": "CI-008",
+      "canonical_key": "identity.biography-short",
+      "label": "Short professional biography",
+      "content_type": "biography",
+      "source_refs": ["source-gap:no-owner-approved-source-supplied"],
+      "source_status": "not-supplied",
+      "editorial_owner": "Ahmad Abdullayev",
+      "approval_domains": ["content"],
+      "review_schedule_id": "RG-090",
+      "rights_status": "undetermined",
+      "privacy_classification": "confidential-until-reviewed",
+      "migration_disposition": "hold-unpublished",
+      "target_state": "omitted-until-approved",
+      "migration_order": 8,
+      "last_reviewed_on": null,
+      "review_due_on": null,
+      "publication_gate": "owner-approved source and claim-level evidence exist"
+    },
+    {
+      "id": "CI-009",
+      "canonical_key": "identity.biography-medium-extended-media",
+      "label": "Medium, extended and media biography variants",
+      "content_type": "biography-variants",
+      "source_refs": ["source-gap:no-owner-approved-source-supplied"],
+      "source_status": "not-supplied",
+      "editorial_owner": "Ahmad Abdullayev",
+      "approval_domains": ["content"],
+      "review_schedule_id": "RG-180",
+      "rights_status": "undetermined",
+      "privacy_classification": "confidential-until-reviewed",
+      "migration_disposition": "hold-unpublished",
+      "target_state": "omitted-until-approved",
+      "migration_order": 9,
+      "last_reviewed_on": null,
+      "review_due_on": null,
+      "publication_gate": "variants derive from one approved fact set and contain no contradictions"
+    },
+    {
+      "id": "CI-010",
+      "canonical_key": "identity.portrait-pronunciation",
+      "label": "Portrait, alternative text and optional pronunciation assets",
+      "content_type": "identity-media",
+      "source_refs": ["source-gap:no-owner-approved-source-supplied"],
+      "source_status": "not-supplied",
+      "editorial_owner": "Ahmad Abdullayev",
+      "approval_domains": ["content", "privacy", "accessibility"],
+      "review_schedule_id": "RG-180",
+      "rights_status": "undetermined",
+      "privacy_classification": "confidential-until-reviewed",
+      "migration_disposition": "hold-unpublished",
+      "target_state": "omitted-until-approved",
+      "migration_order": 10,
+      "last_reviewed_on": null,
+      "review_due_on": null,
+      "publication_gate": "consent, copyright, licence, attribution and accessibility treatment are recorded"
+    },
+    {
+      "id": "CI-011",
+      "canonical_key": "identity.expertise",
+      "label": "Structured expertise areas and evidence",
+      "content_type": "expertise-records",
+      "source_refs": ["source-gap:no-owner-approved-source-supplied"],
+      "source_status": "not-supplied",
+      "editorial_owner": "Ahmad Abdullayev",
+      "approval_domains": ["content"],
+      "review_schedule_id": "RG-180",
+      "rights_status": "undetermined",
+      "privacy_classification": "confidential-until-reviewed",
+      "migration_disposition": "hold-unpublished",
+      "target_state": "omitted-until-approved",
+      "migration_order": 11,
+      "last_reviewed_on": null,
+      "review_due_on": null,
+      "publication_gate": "every material expertise claim has an approved evidence relationship"
+    },
+    {
+      "id": "CI-012",
+      "canonical_key": "research.overview-areas-questions-methods",
+      "label": "Research overview, areas, questions and methods",
+      "content_type": "research-profile",
+      "source_refs": ["source-gap:no-owner-approved-source-supplied"],
+      "source_status": "not-supplied",
+      "editorial_owner": "Ahmad Abdullayev",
+      "approval_domains": ["content"],
+      "review_schedule_id": "RG-090",
+      "rights_status": "undetermined",
+      "privacy_classification": "confidential-until-reviewed",
+      "migration_disposition": "hold-unpublished",
+      "target_state": "omitted-until-approved",
+      "migration_order": 12,
+      "last_reviewed_on": null,
+      "review_due_on": null,
+      "publication_gate": "owner-approved specialist and public explanations exist"
+    },
+    {
+      "id": "CI-013",
+      "canonical_key": "research.activities-collaborators-funding",
+      "label": "Research activities, collaborators, institutions and funding",
+      "content_type": "research-activity-records",
+      "source_refs": ["source-gap:no-owner-approved-source-supplied"],
+      "source_status": "not-supplied",
+      "editorial_owner": "Ahmad Abdullayev",
+      "approval_domains": ["content", "privacy"],
+      "review_schedule_id": "RG-090",
+      "rights_status": "undetermined",
+      "privacy_classification": "possible-third-party-data",
+      "migration_disposition": "hold-unpublished",
+      "target_state": "omitted-until-approved",
+      "migration_order": 13,
+      "last_reviewed_on": null,
+      "review_due_on": null,
+      "publication_gate": "dates, contribution, third-party publication basis and funding terms are approved"
+    },
+    {
+      "id": "CI-014",
+      "canonical_key": "outputs.publications-core",
+      "label": "Publication core metadata and identifiers",
+      "content_type": "publications",
+      "source_refs": ["source-gap:no-owner-approved-source-supplied"],
+      "source_status": "not-supplied",
+      "editorial_owner": "Ahmad Abdullayev",
+      "approval_domains": ["content"],
+      "review_schedule_id": "RG-090",
+      "rights_status": "undetermined",
+      "privacy_classification": "none",
+      "migration_disposition": "hold-unpublished",
+      "target_state": "omitted-until-approved",
+      "migration_order": 14,
+      "last_reviewed_on": null,
+      "review_due_on": null,
+      "publication_gate": "title, venue, status, dates and identifiers are owner-approved and deduplicated"
+    },
+    {
+      "id": "CI-015",
+      "canonical_key": "outputs.publication-contributors-versions-resources",
+      "label": "Publication authors, contributions, versions and resources",
+      "content_type": "publication-relationships",
+      "source_refs": ["source-gap:no-owner-approved-source-supplied"],
+      "source_status": "not-supplied",
+      "editorial_owner": "Ahmad Abdullayev",
+      "approval_domains": ["content", "privacy"],
+      "review_schedule_id": "RG-090",
+      "rights_status": "undetermined",
+      "privacy_classification": "possible-third-party-data",
+      "migration_disposition": "hold-unpublished",
+      "target_state": "omitted-until-approved",
+      "migration_order": 15,
+      "last_reviewed_on": null,
+      "review_due_on": null,
+      "publication_gate": "author order, contribution, version status, resource rights and correction state are verified"
+    },
+    {
+      "id": "CI-016",
+      "canonical_key": "projects.canonical-projects",
+      "label": "Project records, memberships, outcomes and evidence",
+      "content_type": "projects",
+      "source_refs": ["source-gap:no-owner-approved-source-supplied"],
+      "source_status": "not-supplied",
+      "editorial_owner": "Ahmad Abdullayev",
+      "approval_domains": ["content", "privacy"],
+      "review_schedule_id": "RG-090",
+      "rights_status": "undetermined",
+      "privacy_classification": "possible-third-party-data",
+      "migration_disposition": "hold-unpublished",
+      "target_state": "omitted-until-approved",
+      "migration_order": 16,
+      "last_reviewed_on": null,
+      "review_due_on": null,
+      "publication_gate": "owner contribution, confidentiality, team attribution and evidence are approved"
+    },
+    {
+      "id": "CI-017",
+      "canonical_key": "projects.software-and-datasets",
+      "label": "Software and dataset outputs",
+      "content_type": "software-dataset-records",
+      "source_refs": ["source-gap:no-owner-approved-source-supplied"],
+      "source_status": "not-supplied",
+      "editorial_owner": "Ahmad Abdullayev",
+      "approval_domains": ["content", "privacy", "security"],
+      "review_schedule_id": "RG-180",
+      "rights_status": "undetermined",
+      "privacy_classification": "confidential-until-reviewed",
+      "migration_disposition": "hold-unpublished",
+      "target_state": "omitted-until-approved",
+      "migration_order": 17,
+      "last_reviewed_on": null,
+      "review_due_on": null,
+      "publication_gate": "licence, release, repository, data access, security and ethical limitations are approved"
+    },
+    {
+      "id": "CI-018",
+      "canonical_key": "career.education-and-theses",
+      "label": "Education and thesis records",
+      "content_type": "education-records",
+      "source_refs": ["source-gap:no-owner-approved-source-supplied"],
+      "source_status": "not-supplied",
+      "editorial_owner": "Ahmad Abdullayev",
+      "approval_domains": ["content", "privacy"],
+      "review_schedule_id": "RG-365",
+      "rights_status": "undetermined",
+      "privacy_classification": "possible-third-party-data",
+      "migration_disposition": "hold-unpublished",
+      "target_state": "omitted-until-approved",
+      "migration_order": 18,
+      "last_reviewed_on": null,
+      "review_due_on": null,
+      "publication_gate": "institution, program, degree state, dates, thesis and supervisor publication basis are approved"
+    },
+    {
+      "id": "CI-019",
+      "canonical_key": "career.experience-and-appointments",
+      "label": "Experience and appointment records",
+      "content_type": "experience-records",
+      "source_refs": ["source-gap:no-owner-approved-source-supplied"],
+      "source_status": "not-supplied",
+      "editorial_owner": "Ahmad Abdullayev",
+      "approval_domains": ["content", "privacy"],
+      "review_schedule_id": "RG-090",
+      "rights_status": "undetermined",
+      "privacy_classification": "possible-third-party-data",
+      "migration_disposition": "hold-unpublished",
+      "target_state": "omitted-until-approved",
+      "migration_order": 19,
+      "last_reviewed_on": null,
+      "review_due_on": null,
+      "publication_gate": "position, organization, dates, current state and outcomes are owner-approved"
+    },
+    {
+      "id": "CI-020",
+      "canonical_key": "academic.teaching-courses-mentoring",
+      "label": "Teaching, courses and mentoring",
+      "content_type": "teaching-mentoring-records",
+      "source_refs": ["source-gap:no-owner-approved-source-supplied"],
+      "source_status": "not-supplied",
+      "editorial_owner": "Ahmad Abdullayev",
+      "approval_domains": ["content", "privacy"],
+      "review_schedule_id": "RG-180",
+      "rights_status": "undetermined",
+      "privacy_classification": "possible-third-party-data",
+      "migration_disposition": "hold-unpublished",
+      "target_state": "omitted-until-approved",
+      "migration_order": 20,
+      "last_reviewed_on": null,
+      "review_due_on": null,
+      "publication_gate": "restricted materials and student or mentee identities are excluded unless publication is approved"
+    },
+    {
+      "id": "CI-021",
+      "canonical_key": "academic.awards-grants-talks-service",
+      "label": "Awards, grants, talks and service",
+      "content_type": "academic-activity-records",
+      "source_refs": ["source-gap:no-owner-approved-source-supplied"],
+      "source_status": "not-supplied",
+      "editorial_owner": "Ahmad Abdullayev",
+      "approval_domains": ["content", "privacy"],
+      "review_schedule_id": "RG-180",
+      "rights_status": "undetermined",
+      "privacy_classification": "possible-third-party-data",
+      "migration_disposition": "hold-unpublished",
+      "target_state": "omitted-until-approved",
+      "migration_order": 21,
+      "last_reviewed_on": null,
+      "review_due_on": null,
+      "publication_gate": "title, organization, role, date, state and evidence are approved"
+    },
+    {
+      "id": "CI-022",
+      "canonical_key": "content.news-articles-media",
+      "label": "News, articles and media appearances",
+      "content_type": "editorial-content",
+      "source_refs": ["source-gap:no-owner-approved-source-supplied"],
+      "source_status": "not-supplied",
+      "editorial_owner": "Ahmad Abdullayev",
+      "approval_domains": ["content", "privacy"],
+      "review_schedule_id": "RG-180",
+      "rights_status": "undetermined",
+      "privacy_classification": "possible-third-party-data",
+      "migration_disposition": "hold-unpublished",
+      "target_state": "omitted-until-approved",
+      "migration_order": 22,
+      "last_reviewed_on": null,
+      "review_due_on": null,
+      "publication_gate": "authorship, source, dates, external rights, embeds and correction state are approved"
+    },
+    {
+      "id": "CI-023",
+      "canonical_key": "documents.curriculum-vitae",
+      "label": "Current CV and accessible equivalent",
+      "content_type": "cv-document",
+      "source_refs": ["source-gap:no-owner-approved-source-supplied"],
+      "source_status": "not-supplied",
+      "editorial_owner": "Ahmad Abdullayev",
+      "approval_domains": ["content", "privacy", "accessibility"],
+      "review_schedule_id": "RG-090",
+      "rights_status": "undetermined",
+      "privacy_classification": "confidential-until-reviewed",
+      "migration_disposition": "hold-unpublished",
+      "target_state": "omitted-until-approved",
+      "migration_order": 23,
+      "last_reviewed_on": null,
+      "review_due_on": null,
+      "publication_gate": "approved current version contains no private data and has an accessible equivalent"
+    },
+    {
+      "id": "CI-024",
+      "canonical_key": "assets.documents-and-media",
+      "label": "Downloadable documents, images, audio, video and supplements",
+      "content_type": "managed-assets",
+      "source_refs": ["source-gap:no-owner-approved-source-supplied"],
+      "source_status": "not-supplied",
+      "editorial_owner": "Ahmad Abdullayev",
+      "approval_domains": ["content", "privacy", "accessibility", "security"],
+      "review_schedule_id": "RG-180",
+      "rights_status": "undetermined",
+      "privacy_classification": "confidential-until-reviewed",
+      "migration_disposition": "hold-unpublished",
+      "target_state": "omitted-until-approved",
+      "migration_order": 24,
+      "last_reviewed_on": null,
+      "review_due_on": null,
+      "publication_gate": "checksum, malware scan, rights, attribution, privacy and accessibility metadata pass"
+    },
+    {
+      "id": "CI-025",
+      "canonical_key": "contact.method-form-and-collaboration-copy",
+      "label": "Contact form, collaboration availability and response expectations",
+      "content_type": "contact-content",
+      "source_refs": [
+        "product-baseline:feature_decisions.contact",
+        "website-srs:p176-p188"
+      ],
+      "source_status": "decision-baselined",
+      "editorial_owner": "Ahmad Abdullayev",
+      "approval_domains": ["content", "privacy", "security", "operations"],
+      "review_schedule_id": "RG-030",
+      "rights_status": "to-be-authored",
+      "privacy_classification": "visitor-personal-data-processing",
+      "migration_disposition": "create-after-gates",
+      "target_state": "draft-required",
+      "migration_order": 25,
+      "last_reviewed_on": null,
+      "review_due_on": null,
+      "publication_gate": "registration or exemption evidence, transfer assessment, provider terms, notice, consent, retention and delivery tests pass"
+    },
+    {
+      "id": "CI-026",
+      "canonical_key": "policy.privacy-and-storage-notice",
+      "label": "Privacy and storage notice",
+      "content_type": "policy",
+      "source_refs": ["LAW-AZ-PERSONAL-DATA-998-IIIQ", "website-srs:p300-p301"],
+      "source_status": "official-reference",
+      "editorial_owner": "Ahmad Abdullayev",
+      "approval_domains": ["privacy", "content"],
+      "review_schedule_id": "RG-090",
+      "rights_status": "to-be-authored",
+      "privacy_classification": "legal-operational-metadata",
+      "migration_disposition": "create-after-gates",
+      "target_state": "draft-required",
+      "migration_order": 26,
+      "last_reviewed_on": null,
+      "review_due_on": null,
+      "publication_gate": "notice exactly matches enabled fields, purposes, recipients, region, retention, rights and contact route"
+    },
+    {
+      "id": "CI-027",
+      "canonical_key": "policy.rights-licence-attribution",
+      "label": "Rights, licence and attribution notice",
+      "content_type": "policy",
+      "source_refs": ["LAW-AZ-COPYRIGHT-115-IQ", "website-srs:p300"],
+      "source_status": "official-reference",
+      "editorial_owner": "Ahmad Abdullayev",
+      "approval_domains": ["content", "privacy"],
+      "review_schedule_id": "RG-180",
+      "rights_status": "to-be-authored",
+      "privacy_classification": "none",
+      "migration_disposition": "create-after-gates",
+      "target_state": "draft-required",
+      "migration_order": 27,
+      "last_reviewed_on": null,
+      "review_due_on": null,
+      "publication_gate": "notice does not claim ownership or grant a licence beyond item-level evidence"
+    },
+    {
+      "id": "CI-028",
+      "canonical_key": "policy.rights-privacy-and-takedown-route",
+      "label": "Rights, privacy, impersonation, inaccuracy and takedown route",
+      "content_type": "policy-and-workflow",
+      "source_refs": [
+        "website-srs:p302",
+        "LAW-AZ-PERSONAL-DATA-998-IIIQ",
+        "LAW-AZ-COPYRIGHT-115-IQ"
+      ],
+      "source_status": "official-reference",
+      "editorial_owner": "Ahmad Abdullayev",
+      "approval_domains": ["content", "privacy", "operations"],
+      "review_schedule_id": "RG-030",
+      "rights_status": "to-be-authored",
+      "privacy_classification": "visitor-personal-data-processing",
+      "migration_disposition": "create-after-gates",
+      "target_state": "draft-required",
+      "migration_order": 28,
+      "last_reviewed_on": null,
+      "review_due_on": null,
+      "publication_gate": "reporting route, evidence protection, acknowledgement, triage, containment, decision and appeal path are tested"
+    },
+    {
+      "id": "CI-029",
+      "canonical_key": "discovery.routes-redirects-navigation",
+      "label": "Canonical routes, redirects and navigation labels",
+      "content_type": "routing-metadata",
+      "source_refs": [
+        "repository:src/paw/urls.py",
+        "repository:src/apps/core/urls.py",
+        "repository:src/templates/base.html"
+      ],
+      "source_status": "repository-observed",
+      "editorial_owner": "Ahmad Abdullayev",
+      "approval_domains": ["product", "content", "operations"],
+      "review_schedule_id": "RG-090",
+      "rights_status": "repository-controlled",
+      "privacy_classification": "none",
+      "migration_disposition": "import-verified",
+      "target_state": "approved-public",
+      "migration_order": 29,
+      "last_reviewed_on": "2026-07-17",
+      "review_due_on": "2026-10-15",
+      "publication_gate": "every active route is unique, canonical, authorized for public visibility and loop-free"
+    },
+    {
+      "id": "CI-030",
+      "canonical_key": "discovery.structured-metadata-feed-social-preview",
+      "label": "Structured metadata, Atom feed and static social-preview content",
+      "content_type": "generated-discovery-content",
+      "source_refs": [
+        "product-baseline:feature_decisions.privacy_and_discovery.atom_feed",
+        "product-baseline:feature_decisions.privacy_and_discovery.static_social_previews",
+        "source-gap:no-owner-approved-academic-content-supplied"
+      ],
+      "source_status": "decision-baselined",
+      "editorial_owner": "Ahmad Abdullayev",
+      "approval_domains": ["content", "privacy", "operations"],
+      "review_schedule_id": "RG-090",
+      "rights_status": "to-be-authored",
+      "privacy_classification": "confidential-until-reviewed",
+      "migration_disposition": "create-after-gates",
+      "target_state": "draft-required",
+      "migration_order": 30,
+      "last_reviewed_on": null,
+      "review_due_on": null,
+      "publication_gate": "derive only from the exact approved public snapshot and approved assets"
+    },
+    {
+      "id": "CI-031",
+      "canonical_key": "localization.english-source-content",
+      "label": "English source-locale content and language metadata",
+      "content_type": "localization-baseline",
+      "source_refs": [
+        "product-baseline:default_public_language",
+        "product-baseline:localization.active_locales"
+      ],
+      "source_status": "verified",
+      "editorial_owner": "Ahmad Abdullayev",
+      "approval_domains": ["product", "content", "accessibility"],
+      "review_schedule_id": "RG-180",
+      "rights_status": "repository-controlled",
+      "privacy_classification": "none",
+      "migration_disposition": "import-verified",
+      "target_state": "approved-public",
+      "migration_order": 31,
+      "last_reviewed_on": "2026-07-17",
+      "review_due_on": "2027-01-13",
+      "publication_gate": "every public route and metadata representation declares English consistently"
+    },
+    {
+      "id": "CI-032",
+      "canonical_key": "governance.legal-sources-revisions-approvals",
+      "label": "Legal source register, governance baseline, revisions and approvals",
+      "content_type": "internal-governance-records",
+      "source_refs": [
+        "repository:config/foundation-governance.json",
+        "owner-directive:2026-07-17-items-19-22"
+      ],
+      "source_status": "verified",
+      "editorial_owner": "Ahmad Abdullayev",
+      "approval_domains": ["product", "content", "privacy", "operations"],
+      "review_schedule_id": "RG-090",
+      "rights_status": "reference-only",
+      "privacy_classification": "legal-operational-metadata",
+      "migration_disposition": "create-reference",
+      "target_state": "approved-internal",
+      "migration_order": 32,
+      "last_reviewed_on": "2026-07-17",
+      "review_due_on": "2026-10-15",
+      "publication_gate": "machine validation passes and every decision remains append-only and attributable"
+    }
+  ],
+  "migration_plan": {
+    "status": "approved-plan-not-executed",
+    "source_freeze_required": true,
+    "dry_run_required": true,
+    "production_import_requires_owner_approval": true,
+    "rollback_to_last_valid_snapshot_required": true,
+    "reconciliation": {
+      "record_counts": true,
+      "relationship_counts": true,
+      "asset_checksums": true,
+      "route_uniqueness": true,
+      "public-private-boundary": true,
+      "derivative-snapshot-identity": true
+    },
+    "steps": [
+      {
+        "id": "MP-01",
+        "order": 1,
+        "name": "Freeze and identify sources",
+        "owner_role": "Content Maintainer",
+        "required_inputs": "read-only source export, source owner, export time, format, counts and checksums",
+        "exit_criteria": "every source has an immutable manifest entry and no source is silently overwritten",
+        "rollback": "discard the working copy and recreate it from the immutable source export"
+      },
+      {
+        "id": "MP-02",
+        "order": 2,
+        "name": "Discover and enumerate",
+        "owner_role": "Content Maintainer",
+        "required_inputs": "source manifest and the 32-item content inventory",
+        "exit_criteria": "every discovered record and asset maps to one inventory key or a documented exclusion",
+        "rollback": "restore the prior inventory revision and rerun discovery"
+      },
+      {
+        "id": "MP-03",
+        "order": 3,
+        "name": "Classify rights, privacy and visibility",
+        "owner_role": "Privacy Approver",
+        "required_inputs": "discovered records, rights evidence, consent and confidentiality obligations",
+        "exit_criteria": "each item has rights status, privacy class, intended visibility and disposition; unknowns are held unpublished",
+        "rollback": "return affected items to quarantine and remove them from all candidate public sets"
+      },
+      {
+        "id": "MP-04",
+        "order": 4,
+        "name": "Normalize and deduplicate canonical facts",
+        "owner_role": "Academic Content Approver",
+        "required_inputs": "classified records, identifiers, dates and relationship candidates",
+        "exit_criteria": "canonical keys are unique, identifiers are normalized, conflicts are explicit and no display copy becomes a second authority",
+        "rollback": "discard normalized candidates and retain the untouched source manifest"
+      },
+      {
+        "id": "MP-05",
+        "order": 5,
+        "name": "Transform into versioned drafts",
+        "owner_role": "Content Maintainer",
+        "required_inputs": "approved mapping specification and normalized candidates",
+        "exit_criteria": "schema-valid draft revisions preserve source identifiers, provenance and source-to-target field mappings",
+        "rollback": "delete unapproved draft imports by migration batch identifier"
+      },
+      {
+        "id": "MP-06",
+        "order": 6,
+        "name": "Verify facts and relationships",
+        "owner_role": "Academic Content Approver",
+        "required_inputs": "draft revisions, evidence and conflict report",
+        "exit_criteria": "material claims, dates, states, authorship, relationships and identifiers are approved or held unpublished",
+        "rollback": "reject the affected draft revision without changing the public snapshot"
+      },
+      {
+        "id": "MP-07",
+        "order": 7,
+        "name": "Validate assets and accessibility",
+        "owner_role": "Academic Content Approver",
+        "required_inputs": "quarantined assets, file metadata, captions, transcripts and document equivalents",
+        "exit_criteria": "checksums, type and malware checks, alternatives, captions, transcripts and accessible-document checks pass",
+        "rollback": "keep failed assets quarantined and remove dependent public actions"
+      },
+      {
+        "id": "MP-08",
+        "order": 8,
+        "name": "Complete legal, privacy and rights review",
+        "owner_role": "Privacy Approver",
+        "required_inputs": "candidate public set, processing inventory, rights ledger and policy drafts",
+        "exit_criteria": "registration or exemption evidence, transfer controls, notices, retention, licences, attribution and takedown route pass review",
+        "rollback": "hold the affected content or processing feature inactive"
+      },
+      {
+        "id": "MP-09",
+        "order": 9,
+        "name": "Approve immutable release candidate",
+        "owner_role": "Website Owner and Product Approver",
+        "required_inputs": "content, accessibility, security, privacy and operations evidence for one immutable candidate",
+        "exit_criteria": "separate approval decisions identify the same revision and artifact checksums",
+        "rollback": "reject the candidate and preserve the last approved release"
+      },
+      {
+        "id": "MP-10",
+        "order": 10,
+        "name": "Publish atomically",
+        "owner_role": "Technical Operations Approver",
+        "required_inputs": "approved release candidate and verified rollback target",
+        "exit_criteria": "one transaction or equivalent atomic workflow activates the approved snapshot without exposing drafts",
+        "rollback": "reactivate the last verified public snapshot"
+      },
+      {
+        "id": "MP-11",
+        "order": 11,
+        "name": "Rebuild derivatives and reconcile",
+        "owner_role": "Technical Operations Approver",
+        "required_inputs": "published revision identifier and source manifest",
+        "exit_criteria": "search, routes, sitemap, feed, metadata, social previews, caches and public assets use the same snapshot and reconciliation has zero unexplained variance",
+        "rollback": "invalidate failed derivatives and serve the last coherent derivative set"
+      },
+      {
+        "id": "MP-12",
+        "order": 12,
+        "name": "Archive evidence and close migration",
+        "owner_role": "Website Owner and Product Approver",
+        "required_inputs": "manifest, mappings, validation output, approvals, release identifier and reconciliation report",
+        "exit_criteria": "the evidence pack is immutable, restoration is demonstrated and every source item has a final disposition",
+        "rollback": "reopen the migration batch through a new revision; never rewrite the closed evidence pack"
+      }
+    ]
+  },
+  "revision_history": [
+    {
+      "id": "REV-001",
+      "logical_artifact_id": "repository-foundation@62418c3",
+      "version": "62418c3",
+      "previous_version": null,
+      "recorded_at": "2026-07-17T08:18:51Z",
+      "actor_role": "Repository Owner",
+      "change_type": "foundation-commit",
+      "summary": "Recorded the initial repository, product baseline, architecture, development contract and executable foundation checks in Git commit 62418c3.",
+      "changed_sections": [
+        "repository-foundation",
+        "product-baseline",
+        "architecture",
+        "development-contract",
+        "foundation-checks"
+      ],
+      "impacts": {
+        "data_migration": "established the initial repository state; no legacy academic content was migrated",
+        "security_privacy": "established public/private boundaries and prohibited unsupported public attributes",
+        "accessibility": "established WCAG 2.2 AA as the conformance target",
+        "testing": "established executable foundation checks"
+      },
+      "restoration_locator": "git commit 62418c3529060b2fdd27af2949cd5169e917a7a4"
+    },
+    {
+      "id": "REV-002",
+      "logical_artifact_id": "foundation-items-11-23@1.0.0",
+      "version": "1.0.0",
+      "previous_version": "62418c3",
+      "recorded_at": "2026-07-17T08:33:00Z",
+      "actor_role": "implementation agent acting under owner instruction",
+      "change_type": "foundation-scope-baseline",
+      "summary": "Established the complete decision, governance, evidence and traceability bundle for foundation items 11 through 23.",
+      "changed_sections": [
+        "deployment-and-environments",
+        "localization",
+        "administration-and-maintainers",
+        "conditional-capability-decisions",
+        "contact-search-and-integrations",
+        "jurisdiction",
+        "legal_sources",
+        "content_governance",
+        "content_inventory",
+        "migration_plan",
+        "revision_history",
+        "approval_records",
+        "requirements-matrix",
+        "evidence-ledger",
+        "foundation-scope-manifest"
+      ],
+      "impacts": {
+        "data_migration": "creates an approved plan and dispositions; performs no production content mutation",
+        "security_privacy": "adds mandatory registration, cross-border, minimization, rights, provider and publication controls",
+        "accessibility": "requires accessibility evidence before asset or document migration approval",
+        "testing": "adds schema, semantic, cross-artifact, source-regeneration and immutable-bundle validation"
+      },
+      "restoration_locator": "config/foundation-scope-manifest.json#bundle_projection_sha256"
+    }
+  ],
+  "approval_records": [
+    {
+      "id": "APR-PRODUCT-001",
+      "domain": "product",
+      "scope_items": [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23],
+      "decision": "Approve the selected scope, jurisdiction, content-governance, inventory, migration, revision and traceability foundations as the project baseline.",
+      "result": "approved-for-foundation-scope",
+      "stakeholder_id": "STK-001",
+      "approver_role": "Website Owner and Product Approver",
+      "logical_artifact_id": "foundation-items-11-23@1.0.0",
+      "artifact_version": "1.0.0",
+      "decided_at": "2026-07-17T08:33:00Z",
+      "supersedes": null,
+      "evidence_refs": [
+        "owner-directive:2026-07-17-items-11-23",
+        "website-srs:p1-p15",
+        "backend-specification:p4-p13"
+      ],
+      "scope_limit": "foundation-scope decision only; it is not feature-release, production-deployment or whole-SRS conformance approval"
+    },
+    {
+      "id": "APR-CONTENT-001",
+      "domain": "content",
+      "scope_items": [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23],
+      "decision": "Approve the canonical ownership, source-evidence rule, four review cadences, seven event triggers, 32-item inventory and explicit unpublished dispositions for unsupplied content.",
+      "result": "approved-for-foundation-scope",
+      "stakeholder_id": "STK-001",
+      "approver_role": "Academic Content Approver",
+      "logical_artifact_id": "foundation-items-11-23@1.0.0",
+      "artifact_version": "1.0.0",
+      "decided_at": "2026-07-17T08:33:00Z",
+      "supersedes": null,
+      "evidence_refs": [
+        "owner-directive:2026-07-17-items-11-23",
+        "website-srs:p15-p23",
+        "backend-specification:p8-p13"
+      ],
+      "scope_limit": "foundation-scope decision only; each future public content revision requires its own evidence and approval"
+    },
+    {
+      "id": "APR-ACCESSIBILITY-001",
+      "domain": "accessibility",
+      "scope_items": [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23],
+      "decision": "Approve the foundation requirement that migrated documents, media, language metadata and complete workflows carry accessibility evidence before public approval.",
+      "result": "approved-for-foundation-scope",
+      "stakeholder_id": "STK-001",
+      "approver_role": "Accessibility Approver",
+      "logical_artifact_id": "foundation-items-11-23@1.0.0",
+      "artifact_version": "1.0.0",
+      "decided_at": "2026-07-17T08:33:00Z",
+      "supersedes": null,
+      "evidence_refs": [
+        "owner-directive:2026-07-17-items-11-23",
+        "website-srs:p225-p252",
+        "backend-specification:p34-p36"
+      ],
+      "scope_limit": "foundation-scope decision only; no page, document or complete process is represented as accessibility-conformant by this record"
+    },
+    {
+      "id": "APR-SECURITY-001",
+      "domain": "security",
+      "scope_items": [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23],
+      "decision": "Approve the foundation public/private boundary, quarantined migration, minimized processing, immutable evidence and provider-control gates.",
+      "result": "approved-for-foundation-scope",
+      "stakeholder_id": "STK-001",
+      "approver_role": "Security Approver",
+      "logical_artifact_id": "foundation-items-11-23@1.0.0",
+      "artifact_version": "1.0.0",
+      "decided_at": "2026-07-17T08:33:00Z",
+      "supersedes": null,
+      "evidence_refs": [
+        "owner-directive:2026-07-17-items-11-23",
+        "website-srs:p271-p291",
+        "backend-specification:p4-p13"
+      ],
+      "scope_limit": "foundation-scope decision only; it is not a production threat-model, penetration-test or security-release approval"
+    },
+    {
+      "id": "APR-PRIVACY-001",
+      "domain": "privacy",
+      "scope_items": [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23],
+      "decision": "Approve Azerbaijan as the provisional internal governance baseline pending actual nexus and applicable-law determination, eu-central-1 as the selected but not yet deployed region, and the registration, licensing, consent-channel, certification, cross-border, notice, rights, retention and inactive-feature gates.",
+      "result": "approved-for-foundation-scope",
+      "stakeholder_id": "STK-001",
+      "approver_role": "Privacy Approver",
+      "logical_artifact_id": "foundation-items-11-23@1.0.0",
+      "artifact_version": "1.0.0",
+      "decided_at": "2026-07-17T08:33:00Z",
+      "supersedes": null,
+      "evidence_refs": [
+        "owner-directive:2026-07-17-items-11-23",
+        "LAW-AZ-CONSTITUTION-30-32",
+        "LAW-AZ-PERSONAL-DATA-998-IIIQ",
+        "LAW-AZ-PRIVATE-INTERNATIONAL-LAW",
+        "LAW-AZ-CABINET-237",
+        "LAW-AZ-CABINET-149",
+        "LAW-EU-GDPR-2016-679",
+        "GUIDANCE-EU-EDPB-ARTICLE-3",
+        "PROVIDER-AWS-REGIONS",
+        "PROVIDER-AWS-DATA-PRIVACY"
+      ],
+      "scope_limit": "foundation-scope decision only; it does not waive mandatory law or approve production personal-data collection"
+    },
+    {
+      "id": "APR-OPERATIONS-001",
+      "domain": "operations",
+      "scope_items": [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23],
+      "decision": "Approve the 12-step migration, reconciliation, atomic-publication, rollback, evidence-archive and append-only revision controls for foundation use.",
+      "result": "approved-for-foundation-scope",
+      "stakeholder_id": "STK-001",
+      "approver_role": "Technical Operations Approver",
+      "logical_artifact_id": "foundation-items-11-23@1.0.0",
+      "artifact_version": "1.0.0",
+      "decided_at": "2026-07-17T08:33:00Z",
+      "supersedes": null,
+      "evidence_refs": [
+        "owner-directive:2026-07-17-items-11-23",
+        "website-srs:p266-p268",
+        "website-srs:p292-p313",
+        "backend-specification:p34-p36"
+      ],
+      "scope_limit": "foundation-scope decision only; it is not deployment, restoration-drill or production-release approval"
+    }
+  ]
+}

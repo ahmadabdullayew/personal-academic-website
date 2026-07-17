@@ -7,7 +7,7 @@ affiliation or biography is inferred before an approved source record exists.
 
 ## Foundation status
 
-The first foundation milestone establishes:
+The project-and-scope foundation establishes:
 
 1. a functioning Git repository on `main`;
 2. a reproducible Python and Node toolchain;
@@ -15,12 +15,20 @@ The first foundation milestone establishes:
 4. safe local environment examples;
 5. executable formatting, linting, typing, testing and build commands;
 6. named ownership and release-approval roles;
-7. primary and secondary audiences; and
-8. ranked visitor and owner goals.
+7. primary and secondary audiences;
+8. ranked visitor and owner goals;
+9. the primary domain, five deployment environments and one active locale;
+10. the administration model and named maintainer roles;
+11. binary decisions for all 54 optional or conditional requirement cards;
+12. contact, search, synchronization, privacy and discovery feature decisions;
+13. jurisdiction, content ownership, approval and review controls;
+14. a 32-record initial content inventory and 12-step migration plan;
+15. formal revision history and six domain-specific approval records; and
+16. the exact 264-row applicability, dependency and ownership matrix.
 
-The complete website requirements are not represented as finished by this
-milestone. The current implementation is a tested foundation from which those
-requirements can be implemented without inventing personal or academic claims.
+This milestone resolves foundation items 1–23. Applicable website capabilities
+remain connected to their own implementation and release evidence; unsupported
+personal or academic claims remain unpublished.
 
 ## Owner and accountability
 
@@ -31,7 +39,9 @@ requirements can be implemented without inventing personal or academic claims.
   person fills every role.
 - Applicable P0 failures are not waivable.
 
-See [governance](docs/product/governance.md) and
+See [governance](docs/product/governance.md),
+[scope decisions 11–18](docs/product/foundation-scope-decisions.md),
+[legal and content governance](docs/product/legal-content-governance.md) and
 [audiences and goals](docs/product/audiences-and-goals.md).
 
 ## Architecture
@@ -58,11 +68,14 @@ enhanced strict TypeScript built by Vite. Django REST Framework supplies
 `/api/v1`. PostgreSQL supplies persistence and full-text/trigram search. Celery
 consumes at-least-once SQS messages through idempotent handlers. Production
 storage uses separate private S3 buckets. Production hosting uses AWS managed
-services across multiple availability zones.
+services across multiple availability zones in `eu-central-1`
+(Europe/Frankfurt). The primary public origin is `https://ahmadabdullayev.com`.
 
 The binding rationale and alternatives are recorded in
 [ADR 0001](docs/architecture/0001-platform.md) and the source review in
 [the foundation literature review](docs/research/foundation-literature-review.md).
+The selections for items 11–23 have a separate
+[scope and governance evidence review](docs/research/scope-governance-literature-review.md).
 
 ## Prerequisites
 
@@ -70,6 +83,9 @@ The binding rationale and alternatives are recorded in
 - `uv` 0.11.29 or later.
 - Node.js 22.23.0 and npm 10.9.8.
 - Docker with Compose support for PostgreSQL and local S3/SQS emulation.
+- Poppler `pdftotext` 24.02.0 or later when regenerating the 264-row matrix;
+  verify it with `pdftotext -v`. It is not required to validate the committed
+  matrix.
 
 The repository pins Python 3.13.14 in `.python-version` and Node 22.23.0 in
 `.nvmrc`.
@@ -114,7 +130,7 @@ Detailed clean-clone, migration and troubleshooting instructions are in
 | `make typecheck`        | Run strict mypy and TypeScript checks                                 |
 | `make test`             | Run Python and TypeScript tests with coverage thresholds              |
 | `make env-check`        | Validate the environment contract                                     |
-| `make scope-check`      | Validate owner, approvers, audiences and ranked goals                 |
+| `make scope-check`      | Validate all three baselines and their cross-artifact consistency     |
 | `make production-check` | Run deployment checks against generated safe validation config        |
 | `make migration-check`  | Reject model changes that lack migrations                             |
 | `make openapi-check`    | Generate and validate the versioned OpenAPI document                  |
@@ -124,7 +140,7 @@ Detailed clean-clone, migration and troubleshooting instructions are in
 ## Repository map
 
 ```text
-config/                 machine-readable product baseline
+config/                 machine-readable product, governance and requirement baselines
 docs/architecture/      binding architecture decisions
 docs/development/       local setup, environment and testing contracts
 docs/product/           owner, approval, audience and goal baseline
@@ -143,9 +159,10 @@ tests/                  cross-application Python tests
 ## Configuration and secrets
 
 `.env.example` contains safe local values; `.env.test.example` contains isolated
-test values. Real `.env` files are ignored. Production secrets must be supplied
+test values. Preview, staging and production have non-secret deployment
+templates. Real `.env` files are ignored. Deployed secrets must be supplied
 through AWS Secrets Manager or Systems Manager Parameter Store and IAM task
-roles. No AWS access key is stored in a production file.
+roles. No AWS access key is stored in a deployment template.
 
 See [the environment contract](docs/development/environment.md).
 
@@ -164,4 +181,5 @@ See [the environment contract](docs/development/environment.md).
 All new behavior must be connected to an SRS requirement, measurable acceptance
 criteria and executable or inspectable evidence. See
 [CONTRIBUTING.md](CONTRIBUTING.md) and the
-[foundation traceability matrix](docs/traceability/foundation.md).
+[foundation traceability matrix](docs/traceability/foundation.md) and the
+[264-row requirement matrix](docs/traceability/requirements-matrix.md).

@@ -17,6 +17,30 @@
 already available. `npm ci` installs exactly the dependency graph in
 `package-lock.json`.
 
+## Requirement-matrix source regeneration
+
+Ordinary development and validation use the committed 264-row matrix and do not
+need the source PDFs or a PDF extractor. Regenerating that matrix from the two
+reviewed PDFs additionally requires Poppler `pdftotext` 24.02.0 or later.
+
+Install the `poppler-utils` package on Debian/Ubuntu or the `poppler` formula
+with Homebrew on macOS, then verify the executable and version before running
+the builder:
+
+```shell
+pdftotext -v
+python3 scripts/build_requirements_matrix.py \
+  --srs-pdf /path/to/personal_academic_professional_website_srs.pdf \
+  --backend-pdf /path/to/personal_academic_website_backend_specification.pdf \
+  --output /tmp/requirements-matrix.json
+cmp config/requirements-matrix.json /tmp/requirements-matrix.json
+```
+
+The first command must report `pdftotext version 24.02.0` or a later version.
+The builder performs the same preflight and gives platform-specific installation
+and verification guidance when the executable is missing, cannot run, reports an
+unrecognized version, or is too old.
+
 ## Local services
 
 Docker Compose starts:
@@ -69,3 +93,5 @@ surface.
   migrating.
 - **Lock drift:** regenerate the relevant lock deliberately and review its full
   diff.
+- **Matrix extractor unavailable:** install Poppler `pdftotext` 24.02.0 or
+  later, confirm `pdftotext -v`, and rerun the matrix builder.

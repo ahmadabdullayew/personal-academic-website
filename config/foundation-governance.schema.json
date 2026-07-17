@@ -1,0 +1,825 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ahmadabdullayev.com/schemas/foundation-governance.schema.json",
+  "title": "Foundation legal, content, migration, revision and approval governance baseline",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "baseline_version",
+    "effective_at",
+    "status",
+    "scope_items",
+    "source_documents",
+    "stakeholders",
+    "jurisdiction",
+    "legal_sources",
+    "content_governance",
+    "content_inventory",
+    "migration_plan",
+    "revision_history",
+    "approval_records"
+  ],
+  "properties": {
+    "baseline_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "effective_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "status": {
+      "const": "approved-foundation-baseline"
+    },
+    "scope_items": {
+      "const": [19, 20, 21, 22]
+    },
+    "source_documents": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": { "$ref": "#/$defs/sourceDocument" }
+    },
+    "stakeholders": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/stakeholder" }
+    },
+    "jurisdiction": { "$ref": "#/$defs/jurisdiction" },
+    "legal_sources": {
+      "type": "array",
+      "minItems": 17,
+      "items": { "$ref": "#/$defs/legalSource" }
+    },
+    "content_governance": { "$ref": "#/$defs/contentGovernance" },
+    "content_inventory": {
+      "type": "array",
+      "minItems": 32,
+      "maxItems": 32,
+      "items": { "$ref": "#/$defs/contentInventoryItem" }
+    },
+    "migration_plan": { "$ref": "#/$defs/migrationPlan" },
+    "revision_history": {
+      "type": "array",
+      "minItems": 2,
+      "items": { "$ref": "#/$defs/revision" }
+    },
+    "approval_records": {
+      "type": "array",
+      "minItems": 6,
+      "items": { "$ref": "#/$defs/approval" }
+    }
+  },
+  "$defs": {
+    "nonEmptyString": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": ".*\\S.*"
+    },
+    "dateOrNull": {
+      "oneOf": [{ "type": "string", "format": "date" }, { "type": "null" }]
+    },
+    "evidenceRefs": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[A-Za-z][A-Za-z0-9-]*:.+|^(LAW|AUTHORITY|GUIDANCE|PROVIDER)-[A-Z0-9-]+$"
+      }
+    },
+    "sourceDocument": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "filename",
+        "sha256",
+        "page_reference_model",
+        "evidence_refs"
+      ],
+      "properties": {
+        "id": { "enum": ["website-srs", "backend-specification"] },
+        "filename": { "$ref": "#/$defs/nonEmptyString" },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "page_reference_model": { "$ref": "#/$defs/nonEmptyString" },
+        "evidence_refs": { "$ref": "#/$defs/evidenceRefs" }
+      }
+    },
+    "stakeholder": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "relationship",
+        "roles",
+        "authority",
+        "evidence_refs"
+      ],
+      "properties": {
+        "id": { "type": "string", "pattern": "^STK-[0-9]{3}$" },
+        "name": { "$ref": "#/$defs/nonEmptyString" },
+        "relationship": { "$ref": "#/$defs/nonEmptyString" },
+        "roles": {
+          "type": "array",
+          "minItems": 4,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/nonEmptyString" }
+        },
+        "authority": { "$ref": "#/$defs/nonEmptyString" },
+        "evidence_refs": { "$ref": "#/$defs/evidenceRefs" }
+      }
+    },
+    "jurisdiction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "selected_project_governance_baseline",
+        "applicability_determination",
+        "legal_source_provenance",
+        "selected_hosting",
+        "activated_processing_snapshot",
+        "personal_data_controls",
+        "publication_controls",
+        "review"
+      ],
+      "properties": {
+        "selected_project_governance_baseline": {
+          "const": {
+            "country_code": "AZ",
+            "country_name": "Republic of Azerbaijan",
+            "status": "provisional-pending-nexus-and-applicable-law-determination",
+            "purpose": "internal engineering and governance baseline only",
+            "mandatory_law_savings": true,
+            "choice_of_law_enforceability_asserted": false,
+            "court_forum_established": false
+          }
+        },
+        "applicability_determination": {
+          "const": {
+            "controller_establishment_and_activity_nexus_status": "unverified",
+            "owner_residence_or_citizenship_asserted": false,
+            "actual_applicable_law_determination": "required-before-production-personal-data-processing",
+            "visitor_targeting_and_monitoring_assessment": "required-before-production-personal-data-processing",
+            "household_or_personal_use_exception": "not-relied-upon-without-clause-specific-determination",
+            "gdpr_status": "contingent-pending-article-3-analysis",
+            "germany_hosting_alone_triggers_gdpr": false
+          }
+        },
+        "legal_source_provenance": {
+          "const": {
+            "current_review_content_digest_status": "not-recorded",
+            "immutable_source_verification_claimed": false,
+            "production_reliance_gate": "retrieve-current-official-text-and-record-content-sha256-or-stable-instrument-or-archive-identity",
+            "required_archive_metadata": [
+              "source-id",
+              "official-url",
+              "retrieval-timestamp",
+              "content-sha256-or-stable-instrument-or-archive-identity",
+              "official-language-and-translation-status",
+              "amendment-through-or-source-currency-status"
+            ]
+          }
+        },
+        "selected_hosting": {
+          "const": {
+            "provider": "Amazon Web Services",
+            "region": "eu-central-1",
+            "region_name": "Europe (Frankfurt)",
+            "country_code": "DE",
+            "deployment_state": "selected-not-deployed-or-evidenced",
+            "regional_configuration_requirement": "regional-resources-must-use-eu-central-1",
+            "application_managed_cross_region_replication": "prohibited-unless-separately-approved-and-documented",
+            "service_specific_location_and_transfer_evidence_required": true,
+            "outbound_email_recipient_system_processing_must_be_disclosed": true,
+            "global_or_out_of_region_service_processing_must_be_disclosed": true,
+            "provider_service_and_legal_exceptions_must_be_disclosed": true,
+            "personal_data_in_resource_names_tags_or_free_form_metadata": "prohibited",
+            "service_assessment_required_for": [
+              "application-runtime-and-relational-data",
+              "object-storage-and-backups",
+              "queues-and-job-payloads",
+              "application-security-and-audit-logs",
+              "amazon-ses-identities-suppression-feedback-and-delivery-events",
+              "dns-cdn-certificates-and-edge-processing",
+              "control-plane-resource-identifiers-tags-and-metadata",
+              "support-access-subprocessors-and-legal-demands",
+              "aws-account-billing-and-diagnostic-information",
+              "recipient-mailbox-provider-and-mailbox-location"
+            ],
+            "ses_controls": {
+              "engagement_tracking": "disabled",
+              "delivery_tls": "require-tls-or-send-only-minimal-notification-with-secure-admin-retrieval",
+              "message_body_personal_data": "minimized",
+              "recipient_mail_system_assessment_required": true
+            }
+          }
+        },
+        "activated_processing_snapshot": {
+          "const": {
+            "contact_form": "active-direct-submission-channel-with-aws-ses",
+            "operational_security_logs": "active-minimized-redacted-fixed-retention",
+            "public_search": "active-public-content-only-no-raw-query-retention",
+            "atom_feed": "active-public-content-only",
+            "static_social_previews": "active-public-content-only",
+            "ses_engagement_tracking": "inactive",
+            "analytics": "inactive",
+            "nonessential_cookies": "inactive",
+            "third_party_embeds": "inactive",
+            "orcid_synchronization": "inactive",
+            "crossref_synchronization": "inactive"
+          }
+        },
+        "personal_data_controls": {
+          "const": {
+            "information_system_owner": "Ahmad Abdullayev",
+            "registration": {
+              "decision": "register-before-production-unless-a-documented-clause-specific-legal-determination-establishes-an-exemption",
+              "exemption_status": "none-relied-upon",
+              "competent_authority_guidance_if_needed": true,
+              "evidence_required_before_collection": true
+            },
+            "licensing": {
+              "article_9_14_applicability_status": "undetermined",
+              "determination_and_evidence_required_before_operation": true,
+              "registration_does_not_resolve_licensing": true
+            },
+            "consent": {
+              "privacy_acknowledgement_is_legal_consent": false,
+              "article_8_6_ehis_applicability_status": "undetermined",
+              "ehis_or_digital_consent_determination_required_before_collection": true,
+              "consent_evidence_required_when_consent_is_the_basis": true,
+              "withdrawal_mechanism_must_match_applicable_legal_channel": true
+            },
+            "certification_and_state_expertise": {
+              "conformity_certificate_applicability_status": "undetermined",
+              "state_expert_examination_applicability_status": "undetermined",
+              "system_and_project_documentation_status": "not-yet-evidenced",
+              "determination_and_evidence_required_before_operation": true,
+              "status_disclosure_required_at_collection": true
+            },
+            "cross_border_transfer": {
+              "status": "blocked-pending-article-14-and-actual-transfer-facts",
+              "crossing_azerbaijan_state_border_fact_status": "undetermined",
+              "article_14_findings": {
+                "article_14_2_1_national_security_threat": "undetermined",
+                "article_14_2_2_receiving_law_equivalence": "undetermined",
+                "article_14_3_consent_or_life_health_exception": "undetermined",
+                "article_14_4_security_safeguards": "undetermined"
+              },
+              "aws_processing_paths_assessed": false,
+              "recipient_mailbox_paths_assessed": false,
+              "gdpr_is_not_itself_an_article_14_equivalence_determination": true,
+              "security_safeguards_evidence_required": true
+            },
+            "provider_contract_and_processing_terms_required": true,
+            "purpose_and_field_inventory_before_collection": true,
+            "retention_and_deletion_rules_before_collection": true,
+            "collection_notice": {
+              "status": "required-before-collection",
+              "required_fields": [
+                "owner-or-operator-identity",
+                "processing-purpose-and-legal-basis",
+                "information-system-protection-level",
+                "conformity-certificate-and-state-expertise-status",
+                "intended-users-and-information-exchange-systems",
+                "statutory-data-subject-rights"
+              ]
+            },
+            "data_subject_rights": {
+              "workflow_status": "required-before-collection",
+              "request_channels": [
+                "paper-written-application-with-identity-document",
+                "electronic-request-with-enhanced-electronic-signature"
+              ],
+              "response_deadline_working_days": 7,
+              "third_party_consultation_extension_working_days": 7,
+              "reasoned_refusal_deadline_working_days": 5,
+              "prior_recipient_notification_deadline_working_days": 3,
+              "identity_document_minimization_and_secure_handling_required": true,
+              "responses_must_exclude_other_persons_personal_data": true
+            },
+            "security": {
+              "decision_161_clause_mapping_required": true,
+              "required_evidence": [
+                "threat-and-protection-level-assessment",
+                "approved-software-and-operating-instructions",
+                "restoration-and-continuity-controls",
+                "protection-and-system-project-documentation",
+                "access-security-and-control-audit-registers",
+                "physical-and-data-centre-controls",
+                "licensed-software-evidence",
+                "role-based-access-authentication-and-authorization",
+                "decision-161-encryption-control-including-256-bit-key-requirement",
+                "conformity-certification-and-state-expertise-evidence"
+              ]
+            },
+            "data_minimization_and_incidental_data": {
+              "only_direct_visitor_submission_channel": "contact-form",
+              "security_logs_and_search_queries_are_potential_personal_data": true,
+              "raw_search_query_persistence": "prohibited",
+              "query_string_and_secret_redaction_required": true,
+              "access_log_field_minimization_and_fixed_retention_required": true,
+              "special_category_data_policy": "not-requested-and-prohibited-by-policy",
+              "free_text_may_receive_special_category_data": true,
+              "inadvertent_special_category_response": "restrict-quarantine-escalate-and-delete"
+            },
+            "automated_decision_making": "prohibited",
+            "sale_or_brokerage": "prohibited"
+          }
+        },
+        "publication_controls": {
+          "const": {
+            "privacy_notice": "required-before-contact-form-production-activation",
+            "cookie_or_storage_notice": "no-public-consent-interface-while-nonessential-public-storage-is-inactive; disclose-and-assess-admin-session-cookies-and-server-processing",
+            "rights_licence_and_attribution_notice": "required-before-third-party-content-publication",
+            "rights_privacy_impersonation_and_accuracy_reporting_route": "required-at-public-launch",
+            "terms_notice": "site-use-and-rights-notice-required-at-public-launch; no-ecommerce-or-account-contract-terms-active",
+            "policy_language": "English",
+            "policy_versioning": "append-only-version-record-with-effective-date"
+          }
+        },
+        "review": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "scheduled_interval_days",
+            "next_scheduled_review_on",
+            "event_triggers",
+            "review_owner_role"
+          ],
+          "properties": {
+            "scheduled_interval_days": { "const": 90 },
+            "next_scheduled_review_on": { "type": "string", "format": "date" },
+            "event_triggers": {
+              "type": "array",
+              "minItems": 6,
+              "uniqueItems": true,
+              "items": { "$ref": "#/$defs/nonEmptyString" }
+            },
+            "review_owner_role": { "const": "Privacy Approver" }
+          }
+        }
+      }
+    },
+    "legalSource": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "authority",
+        "title",
+        "url",
+        "jurisdiction",
+        "source_type",
+        "provisions",
+        "project_proposition",
+        "proposition_mappings",
+        "official_language",
+        "translation_status",
+        "currency_note",
+        "reviewed_on",
+        "retrieved_on"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^(LAW|AUTHORITY|GUIDANCE|PROVIDER)-[A-Z0-9-]+$"
+        },
+        "authority": { "$ref": "#/$defs/nonEmptyString" },
+        "title": { "$ref": "#/$defs/nonEmptyString" },
+        "url": { "type": "string", "format": "uri", "pattern": "^https://" },
+        "jurisdiction": { "enum": ["AZ", "EU", "PROVIDER"] },
+        "source_type": {
+          "enum": [
+            "primary-law",
+            "secondary-law",
+            "official-guidance",
+            "provider-documentation"
+          ]
+        },
+        "provisions": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/nonEmptyString" }
+        },
+        "project_proposition": { "$ref": "#/$defs/nonEmptyString" },
+        "proposition_mappings": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["provision", "proposition"],
+            "properties": {
+              "provision": { "$ref": "#/$defs/nonEmptyString" },
+              "proposition": { "$ref": "#/$defs/nonEmptyString" }
+            }
+          }
+        },
+        "official_language": { "enum": ["Azerbaijani", "English"] },
+        "translation_status": {
+          "enum": [
+            "official-English-version",
+            "project-English-paraphrase-of-official-Azerbaijani-source",
+            "original-English"
+          ]
+        },
+        "currency_note": { "$ref": "#/$defs/nonEmptyString" },
+        "reviewed_on": { "type": "string", "format": "date" },
+        "retrieved_on": { "type": "string", "format": "date" }
+      }
+    },
+    "contentGovernance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "canonical_editorial_owner",
+        "role_assignments",
+        "workflow",
+        "rules",
+        "required_record_fields",
+        "review_schedules",
+        "event_review_triggers"
+      ],
+      "properties": {
+        "canonical_editorial_owner": { "const": "Ahmad Abdullayev" },
+        "role_assignments": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": { "$ref": "#/$defs/roleAssignment" }
+        },
+        "workflow": {
+          "const": [
+            "draft",
+            "fact-review",
+            "rights-privacy-review",
+            "approved",
+            "published",
+            "superseded-or-archived"
+          ]
+        },
+        "rules": {
+          "type": "array",
+          "minItems": 8,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/nonEmptyString" }
+        },
+        "required_record_fields": {
+          "type": "array",
+          "minItems": 10,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/nonEmptyString" }
+        },
+        "review_schedules": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": { "$ref": "#/$defs/reviewSchedule" }
+        },
+        "event_review_triggers": {
+          "type": "array",
+          "minItems": 7,
+          "maxItems": 7,
+          "items": { "$ref": "#/$defs/eventTrigger" }
+        }
+      }
+    },
+    "roleAssignment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["role", "assignee", "accountability"],
+      "properties": {
+        "role": { "$ref": "#/$defs/nonEmptyString" },
+        "assignee": { "const": "Ahmad Abdullayev" },
+        "accountability": { "$ref": "#/$defs/nonEmptyString" }
+      }
+    },
+    "reviewSchedule": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "maximum_interval_days",
+        "applies_to",
+        "overdue_action"
+      ],
+      "properties": {
+        "id": { "type": "string", "pattern": "^RG-[0-9]{3}$" },
+        "name": { "$ref": "#/$defs/nonEmptyString" },
+        "maximum_interval_days": { "enum": [30, 90, 180, 365] },
+        "applies_to": { "$ref": "#/$defs/nonEmptyString" },
+        "overdue_action": { "$ref": "#/$defs/nonEmptyString" }
+      }
+    },
+    "eventTrigger": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "trigger", "response"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^ER-[0-9]{3}$" },
+        "trigger": { "$ref": "#/$defs/nonEmptyString" },
+        "response": { "$ref": "#/$defs/nonEmptyString" }
+      }
+    },
+    "contentInventoryItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "canonical_key",
+        "label",
+        "content_type",
+        "source_refs",
+        "source_status",
+        "editorial_owner",
+        "approval_domains",
+        "review_schedule_id",
+        "rights_status",
+        "privacy_classification",
+        "migration_disposition",
+        "target_state",
+        "migration_order",
+        "last_reviewed_on",
+        "review_due_on",
+        "publication_gate"
+      ],
+      "properties": {
+        "id": { "type": "string", "pattern": "^CI-[0-9]{3}$" },
+        "canonical_key": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*(\\.[a-z][a-z0-9-]*)+$"
+        },
+        "label": { "$ref": "#/$defs/nonEmptyString" },
+        "content_type": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*$"
+        },
+        "source_refs": { "$ref": "#/$defs/evidenceRefs" },
+        "source_status": {
+          "enum": [
+            "verified",
+            "repository-observed",
+            "decision-baselined",
+            "not-supplied",
+            "official-reference"
+          ]
+        },
+        "editorial_owner": { "const": "Ahmad Abdullayev" },
+        "approval_domains": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "product",
+              "content",
+              "accessibility",
+              "security",
+              "privacy",
+              "operations"
+            ]
+          }
+        },
+        "review_schedule_id": { "type": "string", "pattern": "^RG-[0-9]{3}$" },
+        "rights_status": {
+          "enum": [
+            "owner-provided",
+            "repository-controlled",
+            "undetermined",
+            "to-be-authored",
+            "reference-only"
+          ]
+        },
+        "privacy_classification": {
+          "enum": [
+            "none",
+            "public-owner-data",
+            "possible-third-party-data",
+            "visitor-personal-data-processing",
+            "confidential-until-reviewed",
+            "legal-operational-metadata"
+          ]
+        },
+        "migration_disposition": {
+          "enum": [
+            "import-verified",
+            "retire-temporary",
+            "replace-with-approved",
+            "hold-unpublished",
+            "create-after-gates",
+            "create-reference"
+          ]
+        },
+        "target_state": {
+          "enum": [
+            "approved-public",
+            "temporary-public",
+            "omitted-until-approved",
+            "draft-required",
+            "approved-internal"
+          ]
+        },
+        "migration_order": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 32
+        },
+        "last_reviewed_on": { "$ref": "#/$defs/dateOrNull" },
+        "review_due_on": { "$ref": "#/$defs/dateOrNull" },
+        "publication_gate": { "$ref": "#/$defs/nonEmptyString" }
+      }
+    },
+    "migrationPlan": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "source_freeze_required",
+        "dry_run_required",
+        "production_import_requires_owner_approval",
+        "rollback_to_last_valid_snapshot_required",
+        "reconciliation",
+        "steps"
+      ],
+      "properties": {
+        "status": { "const": "approved-plan-not-executed" },
+        "source_freeze_required": { "const": true },
+        "dry_run_required": { "const": true },
+        "production_import_requires_owner_approval": { "const": true },
+        "rollback_to_last_valid_snapshot_required": { "const": true },
+        "reconciliation": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "record_counts",
+            "relationship_counts",
+            "asset_checksums",
+            "route_uniqueness",
+            "public-private-boundary",
+            "derivative-snapshot-identity"
+          ],
+          "properties": {
+            "record_counts": { "const": true },
+            "relationship_counts": { "const": true },
+            "asset_checksums": { "const": true },
+            "route_uniqueness": { "const": true },
+            "public-private-boundary": { "const": true },
+            "derivative-snapshot-identity": { "const": true }
+          }
+        },
+        "steps": {
+          "type": "array",
+          "minItems": 12,
+          "maxItems": 12,
+          "items": { "$ref": "#/$defs/migrationStep" }
+        }
+      }
+    },
+    "migrationStep": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "order",
+        "name",
+        "owner_role",
+        "required_inputs",
+        "exit_criteria",
+        "rollback"
+      ],
+      "properties": {
+        "id": { "type": "string", "pattern": "^MP-[0-9]{2}$" },
+        "order": { "type": "integer", "minimum": 1, "maximum": 12 },
+        "name": { "$ref": "#/$defs/nonEmptyString" },
+        "owner_role": { "$ref": "#/$defs/nonEmptyString" },
+        "required_inputs": { "$ref": "#/$defs/nonEmptyString" },
+        "exit_criteria": { "$ref": "#/$defs/nonEmptyString" },
+        "rollback": { "$ref": "#/$defs/nonEmptyString" }
+      }
+    },
+    "revision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "logical_artifact_id",
+        "version",
+        "previous_version",
+        "recorded_at",
+        "actor_role",
+        "change_type",
+        "summary",
+        "changed_sections",
+        "impacts",
+        "restoration_locator"
+      ],
+      "properties": {
+        "id": { "type": "string", "pattern": "^REV-[0-9]{3}$" },
+        "logical_artifact_id": { "$ref": "#/$defs/nonEmptyString" },
+        "version": { "$ref": "#/$defs/nonEmptyString" },
+        "previous_version": {
+          "oneOf": [{ "$ref": "#/$defs/nonEmptyString" }, { "type": "null" }]
+        },
+        "recorded_at": { "type": "string", "format": "date-time" },
+        "actor_role": { "$ref": "#/$defs/nonEmptyString" },
+        "change_type": { "$ref": "#/$defs/nonEmptyString" },
+        "summary": { "$ref": "#/$defs/nonEmptyString" },
+        "changed_sections": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/nonEmptyString" }
+        },
+        "impacts": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "data_migration",
+            "security_privacy",
+            "accessibility",
+            "testing"
+          ],
+          "properties": {
+            "data_migration": { "$ref": "#/$defs/nonEmptyString" },
+            "security_privacy": { "$ref": "#/$defs/nonEmptyString" },
+            "accessibility": { "$ref": "#/$defs/nonEmptyString" },
+            "testing": { "$ref": "#/$defs/nonEmptyString" }
+          }
+        },
+        "restoration_locator": { "$ref": "#/$defs/nonEmptyString" }
+      }
+    },
+    "approval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "domain",
+        "scope_items",
+        "decision",
+        "result",
+        "stakeholder_id",
+        "approver_role",
+        "logical_artifact_id",
+        "artifact_version",
+        "decided_at",
+        "supersedes",
+        "evidence_refs",
+        "scope_limit"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^APR-(PRODUCT|CONTENT|ACCESSIBILITY|SECURITY|PRIVACY|OPERATIONS)-[0-9]{3}$"
+        },
+        "domain": {
+          "enum": [
+            "product",
+            "content",
+            "accessibility",
+            "security",
+            "privacy",
+            "operations"
+          ]
+        },
+        "scope_items": {
+          "const": [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+        },
+        "decision": { "$ref": "#/$defs/nonEmptyString" },
+        "result": {
+          "enum": [
+            "approved-for-foundation-scope",
+            "rejected-for-foundation-scope"
+          ]
+        },
+        "stakeholder_id": { "type": "string", "pattern": "^STK-[0-9]{3}$" },
+        "approver_role": { "$ref": "#/$defs/nonEmptyString" },
+        "logical_artifact_id": { "$ref": "#/$defs/nonEmptyString" },
+        "artifact_version": {
+          "type": "string",
+          "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+        },
+        "decided_at": { "type": "string", "format": "date-time" },
+        "supersedes": {
+          "oneOf": [
+            {
+              "type": "string",
+              "pattern": "^APR-(PRODUCT|CONTENT|ACCESSIBILITY|SECURITY|PRIVACY|OPERATIONS)-[0-9]{3}$"
+            },
+            { "type": "null" }
+          ]
+        },
+        "evidence_refs": { "$ref": "#/$defs/evidenceRefs" },
+        "scope_limit": { "$ref": "#/$defs/nonEmptyString" }
+      }
+    }
+  }
+}

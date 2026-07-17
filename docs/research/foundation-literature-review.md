@@ -244,9 +244,15 @@ hosts:
 - <https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html>
 - <https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-rebalancing.html>
 
-The production region remains deliberately unresolved until jurisdiction,
-residency and cost decisions are approved. That decision does not change the
-application interfaces.
+The scope baseline selects AWS `eu-central-1` (Europe/Frankfurt, Germany) for
+preview, staging, production and their durable regional application data. AWS
+documents three Availability Zones for this region and availability for the
+selected RDS, S3 and SES regional resources. Cross-region replication is
+disabled. Outbound email still traverses recipient mail infrastructure, and
+global or edge service paths require separate inventory and disclosure. The
+legal record must consequently govern processing in Germany, provider paths,
+processor terms and any applicable international-transfer mechanism; region
+selection does not itself establish legal compliance.
 
 ## 9. Reproducibility evidence
 
@@ -264,10 +270,12 @@ Django system checks, Compose validation and the asset build are one
 
 ## 10. Limitations and update triggers
 
-1. Audience ordering is evidence-led but must later be tested with real user
-   research and analytics activated under privacy approval.
-2. AWS region and cost envelope await jurisdiction and non-functional
-   requirements.
+1. Audience ordering is evidence-led and should later be tested with approved
+   user research. Analytics remains inactive unless a separate minimal-purpose
+   privacy decision activates it.
+2. AWS `eu-central-1` is selected; jurisdiction, processor, transfer, workload,
+   cost-envelope and recovery evidence remain release inputs rather than
+   unspecified region choices.
 3. PostgreSQL search must be benchmarked against the real corpus and supported
    languages.
 4. The queue selection must be revisited if task latency, ordering or
@@ -276,7 +284,7 @@ Django system checks, Compose validation and the asset build are one
    maintained security updates and reviewed lock changes.
 6. Every architecture extraction or new data store requires a new decision
    record and proof that the public/private boundary remains intact.
-7. SQS and AWS hosting require region, workload, cost-envelope and owner-labor
+7. SQS and AWS hosting require measured workload, cost-envelope and owner-labor
    inputs before deployment approval; the review does not invent a monthly cost.
 
 The review is refreshed when a selected dependency loses support, a new legal

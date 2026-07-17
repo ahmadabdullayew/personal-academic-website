@@ -1,0 +1,928 @@
+{
+  "ledger_version": "1.0.0",
+  "effective_at": "2026-07-17T09:20:00Z",
+  "status": "approved-reproducible-evidence-ledger",
+  "scope_items": [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23],
+  "review_protocol": {
+    "owner": "Ahmad Abdullayev",
+    "question": "Which finite deployment, language, administration, capability, legal, content, migration, approval and traceability decisions resolve project-foundation items 11 through 23 while preserving every supplied requirement and every unresolved activation gate?",
+    "evidence_precedence": [
+      "owner-supplied specifications identified by SHA-256",
+      "primary legislation and official government publications",
+      "standards and protocols issued by their controlling organizations",
+      "official provider and registry documentation",
+      "explicit owner policy for choices external evidence cannot determine"
+    ],
+    "selection_rule": "Include a source only when its issuing authority and proposition directly constrain at least one recorded decision; preserve the exact source identity and state the narrow proposition used.",
+    "exclusion_rule": "Exclude duplicates, translations not needed for the reviewed proposition, superseded or draft material when a final source governs, secondary commentary, marketing comparisons and results that do not constrain an item 11 through 23 decision.",
+    "inference_rule": "External evidence establishes requirements, protocol behavior or provider behavior; owner-selected values remain identified as project policy and no source is treated as proof of implementation, deployment, legal status or whole-site conformance.",
+    "drift_rule": "A changed digest, source identity, official URL, version status, legal register, retrieval count or item citation invalidates this ledger until a new retrieval event and versioned review are approved."
+  },
+  "freshness_triggers": [
+    {
+      "id": "FT-01",
+      "condition": "A recorded source URL redirects, disappears, changes authority or changes material content.",
+      "required_action": "Re-retrieve from the issuing authority, record the result, compare the proposition and issue a new ledger version before relying on it."
+    },
+    {
+      "id": "FT-02",
+      "condition": "A standard, protocol, guidance document or provider document gains a revision, replacement, erratum, final successor or changed status.",
+      "required_action": "Review the new status and proposition, retain the prior identity and approve any changed decision mapping."
+    },
+    {
+      "id": "FT-03",
+      "condition": "A cited law, regulation, cabinet decision, official interpretation or consolidated text is amended, repealed or replaced.",
+      "required_action": "Perform a provision-level legal review, update the governance register and block affected production processing until approval."
+    },
+    {
+      "id": "FT-04",
+      "condition": "A provider region, service behavior, contract, subprocessor, transfer path, endpoint or delivery policy changes.",
+      "required_action": "Repeat the service-specific location, security, privacy and operational assessment before release."
+    },
+    {
+      "id": "FT-05",
+      "condition": "A domain, environment, language, role, feature state, provider, jurisdiction, content disposition or requirement-applicability decision changes.",
+      "required_action": "Re-run every affected review question and cross-artifact validation, then obtain the affected approval domains."
+    },
+    {
+      "id": "FT-06",
+      "condition": "A source reaches its next scheduled review date or an affected release is proposed first.",
+      "required_action": "Re-retrieve the source and record unchanged or changed status before the deadline or release, whichever occurs first."
+    },
+    {
+      "id": "FT-07",
+      "condition": "An owner-supplied file name, byte content, page model, extraction count or digest changes.",
+      "required_action": "Treat it as a new source edition, repeat complete extraction and reconciliation, and never substitute it silently."
+    }
+  ],
+  "retrieval_events": [
+    {
+      "id": "EV-001",
+      "executed_at": "2026-07-17T08:40:00Z",
+      "method": "local-direct-retrieval",
+      "sites": ["owner-supplied local filesystem"],
+      "query_strings": [
+        "/home/ahmad-abdullayev/Downloads/personal_academic_professional_website_srs.pdf",
+        "/home/ahmad-abdullayev/Downloads/personal_academic_website_backend_specification.pdf"
+      ],
+      "candidate_count": 2,
+      "included_count": 2,
+      "excluded_count": 0,
+      "included_source_ids": ["website-srs", "backend-specification"],
+      "inclusion_reason": "Both files were explicitly supplied by the owner and their SHA-256 identities, page models and complete requirement populations were recorded.",
+      "excluded_reasons": []
+    },
+    {
+      "id": "EV-002",
+      "executed_at": "2026-07-17T08:50:00Z",
+      "method": "web-direct-retrieval",
+      "sites": ["rdap.verisign.com"],
+      "query_strings": [
+        "HEAD https://rdap.verisign.com/com/v1/domain/ahmadabdullayev.com",
+        "HEAD https://rdap.verisign.com/com/v1/domain/ahmad-abdullayev.com"
+      ],
+      "candidate_count": 2,
+      "included_count": 2,
+      "excluded_count": 0,
+      "included_source_ids": [
+        "REGISTRY-VERISIGN-RDAP-PRIMARY",
+        "REGISTRY-VERISIGN-RDAP-HYPHENATED"
+      ],
+      "inclusion_reason": "Both exact .com names were checked in the authoritative registry endpoint; both returned HTTP 404 at retrieval and were retained because availability can change independently for each name.",
+      "excluded_reasons": []
+    },
+    {
+      "id": "EV-003",
+      "executed_at": "2026-07-17T09:10:00Z",
+      "method": "web-search",
+      "sites": ["docs.aws.amazon.com", "rfc-editor.org", "w3.org", "csrc.nist.gov"],
+      "query_strings": [
+        "site:docs.aws.amazon.com global infrastructure AWS Regions eu-central-1 Frankfurt official",
+        "site:rfc-editor.org RFC 5646 BCP 47 language tags",
+        "site:w3.org International HTML language declarations lang attribute",
+        "site:csrc.nist.gov role based access control FAQ NIST"
+      ],
+      "candidate_count": 18,
+      "included_count": 4,
+      "excluded_count": 14,
+      "included_source_ids": [
+        "PROVIDER-AWS-REGIONS",
+        "RFC-5646",
+        "W3C-HTML-LANGUAGE",
+        "NIST-RBAC"
+      ],
+      "inclusion_reason": "The selected results were the issuing organizations' pages that directly establish region identity, language-tag rules, HTML language declaration and the RBAC model.",
+      "excluded_reasons": [
+        {
+          "count": 10,
+          "reason": "Duplicate formats, translated copies, adjacent tutorials and subsidiary pages did not add a distinct controlling proposition."
+        },
+        {
+          "count": 4,
+          "reason": "Historical papers and implementation aids were narrower or less current than the selected issuing-authority page."
+        }
+      ]
+    },
+    {
+      "id": "EV-004",
+      "executed_at": "2026-07-17T09:12:00Z",
+      "method": "web-search",
+      "sites": ["docs.aws.amazon.com", "postgresql.org", "info.orcid.org", "crossref.org"],
+      "query_strings": [
+        "site:docs.aws.amazon.com/ses/latest/dg data protection Amazon SES official",
+        "site:postgresql.org/docs/current text search official PostgreSQL",
+        "site:info.orcid.org documentation API read data record official",
+        "site:crossref.org documentation retrieve metadata REST API official"
+      ],
+      "candidate_count": 18,
+      "included_count": 3,
+      "excluded_count": 15,
+      "included_source_ids": [
+        "PROVIDER-AWS-SES-DATA-PROTECTION",
+        "POSTGRESQL-FTS",
+        "CROSSREF-REST-API"
+      ],
+      "inclusion_reason": "The selected official pages directly define SES data-protection behavior, the current PostgreSQL full-text-search facility and Crossref metadata retrieval.",
+      "excluded_reasons": [
+        {
+          "count": 11,
+          "reason": "Adjacent security, API, type, identity and support pages duplicated or only elaborated the selected proposition."
+        },
+        {
+          "count": 4,
+          "reason": "Old-version, unrelated-service and presentation-only results were not decision-controlling evidence."
+        }
+      ]
+    },
+    {
+      "id": "EV-005",
+      "executed_at": "2026-07-17T09:14:00Z",
+      "method": "web-search",
+      "sites": ["info.orcid.org", "rfc-editor.org", "ogp.me", "iso.org"],
+      "query_strings": [
+        "site:info.orcid.org/documentation/api-tutorials/api-tutorial-read-data-on-a-record/ ORCID API read data record",
+        "site:rfc-editor.org RFC 4287 Atom Syndication Format",
+        "site:ogp.me The Open Graph protocol basic metadata",
+        "site:iso.org/standard/62542 ISO 15489-1 2016 information documentation records management"
+      ],
+      "candidate_count": 14,
+      "included_count": 3,
+      "excluded_count": 11,
+      "included_source_ids": ["ORCID-API-READ", "RFC-4287", "ISO-15489-1-2016"],
+      "inclusion_reason": "The selected results were the provider tutorial, protocol record and standard catalogue entry directly supporting synchronization, feeds and record governance; the exact OGP page was resolved in the subsequent search.",
+      "excluded_reasons": [
+        {
+          "count": 8,
+          "reason": "Alternate RFC formats, related RFCs and ORCID navigation, search or translated pages did not replace the selected source."
+        },
+        {
+          "count": 3,
+          "reason": "Results without a distinct proposition for the reviewed decisions were excluded."
+        }
+      ]
+    },
+    {
+      "id": "EV-006",
+      "executed_at": "2026-07-17T09:16:00Z",
+      "method": "web-search",
+      "sites": ["ogp.me", "w3.org", "csrc.nist.gov", "rdap.verisign.com"],
+      "query_strings": [
+        "site:ogp.me The Open Graph protocol basic metadata",
+        "site:w3.org/WAI/planning/statements/generator accessibility statement review date",
+        "site:csrc.nist.gov/pubs/sp/800/218/final Secure Software Development Framework",
+        "site:rdap.verisign.com/com/v1/domain/ ahmadabdullayev.com"
+      ],
+      "candidate_count": 16,
+      "included_count": 3,
+      "excluded_count": 13,
+      "included_source_ids": [
+        "OPEN-GRAPH-PROTOCOL",
+        "W3C-ACCESSIBILITY-STATEMENT",
+        "NIST-SP-800-218"
+      ],
+      "inclusion_reason": "The selected pages directly establish static Open Graph metadata, accessibility-statement maintenance evidence and the final SSDF 1.1 record; RDAP status was already captured by direct endpoint retrieval.",
+      "excluded_reasons": [
+        {
+          "count": 9,
+          "reason": "Adjacent accessibility and SSDF project pages, supplements, drafts and presentations did not supersede the selected final proposition."
+        },
+        {
+          "count": 4,
+          "reason": "Search-index results without a separate controlling proposition were excluded, including the non-returned registry lookup represented by direct retrieval."
+        }
+      ]
+    },
+    {
+      "id": "EV-007",
+      "executed_at": "2026-07-17T09:18:00Z",
+      "method": "web-direct-retrieval",
+      "sites": [
+        "president.az",
+        "frameworks.e-qanun.az",
+        "e-qanun.az",
+        "mincom.gov.az",
+        "eur-lex.europa.eu",
+        "edpb.europa.eu",
+        "docs.aws.amazon.com",
+        "aws.amazon.com"
+      ],
+      "query_strings": [
+        "https://president.az/en/pages/view/azerbaijan/constitution/",
+        "https://frameworks.e-qanun.az/19/f_19675.html",
+        "https://frameworks.e-qanun.az/21/f_21060.html",
+        "https://mincom.gov.az/storage/pages/649/9b0e869640ba56d43615eef7906a4d08.pdf",
+        "https://e-qanun.az/framework/49396",
+        "https://mincom.gov.az/storage/pages/648/4b2105426aa7138d97d78c9e1cfb91c4.pdf",
+        "https://president.az/az/articles/view/69619",
+        "https://mincom.gov.az/az/qanunvericilik/lisenziyalasdirma/rabite-ve-informasiya-texnologiyalari-sahesinde-lisenziyalarin-verilmesi/lisenziya/ferdi-sahibkarlar-ucun",
+        "https://mincom.gov.az/az/qanunvericilik/reyestrler/reyestrler",
+        "https://frameworks.e-qanun.az/0/f_509.html",
+        "https://frameworks.e-qanun.az/4/f_4167.html",
+        "https://eur-lex.europa.eu/eli/reg/2016/679/oj",
+        "https://www.edpb.europa.eu/documents/guideline/guidelines-32018-on-the-territorial-scope-of-the-gdpr-article-3-version-adopted_en",
+        "https://docs.aws.amazon.com/global-infrastructure/latest/regions/aws-regions.html",
+        "https://aws.amazon.com/compliance/data-privacy-faq/",
+        "https://docs.aws.amazon.com/ses/latest/dg/regions.html",
+        "https://docs.aws.amazon.com/ses/latest/dg/data-protection.html"
+      ],
+      "candidate_count": 17,
+      "included_count": 17,
+      "excluded_count": 0,
+      "included_source_ids": [
+        "LAW-AZ-CONSTITUTION-30-32",
+        "LAW-AZ-PERSONAL-DATA-998-IIIQ",
+        "LAW-AZ-CABINET-237",
+        "LAW-AZ-CABINET-149",
+        "LAW-AZ-CABINET-149-161-2022-AMENDMENT",
+        "LAW-AZ-CABINET-161",
+        "LAW-AZ-EHIS-DIGITAL-CONSENT",
+        "AUTHORITY-AZ-PERSONAL-DATA-LICENSING",
+        "AUTHORITY-AZ-PERSONAL-DATA-REGISTRY",
+        "LAW-AZ-PRIVATE-INTERNATIONAL-LAW",
+        "LAW-AZ-COPYRIGHT-115-IQ",
+        "LAW-EU-GDPR-2016-679",
+        "GUIDANCE-EU-EDPB-ARTICLE-3",
+        "PROVIDER-AWS-REGIONS",
+        "PROVIDER-AWS-DATA-PRIVACY",
+        "PROVIDER-AWS-SES-REGIONS",
+        "PROVIDER-AWS-SES-DATA-PROTECTION"
+      ],
+      "inclusion_reason": "The complete current official legal and provider register used by the governance baseline was directly addressed; all 17 identities were retained so no legal or service proposition can disappear through an unrecorded subset.",
+      "excluded_reasons": []
+    }
+  ],
+  "sources": [
+    {
+      "id": "website-srs",
+      "authority": "Ahmad Abdullayev, owner-supplied project specification",
+      "title": "Personal Academic and Professional Website Software Requirements Specification",
+      "locator": "personal_academic_professional_website_srs.pdf",
+      "source_class": "owner-supplied-specification",
+      "retrieved_at": "2026-07-17T08:40:00Z",
+      "identity_control": {
+        "kind": "sha256",
+        "value": "976ba51a785d27d37117655a4a508eb5133edb36e988966ce31e8878a78eb9e7"
+      },
+      "proposition": "The SRS supplies the complete product scope, priorities, preconditions, accountable roles and 264 detailed functional-requirement cards used for items 11 through 23.",
+      "limitation": "It specifies desired behavior and governance but does not prove implementation, deployment, owner facts not written in the source or activation of conditional requirements.",
+      "retrieval_event_ids": ["EV-001"],
+      "foundation_items": [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23],
+      "freshness": {
+        "maximum_age_days": null,
+        "next_review_on": null,
+        "event_trigger_ids": ["FT-05", "FT-07"]
+      }
+    },
+    {
+      "id": "backend-specification",
+      "authority": "Ahmad Abdullayev, owner-supplied backend specification",
+      "title": "Personal Academic Website Backend Specification",
+      "locator": "personal_academic_website_backend_specification.pdf",
+      "source_class": "owner-supplied-specification",
+      "retrieved_at": "2026-07-17T08:40:00Z",
+      "identity_control": {
+        "kind": "sha256",
+        "value": "1eca221859e9379cadd3d3e192bd35b68a7e0010ae15f8de53e539e1782c31b5"
+      },
+      "proposition": "The backend specification supplies the implementation responsibility profile, conditional support boundaries and an independent 264-row Appendix A reconciliation sequence.",
+      "limitation": "Support in the backend profile is not evidence that a conditional capability is enabled or that production acceptance has occurred.",
+      "retrieval_event_ids": ["EV-001"],
+      "foundation_items": [11, 13, 14, 15, 16, 17, 18, 20, 21, 22, 23],
+      "freshness": {
+        "maximum_age_days": null,
+        "next_review_on": null,
+        "event_trigger_ids": ["FT-05", "FT-07"]
+      }
+    },
+    {
+      "id": "REGISTRY-VERISIGN-RDAP-PRIMARY",
+      "authority": "Verisign Registry Services",
+      "title": "RDAP lookup for ahmadabdullayev.com",
+      "locator": "https://rdap.verisign.com/com/v1/domain/ahmadabdullayev.com",
+      "source_class": "registry-evidence",
+      "retrieved_at": "2026-07-17T08:50:00Z",
+      "identity_control": {
+        "kind": "retrieval-snapshot",
+        "value": "HTTP 404 observed for exact .com RDAP path on 2026-07-17"
+      },
+      "proposition": "The registry endpoint did not return a registered object for the selected unhyphenated name at retrieval time.",
+      "limitation": "A not-found response is time-sensitive, does not reserve the name and does not establish trademark, ownership, DNS or deployment status.",
+      "retrieval_event_ids": ["EV-002"],
+      "foundation_items": [11],
+      "freshness": {
+        "maximum_age_days": 30,
+        "next_review_on": "2026-08-16",
+        "event_trigger_ids": ["FT-01", "FT-05", "FT-06"]
+      }
+    },
+    {
+      "id": "REGISTRY-VERISIGN-RDAP-HYPHENATED",
+      "authority": "Verisign Registry Services",
+      "title": "RDAP lookup for ahmad-abdullayev.com",
+      "locator": "https://rdap.verisign.com/com/v1/domain/ahmad-abdullayev.com",
+      "source_class": "registry-evidence",
+      "retrieved_at": "2026-07-17T08:50:00Z",
+      "identity_control": {
+        "kind": "retrieval-snapshot",
+        "value": "HTTP 404 observed for exact hyphenated .com RDAP path on 2026-07-17"
+      },
+      "proposition": "The registry endpoint did not return a registered object for the hyphenated comparison name at retrieval time.",
+      "limitation": "A not-found response is time-sensitive and comparison evidence cannot decide the owner's preferred product identity.",
+      "retrieval_event_ids": ["EV-002"],
+      "foundation_items": [11],
+      "freshness": {
+        "maximum_age_days": 30,
+        "next_review_on": "2026-08-16",
+        "event_trigger_ids": ["FT-01", "FT-05", "FT-06"]
+      }
+    },
+    {
+      "id": "RFC-5646",
+      "authority": "RFC Editor / IETF",
+      "title": "RFC 5646: Tags for Identifying Languages",
+      "locator": "https://www.rfc-editor.org/info/rfc5646/",
+      "source_class": "standard",
+      "retrieved_at": "2026-07-17T09:10:00Z",
+      "identity_control": { "kind": "stable-version", "value": "RFC 5646; BCP 47; September 2009" },
+      "proposition": "RFC 5646 defines the structure, construction and semantics of language tags used to identify content language.",
+      "limitation": "It defines tag syntax and semantics but does not decide which language the owner will publish.",
+      "retrieval_event_ids": ["EV-003"],
+      "foundation_items": [12],
+      "freshness": {
+        "maximum_age_days": 365,
+        "next_review_on": "2027-07-17",
+        "event_trigger_ids": ["FT-02", "FT-05", "FT-06"]
+      }
+    },
+    {
+      "id": "W3C-HTML-LANGUAGE",
+      "authority": "World Wide Web Consortium Internationalization Working Group",
+      "title": "Declaring language in HTML",
+      "locator": "https://www.w3.org/International/questions/qa-html-language-declarations.html",
+      "source_class": "official-guidance",
+      "retrieved_at": "2026-07-17T09:10:00Z",
+      "identity_control": { "kind": "retrieval-snapshot", "value": "English guidance page retrieved 2026-07-17" },
+      "proposition": "HTML content declares its default language on the html element and marks content-language changes on the relevant nested element using BCP 47 values.",
+      "limitation": "The guidance controls markup, not translation completeness, locale activation or editorial approval.",
+      "retrieval_event_ids": ["EV-003"],
+      "foundation_items": [12],
+      "freshness": {
+        "maximum_age_days": 365,
+        "next_review_on": "2027-07-17",
+        "event_trigger_ids": ["FT-01", "FT-02", "FT-05", "FT-06"]
+      }
+    },
+    {
+      "id": "NIST-RBAC",
+      "authority": "National Institute of Standards and Technology",
+      "title": "Role Based Access Control FAQ",
+      "locator": "https://csrc.nist.gov/Projects/role-based-access-control/faqs",
+      "source_class": "official-guidance",
+      "retrieved_at": "2026-07-17T09:10:00Z",
+      "identity_control": { "kind": "retrieval-snapshot", "value": "NIST RBAC FAQ updated 2026-03-04; retrieved 2026-07-17" },
+      "proposition": "RBAC separates users, roles, permissions, sessions and authorization constraints so transactions execute only through authorized role membership.",
+      "limitation": "The archived NIST project supplies a model, not this site's role names, approver authority or proof of enforcement.",
+      "retrieval_event_ids": ["EV-003"],
+      "foundation_items": [13],
+      "freshness": {
+        "maximum_age_days": 365,
+        "next_review_on": "2027-07-17",
+        "event_trigger_ids": ["FT-01", "FT-02", "FT-05", "FT-06"]
+      }
+    },
+    {
+      "id": "POSTGRESQL-FTS",
+      "authority": "PostgreSQL Global Development Group",
+      "title": "PostgreSQL 18, Chapter 12: Full Text Search",
+      "locator": "https://www.postgresql.org/docs/current/textsearch.html",
+      "source_class": "provider-documentation",
+      "retrieved_at": "2026-07-17T09:12:00Z",
+      "identity_control": { "kind": "retrieval-snapshot", "value": "current resolved to PostgreSQL 18 Chapter 12 on 2026-07-17" },
+      "proposition": "PostgreSQL supplies document parsing, query construction, ranking, highlighting, dictionaries and index acceleration for full-text search.",
+      "limitation": "The documentation proves available database behavior, not search relevance, accessibility, corpus approval or production performance for this site.",
+      "retrieval_event_ids": ["EV-004"],
+      "foundation_items": [16],
+      "freshness": {
+        "maximum_age_days": 90,
+        "next_review_on": "2026-10-15",
+        "event_trigger_ids": ["FT-01", "FT-02", "FT-05", "FT-06"]
+      }
+    },
+    {
+      "id": "ORCID-API-READ",
+      "authority": "ORCID",
+      "title": "API Tutorial: Read Data on a Record",
+      "locator": "https://info.orcid.org/documentation/api-tutorials/api-tutorial-read-data-on-a-record/",
+      "source_class": "provider-documentation",
+      "retrieved_at": "2026-07-17T09:14:00Z",
+      "identity_control": { "kind": "retrieval-snapshot", "value": "official ORCID API tutorial retrieved 2026-07-17" },
+      "proposition": "The ORCID public or member API reads public or limited-access information from a specified ORCID record, with sandbox facilities for integration testing.",
+      "limitation": "ORCID does not identify this site's owner without an owner-verified identifier and retrieved data is not local publication approval.",
+      "retrieval_event_ids": ["EV-005"],
+      "foundation_items": [17],
+      "freshness": {
+        "maximum_age_days": 90,
+        "next_review_on": "2026-10-15",
+        "event_trigger_ids": ["FT-01", "FT-02", "FT-05", "FT-06"]
+      }
+    },
+    {
+      "id": "CROSSREF-REST-API",
+      "authority": "Crossref",
+      "title": "Crossref REST API",
+      "locator": "https://www.crossref.org/documentation/retrieve-metadata/rest-api/",
+      "source_class": "provider-documentation",
+      "retrieved_at": "2026-07-17T09:12:00Z",
+      "identity_control": { "kind": "retrieval-snapshot", "value": "page last-updated marker 2020-04-08; retrieved 2026-07-17" },
+      "proposition": "The Crossref REST API exposes deposited scholarly metadata and can retrieve a single metadata record for a specified DOI.",
+      "limitation": "Provider metadata may be incomplete or corrected and does not prove authorship, ownership, local accuracy or publication approval.",
+      "retrieval_event_ids": ["EV-004"],
+      "foundation_items": [17],
+      "freshness": {
+        "maximum_age_days": 90,
+        "next_review_on": "2026-10-15",
+        "event_trigger_ids": ["FT-01", "FT-02", "FT-05", "FT-06"]
+      }
+    },
+    {
+      "id": "RFC-4287",
+      "authority": "RFC Editor / IETF",
+      "title": "RFC 4287: The Atom Syndication Format",
+      "locator": "https://www.rfc-editor.org/info/rfc4287/",
+      "source_class": "protocol",
+      "retrieved_at": "2026-07-17T09:14:00Z",
+      "identity_control": { "kind": "stable-version", "value": "RFC 4287; December 2005; updated by RFC 5988" },
+      "proposition": "RFC 4287 defines Atom feed and entry documents, required metadata, identifiers, dates, links, content and the application/atom+xml media type.",
+      "limitation": "It defines feed syntax and processing, not which private or draft content may be exposed.",
+      "retrieval_event_ids": ["EV-005"],
+      "foundation_items": [18],
+      "freshness": {
+        "maximum_age_days": 365,
+        "next_review_on": "2027-07-17",
+        "event_trigger_ids": ["FT-02", "FT-05", "FT-06"]
+      }
+    },
+    {
+      "id": "OPEN-GRAPH-PROTOCOL",
+      "authority": "Open Graph protocol project",
+      "title": "The Open Graph protocol",
+      "locator": "https://ogp.me/",
+      "source_class": "protocol",
+      "retrieved_at": "2026-07-17T09:16:00Z",
+      "identity_control": { "kind": "retrieval-snapshot", "value": "basic-metadata protocol page retrieved 2026-07-17" },
+      "proposition": "Static meta elements in a page head can identify title, type, image and URL for link-preview graph objects.",
+      "limitation": "The protocol does not require third-party scripts, prove how a platform renders a preview or authorize an image's publication rights.",
+      "retrieval_event_ids": ["EV-006"],
+      "foundation_items": [18],
+      "freshness": {
+        "maximum_age_days": 365,
+        "next_review_on": "2027-07-17",
+        "event_trigger_ids": ["FT-01", "FT-02", "FT-05", "FT-06"]
+      }
+    },
+    {
+      "id": "ISO-15489-1-2016",
+      "authority": "International Organization for Standardization",
+      "title": "ISO 15489-1:2016 Information and documentation — Records management — Part 1: Concepts and principles",
+      "locator": "https://www.iso.org/standard/62542.html",
+      "source_class": "standard",
+      "retrieved_at": "2026-07-17T09:14:00Z",
+      "identity_control": { "kind": "stable-version", "value": "ISO 15489-1:2016, edition 2, confirmed 2021" },
+      "proposition": "The standard covers records and metadata, assigned responsibilities, monitoring, recurrent context analysis, records controls and creation, capture and management processes.",
+      "limitation": "The catalogue proposition does not prescribe this project's numeric review intervals or itself prove compliant records management.",
+      "retrieval_event_ids": ["EV-005"],
+      "foundation_items": [20, 21, 22],
+      "freshness": {
+        "maximum_age_days": 365,
+        "next_review_on": "2027-07-17",
+        "event_trigger_ids": ["FT-01", "FT-02", "FT-05", "FT-06"]
+      }
+    },
+    {
+      "id": "W3C-ACCESSIBILITY-STATEMENT",
+      "authority": "World Wide Web Consortium Web Accessibility Initiative",
+      "title": "Generate an Accessibility Statement",
+      "locator": "https://www.w3.org/WAI/planning/statements/generator/",
+      "source_class": "official-guidance",
+      "retrieved_at": "2026-07-17T09:16:00Z",
+      "identity_control": { "kind": "retrieval-snapshot", "value": "page updated 2025-05-20; retrieved 2026-07-17" },
+      "proposition": "An accessibility statement should identify its evaluated target and version, standard, feedback route, assessment method, evidence, approval and publication date, with a date older than one year potentially treated as unmaintained.",
+      "limitation": "The generator is guidance, not an accessibility evaluation, legal applicability decision or evidence of conformance.",
+      "retrieval_event_ids": ["EV-006"],
+      "foundation_items": [20, 22],
+      "freshness": {
+        "maximum_age_days": 365,
+        "next_review_on": "2027-07-17",
+        "event_trigger_ids": ["FT-01", "FT-02", "FT-05", "FT-06"]
+      }
+    },
+    {
+      "id": "NIST-SP-800-218",
+      "authority": "National Institute of Standards and Technology",
+      "title": "NIST SP 800-218: Secure Software Development Framework Version 1.1",
+      "locator": "https://csrc.nist.gov/pubs/sp/800/218/final",
+      "source_class": "standard",
+      "retrieved_at": "2026-07-17T09:16:00Z",
+      "identity_control": { "kind": "stable-version", "value": "NIST SP 800-218 final, SSDF 1.1, February 2022" },
+      "proposition": "SSDF supplies outcome-based secure-development practices supporting defined roles, protected artifacts, provenance, repeatable verification and retained evidence.",
+      "limitation": "Version 1.2 was still draft at review; version 1.1 does not prove that this project implements any practice or release gate.",
+      "retrieval_event_ids": ["EV-006"],
+      "foundation_items": [14, 21, 22, 23],
+      "freshness": {
+        "maximum_age_days": 90,
+        "next_review_on": "2026-10-15",
+        "event_trigger_ids": ["FT-01", "FT-02", "FT-05", "FT-06"]
+      }
+    },
+    {
+      "id": "LAW-AZ-CONSTITUTION-30-32",
+      "authority": "President of the Republic of Azerbaijan official website",
+      "title": "Constitution of the Republic of Azerbaijan",
+      "locator": "https://president.az/en/pages/view/azerbaijan/constitution/",
+      "source_class": "primary-law",
+      "retrieved_at": "2026-07-17T09:18:00Z",
+      "identity_control": { "kind": "stable-version", "value": "official English text; amendments through referendum 26 September 2016" },
+      "proposition": "Intellectual property is protected; private-life information and personal information receive constitutional protection, including correction or elimination of inaccurate or unlawfully collected information.",
+      "limitation": "The cited English text supplies constitutional propositions but does not determine every statute, factual nexus or remedy applicable to the site.",
+      "retrieval_event_ids": ["EV-007"],
+      "foundation_items": [19, 20, 21],
+      "freshness": { "maximum_age_days": 90, "next_review_on": "2026-10-15", "event_trigger_ids": ["FT-01", "FT-03", "FT-05", "FT-06"] }
+    },
+    {
+      "id": "LAW-AZ-PERSONAL-DATA-998-IIIQ",
+      "authority": "Unified Electronic Database of Legal Acts of the Republic of Azerbaijan",
+      "title": "Law of the Republic of Azerbaijan on Personal Data, No. 998-IIIQ",
+      "locator": "https://frameworks.e-qanun.az/19/f_19675.html",
+      "source_class": "primary-law",
+      "retrieved_at": "2026-07-17T09:18:00Z",
+      "identity_control": { "kind": "stable-version", "value": "Law No. 998-IIIQ; consolidated official text including Article 8.6 retrieved 2026-07-17" },
+      "proposition": "Before production personal-data processing, the project must determine legal applicability, purpose and basis, the Article 8.6 consent channel, licensing, collection disclosures, rights channels and deadlines, security and audit controls, Article 14 transfer findings, and registration or a documented clause-specific exemption.",
+      "limitation": "The Azerbaijani source requires provision-level review; this English proposition is a project paraphrase and not a conclusive applicability opinion.",
+      "retrieval_event_ids": ["EV-007"],
+      "foundation_items": [15, 16, 18, 19, 20, 21],
+      "freshness": { "maximum_age_days": 90, "next_review_on": "2026-10-15", "event_trigger_ids": ["FT-01", "FT-03", "FT-05", "FT-06"] }
+    },
+    {
+      "id": "LAW-AZ-CABINET-237",
+      "authority": "Unified Electronic Database of Legal Acts of the Republic of Azerbaijan",
+      "title": "Cabinet of Ministers Decision No. 237 on personal-data information systems not requiring state registration",
+      "locator": "https://frameworks.e-qanun.az/21/f_21060.html",
+      "source_class": "secondary-law",
+      "retrieved_at": "2026-07-17T09:18:00Z",
+      "identity_control": { "kind": "stable-version", "value": "Decision No. 237 consolidated through the 29 December 2024 clause 2.3 amendment" },
+      "proposition": "Registration exemptions are purpose- and fact-specific; the project records an exemption only with evidence matching the applicable clause and otherwise follows the registration path.",
+      "limitation": "An exemption cannot be inferred from project size, personal purpose or a summary; current clause facts must be documented.",
+      "retrieval_event_ids": ["EV-007"],
+      "foundation_items": [19],
+      "freshness": { "maximum_age_days": 90, "next_review_on": "2026-10-15", "event_trigger_ids": ["FT-01", "FT-03", "FT-05", "FT-06"] }
+    },
+    {
+      "id": "LAW-AZ-CABINET-149",
+      "authority": "Ministry of Digital Development and Transport of the Republic of Azerbaijan",
+      "title": "Cabinet of Ministers Decision No. 149 on state registration and cancellation of personal-data information systems",
+      "locator": "https://mincom.gov.az/storage/pages/649/9b0e869640ba56d43615eef7906a4d08.pdf",
+      "source_class": "secondary-law",
+      "retrieved_at": "2026-07-17T09:18:00Z",
+      "identity_control": { "kind": "stable-version", "value": "Decision No. 149 official Ministry PDF, read with 8 April 2022 amendment" },
+      "proposition": "The registration evidence package must identify the system owner, processing basis and purposes, data and subject categories, safeguards, users, transfers, audit, and rights procedures; the current Ministry name is supplied by the tracked 2022 amendment.",
+      "limitation": "The PDF's authority-name amendment list is not current when read alone and registration evidence does not decide licensing or transfer law.",
+      "retrieval_event_ids": ["EV-007"],
+      "foundation_items": [19, 21, 22],
+      "freshness": { "maximum_age_days": 90, "next_review_on": "2026-10-15", "event_trigger_ids": ["FT-01", "FT-03", "FT-05", "FT-06"] }
+    },
+    {
+      "id": "LAW-AZ-CABINET-149-161-2022-AMENDMENT",
+      "authority": "Unified Electronic Database of Legal Acts of the Republic of Azerbaijan",
+      "title": "Cabinet of Ministers Decision No. 137 of 8 April 2022 amending Decisions No. 149 and No. 161",
+      "locator": "https://e-qanun.az/framework/49396",
+      "source_class": "secondary-law",
+      "retrieved_at": "2026-07-17T09:18:00Z",
+      "identity_control": { "kind": "stable-version", "value": "Decision No. 137 of 8 April 2022, clauses 1 and 2" },
+      "proposition": "References in Decisions No. 149 and No. 161 to the predecessor ministry are read as references to the Ministry of Digital Development and Transport.",
+      "limitation": "The amendment changes authority naming and does not independently state all substantive registration or protection controls.",
+      "retrieval_event_ids": ["EV-007"],
+      "foundation_items": [19],
+      "freshness": { "maximum_age_days": 90, "next_review_on": "2026-10-15", "event_trigger_ids": ["FT-01", "FT-03", "FT-06"] }
+    },
+    {
+      "id": "LAW-AZ-CABINET-161",
+      "authority": "Ministry of Digital Development and Transport of the Republic of Azerbaijan",
+      "title": "Cabinet of Ministers Decision No. 161 approving Requirements for the Protection of Personal Data",
+      "locator": "https://mincom.gov.az/storage/pages/648/4b2105426aa7138d97d78c9e1cfb91c4.pdf",
+      "source_class": "secondary-law",
+      "retrieved_at": "2026-07-17T09:18:00Z",
+      "identity_control": { "kind": "stable-version", "value": "Decision No. 161 official Ministry text, read with current amendments" },
+      "proposition": "Production requires a clause-mapped security evidence package covering threats and protection level, approved software and instructions, restoration, system and protection documentation, access and audit registers, physical controls, authentication and authorization, encryption, certification and state expertise as applicable.",
+      "limitation": "A generic security claim or an unamended historical PDF is insufficient; repealed and amended clauses require current review.",
+      "retrieval_event_ids": ["EV-007"],
+      "foundation_items": [19, 20, 21, 22],
+      "freshness": { "maximum_age_days": 90, "next_review_on": "2026-10-15", "event_trigger_ids": ["FT-01", "FT-03", "FT-05", "FT-06"] }
+    },
+    {
+      "id": "LAW-AZ-EHIS-DIGITAL-CONSENT",
+      "authority": "President of the Republic of Azerbaijan official website",
+      "title": "Regulation on the Electronic Government Information System, including the Digital Consent subsystem",
+      "locator": "https://president.az/az/articles/view/69619",
+      "source_class": "secondary-law",
+      "retrieved_at": "2026-07-17T09:18:00Z",
+      "identity_control": { "kind": "stable-version", "value": "official Presidential EHIS regulation retrieved 2026-07-17" },
+      "proposition": "If Article 8.6 applies, the consent and withdrawal design must use the legally required EHIS or Digital Consent channel; an ordinary privacy acknowledgment is not substituted for that determination.",
+      "limitation": "The regulation does not itself determine whether Article 8.6 applies to the site's actual processing facts.",
+      "retrieval_event_ids": ["EV-007"],
+      "foundation_items": [19],
+      "freshness": { "maximum_age_days": 90, "next_review_on": "2026-10-15", "event_trigger_ids": ["FT-01", "FT-03", "FT-05", "FT-06"] }
+    },
+    {
+      "id": "AUTHORITY-AZ-PERSONAL-DATA-LICENSING",
+      "authority": "Ministry of Digital Development and Transport of the Republic of Azerbaijan",
+      "title": "Licensing information for formation of personal-data resources and creation or servicing of information systems",
+      "locator": "https://mincom.gov.az/az/qanunvericilik/lisenziyalasdirma/rabite-ve-informasiya-texnologiyalari-sahesinde-lisenziyalarin-verilmesi/lisenziya/ferdi-sahibkarlar-ucun",
+      "source_class": "official-guidance",
+      "retrieved_at": "2026-07-17T09:18:00Z",
+      "identity_control": { "kind": "retrieval-snapshot", "value": "current Ministry licensing service page retrieved 2026-07-17" },
+      "proposition": "The project must determine and evidence whether its formation, creation or servicing activities require a special permission or licence; registration does not answer that separate question.",
+      "limitation": "The service page identifies a route but does not conclusively decide project-specific licensing applicability.",
+      "retrieval_event_ids": ["EV-007"],
+      "foundation_items": [19],
+      "freshness": { "maximum_age_days": 90, "next_review_on": "2026-10-15", "event_trigger_ids": ["FT-01", "FT-03", "FT-05", "FT-06"] }
+    },
+    {
+      "id": "AUTHORITY-AZ-PERSONAL-DATA-REGISTRY",
+      "authority": "Ministry of Digital Development and Transport of the Republic of Azerbaijan",
+      "title": "Current official personal-data information-system registry page",
+      "locator": "https://mincom.gov.az/az/qanunvericilik/reyestrler/reyestrler",
+      "source_class": "official-guidance",
+      "retrieved_at": "2026-07-17T09:18:00Z",
+      "identity_control": { "kind": "retrieval-snapshot", "value": "current Ministry registry page retrieved 2026-07-17" },
+      "proposition": "The current competent-authority registry and registration route must be checked and archived before any registration-dependent production activation.",
+      "limitation": "This mutable page does not substitute for registration, an exemption record or a current legal determination.",
+      "retrieval_event_ids": ["EV-007"],
+      "foundation_items": [19, 22],
+      "freshness": { "maximum_age_days": 30, "next_review_on": "2026-08-16", "event_trigger_ids": ["FT-01", "FT-03", "FT-05", "FT-06"] }
+    },
+    {
+      "id": "LAW-AZ-PRIVATE-INTERNATIONAL-LAW",
+      "authority": "Unified Electronic Database of Legal Acts of the Republic of Azerbaijan",
+      "title": "Law of the Republic of Azerbaijan on Private International Law",
+      "locator": "https://frameworks.e-qanun.az/0/f_509.html",
+      "source_class": "primary-law",
+      "retrieved_at": "2026-07-17T09:18:00Z",
+      "identity_control": { "kind": "stable-version", "value": "current consolidated official text, Articles 1 and 24 to 27, retrieved 2026-07-17" },
+      "proposition": "Azerbaijan is a provisional internal governance baseline; applicable law, contractual choice-of-law effect, mandatory rules and any court forum require a separate nexus and enforceability determination.",
+      "limitation": "The internal baseline is not a conclusive applicable-law, residence, citizenship, choice-of-law or forum finding.",
+      "retrieval_event_ids": ["EV-007"],
+      "foundation_items": [19],
+      "freshness": { "maximum_age_days": 90, "next_review_on": "2026-10-15", "event_trigger_ids": ["FT-01", "FT-03", "FT-05", "FT-06"] }
+    },
+    {
+      "id": "LAW-AZ-COPYRIGHT-115-IQ",
+      "authority": "Unified Electronic Database of Legal Acts of the Republic of Azerbaijan",
+      "title": "Law of the Republic of Azerbaijan on Copyright and Related Rights, No. 115-IQ",
+      "locator": "https://frameworks.e-qanun.az/4/f_4167.html",
+      "source_class": "primary-law",
+      "retrieved_at": "2026-07-17T09:18:00Z",
+      "identity_control": { "kind": "stable-version", "value": "Law No. 115-IQ current consolidated official text retrieved 2026-07-17" },
+      "proposition": "Publication requires a recorded rights basis, licence and attribution where applicable; possession of an asset is not treated as ownership of copyright.",
+      "limitation": "The rights basis remains item-specific and the law does not verify ownership or licences for unsupplied assets.",
+      "retrieval_event_ids": ["EV-007"],
+      "foundation_items": [19, 20, 21],
+      "freshness": { "maximum_age_days": 90, "next_review_on": "2026-10-15", "event_trigger_ids": ["FT-01", "FT-03", "FT-05", "FT-06"] }
+    },
+    {
+      "id": "LAW-EU-GDPR-2016-679",
+      "authority": "EUR-Lex",
+      "title": "Regulation (EU) 2016/679",
+      "locator": "https://eur-lex.europa.eu/eli/reg/2016/679/oj",
+      "source_class": "primary-law",
+      "retrieved_at": "2026-07-17T09:18:00Z",
+      "identity_control": { "kind": "stable-version", "value": "Regulation (EU) 2016/679 official consolidated record retrieved 2026-07-17" },
+      "proposition": "GDPR applicability to the owner or controller is contingent on the Article 3 establishment, offering-of-goods-or-services, or monitoring tests; choosing a German AWS region alone does not establish that applicability and does not itself satisfy Azerbaijan Article 14.",
+      "limitation": "The regulation is retained conditionally; no unresolved controller or targeting facts are silently converted into an applicability conclusion.",
+      "retrieval_event_ids": ["EV-007"],
+      "foundation_items": [19],
+      "freshness": { "maximum_age_days": 90, "next_review_on": "2026-10-15", "event_trigger_ids": ["FT-01", "FT-03", "FT-05", "FT-06"] }
+    },
+    {
+      "id": "GUIDANCE-EU-EDPB-ARTICLE-3",
+      "authority": "European Data Protection Board",
+      "title": "Guidelines 3/2018 on the territorial scope of the GDPR (Article 3), Version 2.1",
+      "locator": "https://www.edpb.europa.eu/documents/guideline/guidelines-32018-on-the-territorial-scope-of-the-gdpr-article-3-version-adopted_en",
+      "source_class": "official-guidance",
+      "retrieved_at": "2026-07-17T09:18:00Z",
+      "identity_control": { "kind": "stable-version", "value": "EDPB Guidelines 3/2018, final adopted Version 2.1" },
+      "proposition": "The owner/controller territorial-scope analysis must use establishment, targeting and monitoring facts and may not infer GDPR scope solely from infrastructure location.",
+      "limitation": "Guidance supports Article 3 interpretation but does not decide the owner's presently unverified facts.",
+      "retrieval_event_ids": ["EV-007"],
+      "foundation_items": [19],
+      "freshness": { "maximum_age_days": 90, "next_review_on": "2026-10-15", "event_trigger_ids": ["FT-01", "FT-02", "FT-03", "FT-05", "FT-06"] }
+    },
+    {
+      "id": "PROVIDER-AWS-REGIONS",
+      "authority": "Amazon Web Services",
+      "title": "AWS Regions and Availability Zones",
+      "locator": "https://docs.aws.amazon.com/global-infrastructure/latest/regions/aws-regions.html",
+      "source_class": "provider-documentation",
+      "retrieved_at": "2026-07-17T09:18:00Z",
+      "identity_control": { "kind": "retrieval-snapshot", "value": "eu-central-1=Europe (Frankfurt), Germany, 3 Availability Zones; retrieved 2026-07-17" },
+      "proposition": "AWS identifies eu-central-1 as Europe (Frankfurt), Germany, with three Availability Zones; this establishes region identity, not end-to-end data residency.",
+      "limitation": "The region catalogue does not prove account configuration, deployment, global-service location, transfer legality or recipient mail location.",
+      "retrieval_event_ids": ["EV-003", "EV-007"],
+      "foundation_items": [11, 19],
+      "freshness": { "maximum_age_days": 90, "next_review_on": "2026-10-15", "event_trigger_ids": ["FT-01", "FT-04", "FT-05", "FT-06"] }
+    },
+    {
+      "id": "PROVIDER-AWS-DATA-PRIVACY",
+      "authority": "Amazon Web Services",
+      "title": "AWS Data Privacy FAQ",
+      "locator": "https://aws.amazon.com/compliance/data-privacy-faq/",
+      "source_class": "provider-documentation",
+      "retrieved_at": "2026-07-17T09:18:00Z",
+      "identity_control": { "kind": "retrieval-snapshot", "value": "official AWS privacy FAQ retrieved 2026-07-17" },
+      "proposition": "AWS states that customers select the region for customer content, while account information, resource identifiers, service behavior and legal demands require separate treatment; the project therefore records service-specific evidence instead of asserting an absolute region lock.",
+      "limitation": "A provider FAQ is not an independent legal opinion, applicable contract archive or proof that every service path stays in one region.",
+      "retrieval_event_ids": ["EV-007"],
+      "foundation_items": [11, 19],
+      "freshness": { "maximum_age_days": 90, "next_review_on": "2026-10-15", "event_trigger_ids": ["FT-01", "FT-04", "FT-05", "FT-06"] }
+    },
+    {
+      "id": "PROVIDER-AWS-SES-REGIONS",
+      "authority": "Amazon Web Services",
+      "title": "Amazon SES regions and regional resource behavior",
+      "locator": "https://docs.aws.amazon.com/ses/latest/dg/regions.html",
+      "source_class": "provider-documentation",
+      "retrieved_at": "2026-07-17T09:18:00Z",
+      "identity_control": { "kind": "retrieval-snapshot", "value": "official Amazon SES regional-behavior page retrieved 2026-07-17" },
+      "proposition": "SES identities, credentials and operational settings are region-specific, but outbound delivery reaches recipient infrastructure and must not be described as region-confined.",
+      "limitation": "Regional resource behavior does not prove message delivery, recipient-system location, TLS success or lawful cross-border processing.",
+      "retrieval_event_ids": ["EV-007"],
+      "foundation_items": [15, 19],
+      "freshness": { "maximum_age_days": 90, "next_review_on": "2026-10-15", "event_trigger_ids": ["FT-01", "FT-04", "FT-05", "FT-06"] }
+    },
+    {
+      "id": "PROVIDER-AWS-SES-DATA-PROTECTION",
+      "authority": "Amazon Web Services",
+      "title": "Data protection in Amazon Simple Email Service",
+      "locator": "https://docs.aws.amazon.com/ses/latest/dg/data-protection.html",
+      "source_class": "provider-documentation",
+      "retrieved_at": "2026-07-17T09:18:00Z",
+      "identity_control": { "kind": "retrieval-snapshot", "value": "official Amazon SES data-protection page retrieved 2026-07-17; opportunistic TLS default recorded" },
+      "proposition": "Personal data is prohibited in SES tags or resource-name fields, engagement tracking is disabled, and delivery must require TLS or carry only a minimal notification whose substantive content remains in a secured administrative system.",
+      "limitation": "SES uses opportunistic TLS by default; documentation does not prove this project's configuration, end-to-end encryption or delivery outcome.",
+      "retrieval_event_ids": ["EV-004", "EV-007"],
+      "foundation_items": [15, 18, 19],
+      "freshness": { "maximum_age_days": 90, "next_review_on": "2026-10-15", "event_trigger_ids": ["FT-01", "FT-04", "FT-05", "FT-06"] }
+    }
+  ],
+  "review_questions": [
+    {
+      "id": "RQ-011",
+      "item": 11,
+      "question": "What primary domain and complete environment set are selected, and what evidence boundary separates selection from registration or deployment?",
+      "answer": "The selected primary origin is https://ahmadabdullayev.com; www redirects with path and query preserved. The environments are local, test/CI, preview, staging and production, and selected regional AWS resources use eu-central-1.",
+      "citations": ["website-srs", "backend-specification", "REGISTRY-VERISIGN-RDAP-PRIMARY", "REGISTRY-VERISIGN-RDAP-HYPHENATED", "PROVIDER-AWS-REGIONS", "PROVIDER-AWS-DATA-PRIVACY"],
+      "artifact_refs": ["config/product-baseline.json:deployment", ".env.preview.example", ".env.staging.example", ".env.production.example"],
+      "decision_owner": "Ahmad Abdullayev",
+      "evidence_boundary": "The decision does not claim registration, DNS control, trademark clearance, cloud provisioning or successful public deployment; RDAP status must be rechecked before acquisition."
+    },
+    {
+      "id": "RQ-012",
+      "item": 12,
+      "question": "Which language tags are active, which is the default, and what gate controls activation of another locale?",
+      "answer": "English with tag en is the sole active and default locale, uses left-to-right direction and unprefixed routes, and another locale remains inactive until a complete approved translation inventory, review workflow, equivalent-route map and localized metadata set exist.",
+      "citations": ["website-srs", "RFC-5646", "W3C-HTML-LANGUAGE"],
+      "artifact_refs": ["config/product-baseline.json:localization"],
+      "decision_owner": "Ahmad Abdullayev",
+      "evidence_boundary": "BCP 47 and W3C guidance constrain tagging; English launch scope is owner policy and does not assert that every future content item has been authored."
+    },
+    {
+      "id": "RQ-013",
+      "item": 13,
+      "question": "Which administration model, roles, account constraints, sessions and recovery controls are selected?",
+      "answer": "The model is single-owner online administration with named non-shared accounts, owner, administrator and editor roles, operation-level authorization, MFA for every role, 30-minute idle and 12-hour absolute session limits, sensitive-operation reauthentication and separately verified recovery.",
+      "citations": ["website-srs", "backend-specification", "NIST-RBAC"],
+      "artifact_refs": ["config/product-baseline.json:administration"],
+      "decision_owner": "Ahmad Abdullayev",
+      "evidence_boundary": "The model defines authorization policy but does not claim that accounts, MFA or enforcement code have been deployed."
+    },
+    {
+      "id": "RQ-014",
+      "item": 14,
+      "question": "Has every optional or conditional SRS capability received one explicit, owned activation decision without confusing backend support with runtime activation?",
+      "answer": "All 54 P2 cards are decided: 12 active and 42 inactive, each with a decision owner, rationale and activation condition, while the backend may support dormant paths without enabling them.",
+      "citations": ["website-srs", "backend-specification", "NIST-SP-800-218"],
+      "artifact_refs": ["config/product-baseline.json:conditional_requirement_decisions", "config/requirements-matrix.json"],
+      "decision_owner": "Ahmad Abdullayev",
+      "evidence_boundary": "An active scope decision is not proof of implementation; an inactive decision is a controlled dormant state rather than an unanswered requirement."
+    },
+    {
+      "id": "RQ-015",
+      "item": 15,
+      "question": "Which contact method and delivery provider are active, and what security, privacy and delivery-state boundaries govern them?",
+      "answer": "The /contact/ form is active with Amazon SES configured for eu-central-1; no public email address or marketing subscription is active, and form acceptance, durable queueing, provider acceptance and recipient delivery remain distinct states.",
+      "citations": ["website-srs", "backend-specification", "LAW-AZ-PERSONAL-DATA-998-IIIQ", "PROVIDER-AWS-SES-REGIONS", "PROVIDER-AWS-SES-DATA-PROTECTION"],
+      "artifact_refs": ["config/product-baseline.json:capabilities.contact", "config/foundation-governance.json:jurisdiction.personal_data_controls"],
+      "decision_owner": "Ahmad Abdullayev",
+      "evidence_boundary": "Provider documentation does not establish delivery, deployment or legal clearance; production collection remains gated by the governance controls."
+    },
+    {
+      "id": "RQ-016",
+      "item": 16,
+      "question": "Is site-wide search active, which implementation is selected and what content and query-data boundaries apply?",
+      "answer": "Site-wide search is active at /search/ using PostgreSQL full-text search over approved public snapshots only; drafts, private records and raw-query analytics or persistence are excluded.",
+      "citations": ["website-srs", "backend-specification", "POSTGRESQL-FTS", "LAW-AZ-PERSONAL-DATA-998-IIIQ"],
+      "artifact_refs": ["config/product-baseline.json:capabilities.search"],
+      "decision_owner": "Ahmad Abdullayev",
+      "evidence_boundary": "The database feature exists, but relevance quality, indexing jobs, accessibility and performance remain implementation and acceptance concerns."
+    },
+    {
+      "id": "RQ-017",
+      "item": 17,
+      "question": "Are ORCID and Crossref synchronization active, and which verified prerequisites independently activate each one?",
+      "answer": "Both are inactive: ORCID requires a verified owner-controlled ORCID iD and field-level import policy, while Crossref requires an owner-approved DOI inventory and conflict policy; each is a reviewed candidate-import path rather than an overwrite authority.",
+      "citations": ["website-srs", "backend-specification", "ORCID-API-READ", "CROSSREF-REST-API"],
+      "artifact_refs": ["config/product-baseline.json:capabilities.external_synchronization"],
+      "decision_owner": "Ahmad Abdullayev",
+      "evidence_boundary": "No provider record is attributed to the owner and no provider metadata is approved for publication by this decision."
+    },
+    {
+      "id": "RQ-018",
+      "item": 18,
+      "question": "What exact states apply to analytics, cookies, embeds, feeds and social previews, and what visitor-data boundary follows?",
+      "answer": "Analytics, nonessential public storage and third-party embeds are inactive; authenticated admin session and CSRF cookies are active; an Atom feed and static social-preview metadata are active over approved public content without third-party scripts or tracking.",
+      "citations": ["website-srs", "backend-specification", "RFC-4287", "OPEN-GRAPH-PROTOCOL", "LAW-AZ-PERSONAL-DATA-998-IIIQ", "PROVIDER-AWS-SES-DATA-PROTECTION"],
+      "artifact_refs": ["config/product-baseline.json:capabilities.privacy_and_distribution"],
+      "decision_owner": "Ahmad Abdullayev",
+      "evidence_boundary": "Protocol activation does not activate analytics or embeds and does not authorize exposure of drafts, private metadata or unlicensed images."
+    },
+    {
+      "id": "RQ-019",
+      "item": 19,
+      "question": "Which legal jurisdiction baseline is selected, which mandatory-law and factual-nexus questions remain preserved, and which production gates follow?",
+      "answer": "The Republic of Azerbaijan is the provisional internal project-governance baseline; Germany is the selected AWS regional location. Applicable law, controller nexus, registration or exemption, licensing, consent-channel, security, transfer, GDPR Article 3 and provider-path determinations remain explicit pre-production gates.",
+      "citations": ["website-srs", "LAW-AZ-CONSTITUTION-30-32", "LAW-AZ-PERSONAL-DATA-998-IIIQ", "LAW-AZ-CABINET-237", "LAW-AZ-CABINET-149", "LAW-AZ-CABINET-149-161-2022-AMENDMENT", "LAW-AZ-CABINET-161", "LAW-AZ-EHIS-DIGITAL-CONSENT", "AUTHORITY-AZ-PERSONAL-DATA-LICENSING", "AUTHORITY-AZ-PERSONAL-DATA-REGISTRY", "LAW-AZ-PRIVATE-INTERNATIONAL-LAW", "LAW-AZ-COPYRIGHT-115-IQ", "LAW-EU-GDPR-2016-679", "GUIDANCE-EU-EDPB-ARTICLE-3", "PROVIDER-AWS-REGIONS", "PROVIDER-AWS-DATA-PRIVACY", "PROVIDER-AWS-SES-REGIONS", "PROVIDER-AWS-SES-DATA-PROTECTION"],
+      "artifact_refs": ["config/foundation-governance.json:jurisdiction", "config/foundation-governance.json:legal_sources"],
+      "decision_owner": "Ahmad Abdullayev",
+      "evidence_boundary": "The internal baseline does not assert residence, citizenship, exclusive jurisdiction, court competence, GDPR applicability, registration, licensing or legal advice; factual and provision-level determinations remain required."
+    },
+    {
+      "id": "RQ-020",
+      "item": 20,
+      "question": "Who owns content and approval decisions, which domains approve publication and which calendar and event reviews apply?",
+      "answer": "Ahmad Abdullayev owns editorial decisions and the separately recorded product, content, accessibility, security, privacy and operations approval domains; maximum review intervals are 30, 90, 180 and 365 days with immediate event-triggered review.",
+      "citations": ["website-srs", "backend-specification", "ISO-15489-1-2016", "W3C-ACCESSIBILITY-STATEMENT", "LAW-AZ-CONSTITUTION-30-32", "LAW-AZ-PERSONAL-DATA-998-IIIQ", "LAW-AZ-COPYRIGHT-115-IQ", "LAW-AZ-CABINET-161"],
+      "artifact_refs": ["config/foundation-governance.json:content_governance", "config/foundation-governance.json:approval_records"],
+      "decision_owner": "Ahmad Abdullayev",
+      "evidence_boundary": "Assigned responsibility and cadence are controls, not evidence that a particular content item, legal notice or accessibility statement has passed review."
+    },
+    {
+      "id": "RQ-021",
+      "item": 21,
+      "question": "Does the initial content inventory cover every content family with source, rights, privacy, state, owner, review and migration disposition, and is migration reversible?",
+      "answer": "The governance baseline contains 32 ordered inventory records and a 12-step migration plan with source freezing, quarantine, normalization, rights and privacy checks, dry run, reconciliation, publication gating, rollback and retained evidence.",
+      "citations": ["website-srs", "backend-specification", "ISO-15489-1-2016", "NIST-SP-800-218", "LAW-AZ-CONSTITUTION-30-32", "LAW-AZ-PERSONAL-DATA-998-IIIQ", "LAW-AZ-COPYRIGHT-115-IQ", "LAW-AZ-CABINET-149", "LAW-AZ-CABINET-161"],
+      "artifact_refs": ["config/foundation-governance.json:content_inventory", "config/foundation-governance.json:migration_plan"],
+      "decision_owner": "Ahmad Abdullayev",
+      "evidence_boundary": "Unsupplied or rights-unknown content stays unpublished; an inventory and plan do not claim that migration or acceptance has run."
+    },
+    {
+      "id": "RQ-022",
+      "item": 22,
+      "question": "Are revision history and stakeholder approvals append-only, attributable, scope-limited, linked and independently restorable?",
+      "answer": "The baseline records linked REV-001 and REV-002 revisions plus six separate approval records, each with approver, domain, artifact version, decision, timestamp, evidence and scope limitation.",
+      "citations": ["website-srs", "backend-specification", "ISO-15489-1-2016", "NIST-SP-800-218", "W3C-ACCESSIBILITY-STATEMENT", "AUTHORITY-AZ-PERSONAL-DATA-REGISTRY", "LAW-AZ-CABINET-149", "LAW-AZ-CABINET-161"],
+      "artifact_refs": ["config/foundation-governance.json:revision_history", "config/foundation-governance.json:approval_records"],
+      "decision_owner": "Ahmad Abdullayev",
+      "evidence_boundary": "Foundation approval is confined to recorded artifacts and does not assert production release, legal clearance, accessibility conformance, security assessment or restoration execution."
+    },
+    {
+      "id": "RQ-023",
+      "item": 23,
+      "question": "Does one exact row exist for every SRS functional requirement with reconciled priority, applicability, dependencies, ownership, provenance and no invented inter-requirement edge?",
+      "answer": "The matrix contains 264 unique ordered rows across 20 modules: 148 P0-MUST, 62 P1-SHOULD, 52 P2-CONDITIONAL and 2 P2-MAY; 222 rows are applicable and 42 are dormant, with each row reconciled to the SRS and backend appendix.",
+      "citations": ["website-srs", "backend-specification", "NIST-SP-800-218"],
+      "artifact_refs": ["config/requirements-matrix.json", "config/requirements-matrix.schema.json", "scripts/build_requirements_matrix.py", "scripts/validate_requirements_matrix.py"],
+      "decision_owner": "Ahmad Abdullayev",
+      "evidence_boundary": "The matrix proves closed traceability and decided applicability, not implementation or acceptance of all 264 requirements."
+    }
+  ]
+}

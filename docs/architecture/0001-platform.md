@@ -78,8 +78,10 @@ processes.
 - Separate no-ingress Fargate services for outbox relay and Celery workers.
 - RDS PostgreSQL Multi-AZ in private subnets.
 - SQS, S3, ECR, Secrets Manager, KMS, CloudWatch and AWS Backup.
-- The AWS region is selected later through the jurisdiction and residency
-  decision.
+- Preview, staging and production use AWS `eu-central-1` (Europe/Frankfurt,
+  Germany). Durable regional data and backups remain in-region; cross-region
+  replication is disabled. The legal-governance record must address the
+  resulting processor, jurisdiction and transfer consequences before release.
 
 ### Public caching boundary
 

@@ -6,11 +6,22 @@ from collections.abc import Mapping
 from dataclasses import dataclass
 from urllib.parse import ParseResult, parse_qs, urlparse
 
-APP_ENVIRONMENTS = frozenset({"development", "production", "test"})
+APP_ENVIRONMENTS = frozenset({"development", "preview", "production", "staging", "test"})
+DEPLOYED_ENVIRONMENTS = frozenset({"preview", "production", "staging"})
 CONTACT_DELIVERY_MODES = frozenset({"console", "disabled", "ses"})
 LOG_LEVELS = frozenset({"CRITICAL", "ERROR", "WARNING", "INFO", "DEBUG"})
 LANGUAGE_TAG_PATTERN = re.compile(r"^[A-Za-z]{2,3}(?:-[A-Za-z0-9]{2,8})*$")
 BUCKET_NAME_PATTERN = re.compile(r"^[a-z0-9][a-z0-9.-]{1,61}[a-z0-9]$")
+PREVIEW_HOST_PATTERN = re.compile(
+    r"^pr-[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.preview\.ahmadabdullayev\.com$"
+)
+SELECTED_AWS_REGION = "eu-central-1"
+SELECTED_LANGUAGE = "en"
+DEPLOYED_CONTACT_MODES = {
+    "preview": "disabled",
+    "staging": "disabled",
+    "production": "ses",
+}
 
 
 class EnvironmentConfigurationError(ValueError):
@@ -238,20 +249,22 @@ class RuntimeEnvironment:
             raise EnvironmentConfigurationError(
                 "AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY must be supplied together"
             )
-        if self.app_env != "production" and not self.aws_access_key_id:
+        if self.app_env not in DEPLOYED_ENVIRONMENTS and not self.aws_access_key_id:
             raise EnvironmentConfigurationError(
                 "local and test environments require explicit emulator AWS credentials"
             )
         database_scheme = urlparse(self.database_url).scheme
         if database_scheme == "sqlite" and self.app_env != "test":
             raise EnvironmentConfigurationError("SQLite is permitted only when APP_ENV is test")
-        if self.app_env == "production":
+        if self.app_env in DEPLOYED_ENVIRONMENTS:
             if self.aws_access_key_id or self.aws_secret_access_key:
                 raise EnvironmentConfigurationError(
-                    "production must use an IAM role instead of static AWS credentials"
+                    "deployed environments must use an IAM role instead of static AWS credentials"
                 )
             if self.debug:
-                raise EnvironmentConfigurationError("DJANGO_DEBUG must be false in production")
+                raise EnvironmentConfigurationError(
+                    "DJANGO_DEBUG must be false in deployed environments"
+                )
             if len(self.secret_key) < 50 or any(
                 marker in self.secret_key.lower()
                 for marker in ("change-me", "development-only", "placeholder", "test-only")
@@ -267,7 +280,9 @@ class RuntimeEnvironment:
             }
             for name, value in production_urls.items():
                 if urlparse(value).scheme != "https":
-                    raise EnvironmentConfigurationError(f"{name} must use HTTPS in production")
+                    raise EnvironmentConfigurationError(
+                        f"{name} must use HTTPS in deployed environments"
+                    )
             site = urlparse(self.site_base_url)
             site_origin = f"{site.scheme}://{site.netloc}"
             if site.hostname not in self.allowed_hosts:
@@ -281,7 +296,7 @@ class RuntimeEnvironment:
                     "DJANGO_CSRF_TRUSTED_ORIGINS must include the SITE_BASE_URL origin"
                 )
             if database_scheme not in {"postgres", "postgresql"}:
-                raise EnvironmentConfigurationError("production DATABASE_URL must use PostgreSQL")
+                raise EnvironmentConfigurationError("deployed DATABASE_URL must use PostgreSQL")
             database_query = parse_qs(urlparse(self.database_url).query)
             if database_query.get("sslmode", [""])[0] not in {
                 "require",
@@ -289,7 +304,76 @@ class RuntimeEnvironment:
                 "verify-full",
             }:
                 raise EnvironmentConfigurationError(
-                    "production DATABASE_URL must require PostgreSQL TLS"
+                    "deployed DATABASE_URL must require PostgreSQL TLS"
+                )
+            self._validate_selected_deployment_scope()
+
+    def _validate_selected_deployment_scope(self) -> None:
+        if self.aws_region != SELECTED_AWS_REGION:
+            raise EnvironmentConfigurationError(
+                f"deployed AWS_REGION must be {SELECTED_AWS_REGION}"
+            )
+        if self.default_language != SELECTED_LANGUAGE or self.supported_languages != (
+            SELECTED_LANGUAGE,
+        ):
+            raise EnvironmentConfigurationError(
+                "deployed language scope must contain only the selected en locale"
+            )
+        if self.orcid_enabled or self.crossref_enabled:
+            raise EnvironmentConfigurationError(
+                "ORCID_ENABLED and CROSSREF_ENABLED must remain false in deployed scope"
+            )
+
+        expected_contact_mode = DEPLOYED_CONTACT_MODES[self.app_env]
+        if self.contact_delivery_mode != expected_contact_mode:
+            raise EnvironmentConfigurationError(
+                f"CONTACT_DELIVERY_MODE must be {expected_contact_mode} in {self.app_env}"
+            )
+
+        host = urlparse(self.site_base_url).hostname
+        if not host:
+            raise EnvironmentConfigurationError("SITE_BASE_URL must contain a host")
+        if self.app_env == "preview":
+            host_is_approved = PREVIEW_HOST_PATTERN.fullmatch(host) is not None
+        else:
+            expected_host = {
+                "staging": "staging.ahmadabdullayev.com",
+                "production": "ahmadabdullayev.com",
+            }[self.app_env]
+            host_is_approved = host == expected_host
+        if not host_is_approved:
+            raise EnvironmentConfigurationError(
+                f"SITE_BASE_URL host is outside the selected {self.app_env} origin"
+            )
+
+        selected_origin = f"https://{host}"
+        if self.site_base_url.rstrip("/") != selected_origin:
+            raise EnvironmentConfigurationError(
+                "SITE_BASE_URL must equal the selected origin without a path"
+            )
+        if self.allowed_hosts != (host,):
+            raise EnvironmentConfigurationError(
+                "DJANGO_ALLOWED_HOSTS must contain only the selected deployment host"
+            )
+        if tuple(origin.rstrip("/") for origin in self.csrf_trusted_origins) != (selected_origin,):
+            raise EnvironmentConfigurationError(
+                "DJANGO_CSRF_TRUSTED_ORIGINS must contain only the selected origin"
+            )
+
+        expected_service_hosts = {
+            "S3_ENDPOINT_URL": "s3.eu-central-1.amazonaws.com",
+            "SQS_ENDPOINT_URL": "sqs.eu-central-1.amazonaws.com",
+            "SQS_QUEUE_URL": "sqs.eu-central-1.amazonaws.com",
+        }
+        service_urls = {
+            "S3_ENDPOINT_URL": self.s3_endpoint_url,
+            "SQS_ENDPOINT_URL": self.sqs_endpoint_url,
+            "SQS_QUEUE_URL": self.sqs_queue_url,
+        }
+        for name, value in service_urls.items():
+            if urlparse(value).hostname != expected_service_hosts[name]:
+                raise EnvironmentConfigurationError(
+                    f"{name} must use the selected eu-central-1 AWS endpoint"
                 )
 
 

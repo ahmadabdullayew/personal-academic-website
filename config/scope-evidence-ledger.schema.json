@@ -1,0 +1,304 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ahmadabdullayev.com/schemas/scope-evidence-ledger.schema.json",
+  "title": "Reproducible evidence ledger for project-foundation items 11 through 23",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "ledger_version",
+    "effective_at",
+    "status",
+    "scope_items",
+    "review_protocol",
+    "freshness_triggers",
+    "retrieval_events",
+    "sources",
+    "review_questions"
+  ],
+  "properties": {
+    "ledger_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "effective_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "status": {
+      "const": "approved-reproducible-evidence-ledger"
+    },
+    "scope_items": {
+      "const": [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+    },
+    "review_protocol": { "$ref": "#/$defs/reviewProtocol" },
+    "freshness_triggers": {
+      "type": "array",
+      "minItems": 7,
+      "maxItems": 7,
+      "items": { "$ref": "#/$defs/freshnessTrigger" }
+    },
+    "retrieval_events": {
+      "type": "array",
+      "minItems": 7,
+      "maxItems": 7,
+      "items": { "$ref": "#/$defs/retrievalEvent" }
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 32,
+      "maxItems": 32,
+      "items": { "$ref": "#/$defs/source" }
+    },
+    "review_questions": {
+      "type": "array",
+      "minItems": 13,
+      "maxItems": 13,
+      "items": { "$ref": "#/$defs/reviewQuestion" }
+    }
+  },
+  "$defs": {
+    "nonEmptyString": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": ".*\\S.*"
+    },
+    "identifier": {
+      "type": "string",
+      "pattern": "^[A-Za-z][A-Za-z0-9-]*$"
+    },
+    "stringSet": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "$ref": "#/$defs/nonEmptyString" }
+    },
+    "reviewProtocol": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "owner",
+        "question",
+        "evidence_precedence",
+        "selection_rule",
+        "exclusion_rule",
+        "inference_rule",
+        "drift_rule"
+      ],
+      "properties": {
+        "owner": { "const": "Ahmad Abdullayev" },
+        "question": { "$ref": "#/$defs/nonEmptyString" },
+        "evidence_precedence": { "$ref": "#/$defs/stringSet" },
+        "selection_rule": { "$ref": "#/$defs/nonEmptyString" },
+        "exclusion_rule": { "$ref": "#/$defs/nonEmptyString" },
+        "inference_rule": { "$ref": "#/$defs/nonEmptyString" },
+        "drift_rule": { "$ref": "#/$defs/nonEmptyString" }
+      }
+    },
+    "freshnessTrigger": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "condition", "required_action"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^FT-[0-9]{2}$"
+        },
+        "condition": { "$ref": "#/$defs/nonEmptyString" },
+        "required_action": { "$ref": "#/$defs/nonEmptyString" }
+      }
+    },
+    "excludedReason": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["count", "reason"],
+      "properties": {
+        "count": { "type": "integer", "minimum": 1 },
+        "reason": { "$ref": "#/$defs/nonEmptyString" }
+      }
+    },
+    "retrievalEvent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "executed_at",
+        "method",
+        "sites",
+        "query_strings",
+        "candidate_count",
+        "included_count",
+        "excluded_count",
+        "included_source_ids",
+        "inclusion_reason",
+        "excluded_reasons"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^EV-[0-9]{3}$"
+        },
+        "executed_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "method": {
+          "enum": ["local-direct-retrieval", "web-search", "web-direct-retrieval"]
+        },
+        "sites": { "$ref": "#/$defs/stringSet" },
+        "query_strings": { "$ref": "#/$defs/stringSet" },
+        "candidate_count": { "type": "integer", "minimum": 1 },
+        "included_count": { "type": "integer", "minimum": 1 },
+        "excluded_count": { "type": "integer", "minimum": 0 },
+        "included_source_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/identifier" }
+        },
+        "inclusion_reason": { "$ref": "#/$defs/nonEmptyString" },
+        "excluded_reasons": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/excludedReason" }
+        }
+      }
+    },
+    "identityControl": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "value"],
+      "properties": {
+        "kind": {
+          "enum": ["sha256", "stable-version", "retrieval-snapshot"]
+        },
+        "value": { "$ref": "#/$defs/nonEmptyString" }
+      }
+    },
+    "freshness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["maximum_age_days", "next_review_on", "event_trigger_ids"],
+      "properties": {
+        "maximum_age_days": {
+          "oneOf": [
+            { "type": "integer", "minimum": 1, "maximum": 3650 },
+            { "type": "null" }
+          ]
+        },
+        "next_review_on": {
+          "oneOf": [
+            { "type": "string", "format": "date" },
+            { "type": "null" }
+          ]
+        },
+        "event_trigger_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^FT-[0-9]{2}$"
+          }
+        }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "authority",
+        "title",
+        "locator",
+        "source_class",
+        "retrieved_at",
+        "identity_control",
+        "proposition",
+        "limitation",
+        "retrieval_event_ids",
+        "foundation_items",
+        "freshness"
+      ],
+      "properties": {
+        "id": { "$ref": "#/$defs/identifier" },
+        "authority": { "$ref": "#/$defs/nonEmptyString" },
+        "title": { "$ref": "#/$defs/nonEmptyString" },
+        "locator": { "$ref": "#/$defs/nonEmptyString" },
+        "source_class": {
+          "enum": [
+            "owner-supplied-specification",
+            "registry-evidence",
+            "primary-law",
+            "secondary-law",
+            "official-guidance",
+            "standard",
+            "protocol",
+            "provider-documentation"
+          ]
+        },
+        "retrieved_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "identity_control": { "$ref": "#/$defs/identityControl" },
+        "proposition": { "$ref": "#/$defs/nonEmptyString" },
+        "limitation": { "$ref": "#/$defs/nonEmptyString" },
+        "retrieval_event_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^EV-[0-9]{3}$"
+          }
+        },
+        "foundation_items": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "integer",
+            "minimum": 11,
+            "maximum": 23
+          }
+        },
+        "freshness": { "$ref": "#/$defs/freshness" }
+      }
+    },
+    "reviewQuestion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "item",
+        "question",
+        "answer",
+        "citations",
+        "artifact_refs",
+        "decision_owner",
+        "evidence_boundary"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^RQ-[0-9]{3}$"
+        },
+        "item": {
+          "type": "integer",
+          "minimum": 11,
+          "maximum": 23
+        },
+        "question": { "$ref": "#/$defs/nonEmptyString" },
+        "answer": { "$ref": "#/$defs/nonEmptyString" },
+        "citations": {
+          "type": "array",
+          "minItems": 2,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/identifier" }
+        },
+        "artifact_refs": { "$ref": "#/$defs/stringSet" },
+        "decision_owner": { "const": "Ahmad Abdullayev" },
+        "evidence_boundary": { "$ref": "#/$defs/nonEmptyString" }
+      }
+    }
+  }
+}

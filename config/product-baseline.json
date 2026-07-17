@@ -1,5 +1,5 @@
 {
-  "baseline_version": "1.0.0",
+  "baseline_version": "2.0.0",
   "effective_date": "2026-07-17",
   "snapshot_status": "owner-directed-foundation-public-snapshot",
   "default_public_language": "en",
@@ -87,6 +87,759 @@
     ],
     "separate_role_records_required": true
   },
+  "deployment": {
+    "primary_origin": "https://ahmadabdullayev.com",
+    "canonical_host": "ahmadabdullayev.com",
+    "www_origin": "https://www.ahmadabdullayev.com",
+    "www_behavior": "308 redirect to the primary origin while preserving path and query",
+    "aws_region": "eu-central-1",
+    "aws_region_location": "Germany",
+    "regional_data_policy": "Before deployment, regional application resources and durable customer content for production, staging, preview, backups, logs, queues and SES delivery events must be configured in eu-central-1; application-managed cross-region replication is prohibited unless separately approved. Outbound email necessarily traverses recipient mail systems, and every global, edge or out-of-region service path must be separately inventoried, assessed and disclosed.",
+    "cross_border_consequence": "The selected design would process some hosting and contact-delivery data in Germany when deployed. Production release therefore requires a service- and recipient-path inventory, the actual controller and data-subject nexus determination, the applicable-law assessment, an accurate privacy notice, processor terms and any transfer mechanism that the resulting assessment requires.",
+    "environments": [
+      {
+        "id": "local",
+        "authoritative_origin": "http://localhost:8000",
+        "visibility": "developer-machine-only",
+        "indexing": "not-applicable",
+        "data_policy": "Synthetic or explicitly sanitized development data only; no production secrets or contact submissions.",
+        "authoritative_for_public_content": false
+      },
+      {
+        "id": "test-ci",
+        "authoritative_origin": "http://testserver",
+        "visibility": "isolated-automation-only",
+        "indexing": "not-applicable",
+        "data_policy": "Deterministic synthetic fixtures only; the environment and its database are disposable.",
+        "authoritative_for_public_content": false
+      },
+      {
+        "id": "preview",
+        "authoritative_origin": "https://pr-{change-id}.preview.ahmadabdullayev.com",
+        "visibility": "authenticated-reviewers-only",
+        "indexing": "deny-by-authentication-and-noindex",
+        "data_policy": "Ephemeral sanitized review data only; no production database, secrets, analytics or contact delivery.",
+        "authoritative_for_public_content": false
+      },
+      {
+        "id": "staging",
+        "authoritative_origin": "https://staging.ahmadabdullayev.com",
+        "visibility": "authenticated-maintainers-only",
+        "indexing": "deny-by-authentication-and-noindex",
+        "data_policy": "Production-shaped synthetic or irreversibly sanitized data in eu-central-1; delivery providers use sandbox or sink destinations.",
+        "authoritative_for_public_content": false
+      },
+      {
+        "id": "production",
+        "authoritative_origin": "https://ahmadabdullayev.com",
+        "visibility": "public-read-private-admin",
+        "indexing": "public-approved-routes-only",
+        "data_policy": "Approved public snapshots are public; drafts, administration, inquiries, security state and private assets remain access-controlled in eu-central-1.",
+        "authoritative_for_public_content": true
+      }
+    ]
+  },
+  "localization": {
+    "default_locale": "en",
+    "active_locales": [
+      {
+        "tag": "en",
+        "name": "English",
+        "direction": "ltr",
+        "url_strategy": "unprefixed-canonical-routes"
+      }
+    ],
+    "language_selector_active": false,
+    "fallback_policy": "No silent cross-language fallback is needed while English is the only active locale; text in another language retains an element-level BCP 47 language tag.",
+    "additional_locale_activation_condition": "A complete owner-approved translation inventory, independent review workflow, equivalent-route map and localized metadata set must exist before another locale is activated."
+  },
+  "administration": {
+    "model": "single-owner online administration with named non-shared accounts and operation-level authorization",
+    "online_admin_active": true,
+    "public_account_registration": false,
+    "shared_accounts_allowed": false,
+    "initial_assignments": [
+      {
+        "principal": "Ahmad Abdullayev",
+        "role": "owner"
+      }
+    ],
+    "roles": [
+      {
+        "id": "owner",
+        "initial_account_count": 1,
+        "permissions": [
+          "all-content-operations",
+          "publish-unpublish-and-rollback",
+          "manage-maintainers-and-roles",
+          "activate-conditional-capabilities",
+          "run-approved-provider-synchronization",
+          "review-quality-and-release-status"
+        ],
+        "prohibitions": [
+          "bypass-publication-validation",
+          "publish-without-required-domain-approvals",
+          "expose-secrets-or-non-public-records"
+        ]
+      },
+      {
+        "id": "administrator",
+        "initial_account_count": 0,
+        "permissions": [
+          "all-content-operations",
+          "publish-unpublish-and-rollback",
+          "manage-editor-accounts",
+          "run-approved-provider-synchronization",
+          "review-quality-and-release-status"
+        ],
+        "prohibitions": [
+          "transfer-ownership",
+          "change-owner-role",
+          "activate-conditional-capabilities",
+          "bypass-publication-validation"
+        ]
+      },
+      {
+        "id": "editor",
+        "initial_account_count": 0,
+        "permissions": [
+          "create-and-edit-drafts",
+          "upload-to-quarantine",
+          "manage-content-relationships-and-order",
+          "preview",
+          "request-publication"
+        ],
+        "prohibitions": [
+          "publish-unpublish-or-rollback",
+          "manage-accounts-or-roles",
+          "activate-integrations-or-capabilities",
+          "approve-quarantined-files"
+        ]
+      }
+    ],
+    "mfa_required_roles": ["owner", "administrator", "editor"],
+    "session_policy": {
+      "idle_timeout_minutes": 30,
+      "absolute_timeout_hours": 12,
+      "reauthentication_for_sensitive_operations": true,
+      "invalidate_after_credential_or_role_change": true
+    },
+    "recovery_policy": "Single-use, expiring recovery through a separately verified owner-controlled channel; recovery invalidates existing sessions and emits an audit event."
+  },
+  "feature_decisions": {
+    "contact": {
+      "state": "active",
+      "preferred_public_method": "contact-form",
+      "route": "/contact/",
+      "public_email_address_published": false,
+      "delivery_provider": "amazon-ses",
+      "delivery_region": "eu-central-1",
+      "required_fields": [
+        "inquiry-type",
+        "sender-name",
+        "reply-email",
+        "subject",
+        "message",
+        "privacy-acknowledgement"
+      ],
+      "marketing_consent": "inactive",
+      "public_cookie_required": false,
+      "privacy_acknowledgement_semantics": "Confirms that the collection notice was presented and acknowledged only; it is not a legal basis and never substitutes for a separately required consent channel.",
+      "acceptance_point": "A normalized inquiry and retention deadline are durably stored and one idempotent delivery job is durably queued; the response says accepted for processing and never claims delivery.",
+      "failure_policy": "Validation preserves valid input; abuse is rate-limited accessibly; provider failure is retried and recorded without a false delivery-success response."
+    },
+    "search": {
+      "state": "active",
+      "route": "/search/",
+      "engine": "postgresql-full-text-search",
+      "index_source": "approved-public-snapshots-only",
+      "indexed_content_types": [
+        "profile",
+        "research",
+        "publications",
+        "projects-software-datasets",
+        "career-academic-activities",
+        "news-articles-talks-media-documents"
+      ],
+      "excluded_states": [
+        "draft",
+        "private",
+        "restricted",
+        "embargoed",
+        "revoked",
+        "deleted",
+        "administrative"
+      ],
+      "query_analytics": false,
+      "public_cookie_required": false,
+      "raw_query_persistence": "prohibited",
+      "security_logging": "redacted-and-minimized-with-no-raw-query"
+    },
+    "scholarly_synchronization": {
+      "orcid": {
+        "state": "inactive",
+        "reason": "No owner-verified ORCID iD or owner-approved import scope is present.",
+        "activation_condition": "The owner verifies the exact ORCID iD, approves public fields and provenance rules, and provider-contract tests pass."
+      },
+      "crossref": {
+        "state": "inactive",
+        "reason": "No owner-approved DOI-bearing publication inventory is present.",
+        "activation_condition": "At least one owner-approved normalized DOI exists and mapping, cache, retry, provenance, duplicate and conflict tests pass."
+      },
+      "sync_mode_when_activated": "explicit-maintainer-triggered-candidate-import-never-authoritative-overwrite"
+    },
+    "privacy_and_discovery": {
+      "analytics": "inactive",
+      "public_nonessential_cookies": "inactive",
+      "authenticated_admin_session_and_csrf_cookies": "active",
+      "public_cookie_preference_interface": "inactive-because-no-public-optional-storage-is-active",
+      "third_party_embeds": "inactive-use-approved-thumbnail-transcript-and-direct-link-instead",
+      "atom_feed": "active-at-/feed.atom-from-approved-public-news-and-articles",
+      "static_social_previews": "active-server-rendered-open-graph-metadata-with-no-client-script-cookie-or-tracking-request"
+    }
+  },
+  "conditional_requirements": [
+    {
+      "id": "FR-ABOUT-07",
+      "title": "Optional pronouns and pronunciation",
+      "priority": "P2-MAY",
+      "state": "inactive",
+      "rationale": "No owner-approved pronoun, phonetic spelling or pronunciation asset exists, and none may be inferred.",
+      "activation_condition": "The owner supplies and content-approves the exact public value or accessible pronunciation asset.",
+      "decision_owner": "content",
+      "source_ref": "website-srs:FR-ABOUT-07:p48"
+    },
+    {
+      "id": "FR-ABOUT-09",
+      "title": "Media and event biography kit",
+      "priority": "P2-MAY",
+      "state": "inactive",
+      "rationale": "No approved biography variants, headshots, speaking topics or usage terms exist.",
+      "activation_condition": "A rights-cleared, accessible, owner-approved media-kit inventory and usage policy exist.",
+      "decision_owner": "content",
+      "source_ref": "website-srs:FR-ABOUT-09:p51"
+    },
+    {
+      "id": "FR-RES-09",
+      "title": "Funding relationship",
+      "priority": "P2-CONDITIONAL",
+      "state": "inactive",
+      "rationale": "No approved research funding, sponsor or grant relationship has been supplied.",
+      "activation_condition": "An evidence-backed public research record has an approved funder, sponsor or grant relationship.",
+      "decision_owner": "content",
+      "source_ref": "website-srs:FR-RES-09:p62"
+    },
+    {
+      "id": "FR-RES-10",
+      "title": "Ethics, limitations, and responsible use",
+      "priority": "P2-CONDITIONAL",
+      "state": "inactive",
+      "rationale": "No approved research record currently triggers a public ethics, limitation or responsible-use statement.",
+      "activation_condition": "A research record requires such context and the statement is approved with its evidence and access limits.",
+      "decision_owner": "content",
+      "source_ref": "website-srs:FR-RES-10:p63"
+    },
+    {
+      "id": "FR-PUB-06",
+      "title": "Contributor role attribution",
+      "priority": "P2-CONDITIONAL",
+      "state": "inactive",
+      "rationale": "No publication with owner-approved controlled contributor-role data is present.",
+      "activation_condition": "A publication has evidence-backed contributor roles that preserve authorship and author order.",
+      "decision_owner": "content",
+      "source_ref": "website-srs:FR-PUB-06:p70"
+    },
+    {
+      "id": "FR-PUB-07",
+      "title": "Equal and corresponding author indicators",
+      "priority": "P2-CONDITIONAL",
+      "state": "inactive",
+      "rationale": "No approved equal-contribution or corresponding-author assertion is present.",
+      "activation_condition": "Publisher or author-approved evidence establishes the exact indicator for a publication.",
+      "decision_owner": "content",
+      "source_ref": "website-srs:FR-PUB-07:p71"
+    },
+    {
+      "id": "FR-PUB-19",
+      "title": "Correction notice",
+      "priority": "P2-CONDITIONAL",
+      "state": "inactive",
+      "rationale": "No approved publication correction event is present.",
+      "activation_condition": "A publication has a verified correction, erratum or material update requiring a dated public notice.",
+      "decision_owner": "content",
+      "source_ref": "website-srs:FR-PUB-19:p84"
+    },
+    {
+      "id": "FR-PUB-22",
+      "title": "Open-access resource",
+      "priority": "P2-CONDITIONAL",
+      "state": "inactive",
+      "rationale": "No owner-approved lawful open-access destination has been inventoried.",
+      "activation_condition": "A publication has a verified lawful open-access URL and an accurate access-state label.",
+      "decision_owner": "content",
+      "source_ref": "website-srs:FR-PUB-22:p88"
+    },
+    {
+      "id": "FR-PUB-23",
+      "title": "Local document distribution",
+      "priority": "P2-CONDITIONAL",
+      "state": "inactive",
+      "rationale": "No rights-cleared local publication file has been approved.",
+      "activation_condition": "Rights, licence, version, accessibility and owner approval are recorded for a distributable file.",
+      "decision_owner": "content",
+      "source_ref": "website-srs:FR-PUB-23:p89"
+    },
+    {
+      "id": "FR-PUB-24",
+      "title": "Related code and software",
+      "priority": "P2-CONDITIONAL",
+      "state": "inactive",
+      "rationale": "No approved publication-to-software relationship exists.",
+      "activation_condition": "A canonical publication links to an approved versioned software record or repository release.",
+      "decision_owner": "content",
+      "source_ref": "website-srs:FR-PUB-24:p90"
+    },
+    {
+      "id": "FR-PUB-25",
+      "title": "Related dataset and supplement",
+      "priority": "P2-CONDITIONAL",
+      "state": "inactive",
+      "rationale": "No approved publication-to-dataset or supplement relationship exists.",
+      "activation_condition": "A canonical publication links to an approved dataset or supplement with access, licence and identifier state.",
+      "decision_owner": "content",
+      "source_ref": "website-srs:FR-PUB-25:p91"
+    },
+    {
+      "id": "FR-PUB-26",
+      "title": "Related presentations and media",
+      "priority": "P2-CONDITIONAL",
+      "state": "inactive",
+      "rationale": "No approved publication-to-presentation or media relationship exists.",
+      "activation_condition": "A publication and a rights-cleared presentation or media record have an approved canonical relationship.",
+      "decision_owner": "content",
+      "source_ref": "website-srs:FR-PUB-26:p92"
+    },
+    {
+      "id": "FR-PUB-31",
+      "title": "RIS and other citation export",
+      "priority": "P2-CONDITIONAL",
+      "state": "inactive",
+      "rationale": "No approved publication inventory or demonstrated need justifies an additional export format at launch.",
+      "activation_condition": "Approved publication records exist and a named export format has a tested lossless field mapping and media type.",
+      "decision_owner": "content",
+      "source_ref": "website-srs:FR-PUB-31:p98"
+    },
+    {
+      "id": "FR-PUB-38",
+      "title": "Metric provenance",
+      "priority": "P2-CONDITIONAL",
+      "state": "inactive",
+      "rationale": "No external publication metrics are approved, and site analytics are inactive.",
+      "activation_condition": "A metric, provider, retrieval date, scope, limitations, cache and failure-isolation policy receive content and privacy approval.",
+      "decision_owner": "content",
+      "source_ref": "website-srs:FR-PUB-38:p106"
+    },
+    {
+      "id": "FR-PROJ-05",
+      "title": "Team and institution attribution",
+      "priority": "P2-CONDITIONAL",
+      "state": "inactive",
+      "rationale": "No approved project team or institution attribution has been supplied.",
+      "activation_condition": "A project has evidence-backed public collaborators or institutions and approved attribution wording.",
+      "decision_owner": "content",
+      "source_ref": "website-srs:FR-PROJ-05:p116"
+    },
+    {
+      "id": "FR-PROJ-09",
+      "title": "Repository and demonstration links",
+      "priority": "P2-CONDITIONAL",
+      "state": "inactive",
+      "rationale": "No approved project repository or live demonstration destination exists.",
+      "activation_condition": "A project has a verified public repository or safe maintained demonstration URL with accurate status.",
+      "decision_owner": "content",
+      "source_ref": "website-srs:FR-PROJ-09:p121"
+    },
+    {
+      "id": "FR-PROJ-13",
+      "title": "Software output metadata",
+      "priority": "P2-CONDITIONAL",
+      "state": "inactive",
+      "rationale": "No approved software output record is present.",
+      "activation_condition": "An approved project produces software with canonical version, licence, repository, contribution and release metadata.",
+      "decision_owner": "content",
+      "source_ref": "website-srs:FR-PROJ-13:p125"
+    },
+    {
+      "id": "FR-PROJ-14",
+      "title": "Dataset output metadata",
+      "priority": "P2-CONDITIONAL",
+      "state": "inactive",
+      "rationale": "No approved dataset output record is present.",
+      "activation_condition": "An approved project produces a dataset with identifier, version, licence, access, documentation and stewardship metadata.",
+      "decision_owner": "content",
+      "source_ref": "website-srs:FR-PROJ-14:p126"
+    },
+    {
+      "id": "FR-CAREER-03",
+      "title": "Thesis and supervision metadata",
+      "priority": "P2-CONDITIONAL",
+      "state": "inactive",
+      "rationale": "No owner-approved thesis or supervision record has been supplied.",
+      "activation_condition": "An education record has verified thesis title, institution, degree state and public supervision data.",
+      "decision_owner": "content",
+      "source_ref": "website-srs:FR-CAREER-03:p129"
+    },
+    {
+      "id": "FR-CAREER-09",
+      "title": "Visiting and fellowship distinction",
+      "priority": "P2-CONDITIONAL",
+      "state": "inactive",
+      "rationale": "No approved visiting appointment or fellowship record has been supplied.",
+      "activation_condition": "A verified appointment is specifically visiting or a fellowship and its dates and institution are public.",
+      "decision_owner": "content",
+      "source_ref": "website-srs:FR-CAREER-09:p136"
+    },
+    {
+      "id": "FR-ACADEMIC-01",
+      "title": "Teaching profile",
+      "priority": "P2-CONDITIONAL",
+      "state": "inactive",
+      "rationale": "No approved public teaching profile is present.",
+      "activation_condition": "The owner supplies verified teaching scope, role, institution, dates and intended public audience.",
+      "decision_owner": "content",
+      "source_ref": "website-srs:FR-ACADEMIC-01:p143"
+    },
+    {
+      "id": "FR-ACADEMIC-02",
+      "title": "Course records",
+      "priority": "P2-CONDITIONAL",
+      "state": "inactive",
+      "rationale": "No approved public course record is present.",
+      "activation_condition": "A verified course and owner role are approved, with restricted student and teaching material excluded.",
+      "decision_owner": "content",
+      "source_ref": "website-srs:FR-ACADEMIC-02:p144"
+    },
+    {
+      "id": "FR-ACADEMIC-04",
+      "title": "Mentoring and supervision",
+      "priority": "P2-CONDITIONAL",
+      "state": "inactive",
+      "rationale": "No consented public mentoring or supervision record is present.",
+      "activation_condition": "The relationship, role, dates, privacy basis and any named person's consent are recorded and approved.",
+      "decision_owner": "content",
+      "source_ref": "website-srs:FR-ACADEMIC-04:p146"
+    },
+    {
+      "id": "FR-ACADEMIC-05",
+      "title": "Award and honour records",
+      "priority": "P2-CONDITIONAL",
+      "state": "inactive",
+      "rationale": "No evidence-backed award or honour record is present.",
+      "activation_condition": "An award has verified name, granting body, date, scope and public evidence.",
+      "decision_owner": "content",
+      "source_ref": "website-srs:FR-ACADEMIC-05:p147"
+    },
+    {
+      "id": "FR-ACADEMIC-06",
+      "title": "Grant and funding records",
+      "priority": "P2-CONDITIONAL",
+      "state": "inactive",
+      "rationale": "No approved grant or funding record is present.",
+      "activation_condition": "A verified grant has public funder, identifier, role, dates, amount-disclosure decision and related research links.",
+      "decision_owner": "content",
+      "source_ref": "website-srs:FR-ACADEMIC-06:p148"
+    },
+    {
+      "id": "FR-ACADEMIC-07",
+      "title": "Talk and presentation records",
+      "priority": "P2-CONDITIONAL",
+      "state": "inactive",
+      "rationale": "No approved public talk or presentation record is present.",
+      "activation_condition": "A verified talk has title, event, role, date, status and approved public destination or resources.",
+      "decision_owner": "content",
+      "source_ref": "website-srs:FR-ACADEMIC-07:p149"
+    },
+    {
+      "id": "FR-ACADEMIC-08",
+      "title": "Presentation state and resources",
+      "priority": "P2-CONDITIONAL",
+      "state": "inactive",
+      "rationale": "No presentation resource or event state is present.",
+      "activation_condition": "An approved talk record has an upcoming or completed state and rights-cleared slides, video, transcript or related output.",
+      "decision_owner": "content",
+      "source_ref": "website-srs:FR-ACADEMIC-08:p150"
+    },
+    {
+      "id": "FR-ACADEMIC-09",
+      "title": "Academic service records",
+      "priority": "P2-CONDITIONAL",
+      "state": "inactive",
+      "rationale": "No approved public academic service record is present.",
+      "activation_condition": "A verified service role is public and disclosure does not expose confidential review, committee or personal information.",
+      "decision_owner": "content",
+      "source_ref": "website-srs:FR-ACADEMIC-09:p151"
+    },
+    {
+      "id": "FR-CONTENT-04",
+      "title": "Public scholarship articles",
+      "priority": "P2-CONDITIONAL",
+      "state": "inactive",
+      "rationale": "The launch inventory contains no approved long-form public scholarship article.",
+      "activation_condition": "At least one owner-authored, reviewed, rights-cleared article with correction and revision policy is approved.",
+      "decision_owner": "content",
+      "source_ref": "website-srs:FR-CONTENT-04:p159"
+    },
+    {
+      "id": "FR-CONTENT-07",
+      "title": "Technical content support",
+      "priority": "P2-CONDITIONAL",
+      "state": "inactive",
+      "rationale": "No approved content currently requires code, mathematics, citations, tables or figures beyond the core renderer.",
+      "activation_condition": "Approved content requires a named technical construct and its semantic, accessible, secure renderer is tested.",
+      "decision_owner": "content",
+      "source_ref": "website-srs:FR-CONTENT-07:p162"
+    },
+    {
+      "id": "FR-CONTENT-08",
+      "title": "Media appearance records",
+      "priority": "P2-CONDITIONAL",
+      "state": "inactive",
+      "rationale": "No verified and approved media appearance is present.",
+      "activation_condition": "A media appearance has verified outlet, title, date, role, canonical link and rights/privacy review.",
+      "decision_owner": "content",
+      "source_ref": "website-srs:FR-CONTENT-08:p163"
+    },
+    {
+      "id": "FR-CONTENT-10",
+      "title": "Feed and social metadata",
+      "priority": "P2-CONDITIONAL",
+      "state": "active",
+      "rationale": "Atom syndication and static page-specific social previews are selected discovery outputs and introduce no visitor tracking.",
+      "activation_condition": "Active now; only approved public snapshots may generate /feed.atom or social metadata.",
+      "decision_owner": "content",
+      "source_ref": "website-srs:FR-CONTENT-10:p166"
+    },
+    {
+      "id": "FR-DOC-07",
+      "title": "Multiple public variants",
+      "priority": "P2-CONDITIONAL",
+      "state": "inactive",
+      "rationale": "No approved CV, resume, short biography, publication-list or language-specific document variants exist.",
+      "activation_condition": "Two or more rights-cleared accessible variants have explicit audience, language, version and current/archival labels.",
+      "decision_owner": "content",
+      "source_ref": "website-srs:FR-DOC-07:p173"
+    },
+    {
+      "id": "FR-CONTACT-03",
+      "title": "Optional contact form",
+      "priority": "P2-CONDITIONAL",
+      "state": "active",
+      "rationale": "A data-minimized form is the selected public contact route so the owner's email address is not published.",
+      "activation_condition": "Active for production after SES domain verification, privacy text, retention, abuse, idempotency, accessibility and delivery-failure tests pass.",
+      "decision_owner": "product",
+      "source_ref": "website-srs:FR-CONTACT-03:p178"
+    },
+    {
+      "id": "FR-INT-02",
+      "title": "ORCID public-record retrieval",
+      "priority": "P2-CONDITIONAL",
+      "state": "inactive",
+      "rationale": "No owner-verified ORCID iD or approved import field set is present.",
+      "activation_condition": "The owner verifies the ORCID iD and public fields, credentials, provenance, cache, retry, duplicate and conflict tests pass.",
+      "decision_owner": "content",
+      "source_ref": "website-srs:FR-INT-02:p199"
+    },
+    {
+      "id": "FR-INT-03",
+      "title": "Crossref DOI metadata retrieval",
+      "priority": "P2-CONDITIONAL",
+      "state": "inactive",
+      "rationale": "No owner-approved DOI-bearing publication record is present.",
+      "activation_condition": "An approved normalized DOI exists and Crossref mapping, etiquette, cache, retry, provenance, duplicate and conflict tests pass.",
+      "decision_owner": "content",
+      "source_ref": "website-srs:FR-INT-03:p200"
+    },
+    {
+      "id": "FR-ACC-12",
+      "title": "Captions and transcripts",
+      "priority": "P2-CONDITIONAL",
+      "state": "inactive",
+      "rationale": "No approved time-based media is published and third-party embeds are inactive.",
+      "activation_condition": "Any published prerecorded or live time-based media has the applicable synchronized captions, transcript and alternatives approved before release.",
+      "decision_owner": "accessibility",
+      "source_ref": "website-srs:FR-ACC-12:p237"
+    },
+    {
+      "id": "FR-I18N-02",
+      "title": "Multilingual page variants",
+      "priority": "P2-CONDITIONAL",
+      "state": "inactive",
+      "rationale": "English is the only active locale and no complete approved translation inventory exists.",
+      "activation_condition": "A second locale has independent draft, review, approval, publication and staleness ownership for a complete route set.",
+      "decision_owner": "content",
+      "source_ref": "website-srs:FR-I18N-02:p248"
+    },
+    {
+      "id": "FR-I18N-03",
+      "title": "Equivalent language switching",
+      "priority": "P2-CONDITIONAL",
+      "state": "inactive",
+      "rationale": "A language selector would be an empty or misleading control with only English active.",
+      "activation_condition": "A second approved locale and explicit equivalent-route map exist; missing translations use a labelled absence state.",
+      "decision_owner": "content",
+      "source_ref": "website-srs:FR-I18N-03:p249"
+    },
+    {
+      "id": "FR-I18N-04",
+      "title": "Localized metadata and alternates",
+      "priority": "P2-CONDITIONAL",
+      "state": "inactive",
+      "rationale": "No alternate language route exists, so hreflang or localized social/structured metadata would be false.",
+      "activation_condition": "Equivalent approved pages have localized titles, descriptions, canonical URLs, social metadata and reciprocal alternate links.",
+      "decision_owner": "content",
+      "source_ref": "website-srs:FR-I18N-04:p250"
+    },
+    {
+      "id": "FR-I18N-06",
+      "title": "Directionality and mixed-language support",
+      "priority": "P2-CONDITIONAL",
+      "state": "inactive",
+      "rationale": "The sole active locale is left-to-right English; element-level language tagging remains a core content rule.",
+      "activation_condition": "Approved mixed-direction or right-to-left content exists and bidi isolation, direction, font and assistive-technology tests pass.",
+      "decision_owner": "content",
+      "source_ref": "website-srs:FR-I18N-06:p252"
+    },
+    {
+      "id": "FR-ADMIN-08",
+      "title": "Media and document management",
+      "priority": "P2-CONDITIONAL",
+      "state": "active",
+      "rationale": "The selected full editorial backend requires controlled CV, document, image and accessible-derivative workflows.",
+      "activation_condition": "Active; every upload remains quarantined until allow-list, malware, metadata, rights, accessibility and approval checks pass.",
+      "decision_owner": "product",
+      "source_ref": "website-srs:FR-ADMIN-08:p261"
+    },
+    {
+      "id": "FR-ADMIN-11",
+      "title": "Scheduled publication and expiration",
+      "priority": "P2-CONDITIONAL",
+      "state": "active",
+      "rationale": "Scheduled and expiring time-sensitive content is selected in the full backend profile and avoids error-prone manual release timing.",
+      "activation_condition": "Active with UTC storage, explicit editorial timezone, validated state transitions, idempotent jobs and preservation of the last public snapshot.",
+      "decision_owner": "product",
+      "source_ref": "website-srs:FR-ADMIN-11:p265"
+    },
+    {
+      "id": "FR-ADMIN-14",
+      "title": "Audit trail",
+      "priority": "P2-CONDITIONAL",
+      "state": "active",
+      "rationale": "Online privileged administration, contact delivery, feature configuration and publication require attributable security and integrity evidence even with one initial account.",
+      "activation_condition": "Active for significant authentication, authorization, publication, integration, configuration, upload and release events.",
+      "decision_owner": "product",
+      "source_ref": "website-srs:FR-ADMIN-14:p268"
+    },
+    {
+      "id": "FR-ADMIN-16",
+      "title": "Build and release status",
+      "priority": "P2-CONDITIONAL",
+      "state": "active",
+      "rationale": "Preview, staging and production promotion require visible validation, deployment, health and rollback state.",
+      "activation_condition": "Active; immutable release identifiers and truthful terminal states are available to owner and administrator roles.",
+      "decision_owner": "product",
+      "source_ref": "website-srs:FR-ADMIN-16:p270"
+    },
+    {
+      "id": "FR-SEC-02",
+      "title": "Administrative authentication",
+      "priority": "P2-CONDITIONAL",
+      "state": "active",
+      "rationale": "The selected online administration interface creates an authentication boundary.",
+      "activation_condition": "Active for every administrative route and API; anonymous access is denied before protected state is read or changed.",
+      "decision_owner": "security",
+      "source_ref": "website-srs:FR-SEC-02:p273"
+    },
+    {
+      "id": "FR-SEC-04",
+      "title": "Role-based least privilege",
+      "priority": "P2-CONDITIONAL",
+      "state": "active",
+      "rationale": "Owner, administrator and editor roles are selected and must remain separable even though only the owner is initially assigned.",
+      "activation_condition": "Active with deny-by-default operation permissions and no shared accounts or implicit role inheritance.",
+      "decision_owner": "security",
+      "source_ref": "website-srs:FR-SEC-04:p275"
+    },
+    {
+      "id": "FR-SEC-05",
+      "title": "Secure session lifecycle",
+      "priority": "P2-CONDITIONAL",
+      "state": "active",
+      "rationale": "Cookie-authenticated online administration requires bounded, revocable sessions.",
+      "activation_condition": "Active with secure HttpOnly SameSite cookies, CSRF protection, idle and absolute expiry, logout and credential/role-change invalidation.",
+      "decision_owner": "security",
+      "source_ref": "website-srs:FR-SEC-05:p276"
+    },
+    {
+      "id": "FR-SEC-06",
+      "title": "Account recovery and MFA",
+      "priority": "P2-CONDITIONAL",
+      "state": "active",
+      "rationale": "Password-based privileged administration is selected, so recoverability and phishing-resistant second-factor protection are required for all maintainer roles.",
+      "activation_condition": "Active before any maintainer receives production access; recovery is single-use, expiring, audited and invalidates existing sessions.",
+      "decision_owner": "security",
+      "source_ref": "website-srs:FR-SEC-06:p277"
+    },
+    {
+      "id": "FR-SEC-09",
+      "title": "Secure upload handling",
+      "priority": "P2-CONDITIONAL",
+      "state": "active",
+      "rationale": "Media and document management is active and therefore activates the complete upload trust boundary.",
+      "activation_condition": "Active with size/type allow-lists, quarantine, content inspection, non-executable storage, immutable identity and explicit approval before publication.",
+      "decision_owner": "security",
+      "source_ref": "website-srs:FR-SEC-09:p281"
+    },
+    {
+      "id": "FR-SEC-13",
+      "title": "Optional analytics activation",
+      "priority": "P2-CONDITIONAL",
+      "state": "inactive",
+      "rationale": "Launch decisions do not require visitor measurement and avoid collecting behavioral or device data without a demonstrated purpose.",
+      "activation_condition": "A measurement question, minimal event schema, legal basis, notice, retention, access, deletion and provider assessment receive privacy and owner approval.",
+      "decision_owner": "security",
+      "source_ref": "website-srs:FR-SEC-13:p285"
+    },
+    {
+      "id": "FR-SEC-14",
+      "title": "Privacy preference control",
+      "priority": "P2-CONDITIONAL",
+      "state": "inactive",
+      "rationale": "No public analytics, nonessential cookies, persistent preferences or third-party embeds are active, so a consent banner would be purposeless.",
+      "activation_condition": "A separately approved public optional storage or embed purpose requires visitor choice; reject remains as usable as accept and withdrawal is available.",
+      "decision_owner": "security",
+      "source_ref": "website-srs:FR-SEC-14:p286"
+    },
+    {
+      "id": "FR-SEC-16",
+      "title": "Third-party embed privacy",
+      "priority": "P2-CONDITIONAL",
+      "state": "inactive",
+      "rationale": "Third-party embeds are prohibited at launch; approved thumbnails, transcripts and direct links avoid involuntary provider requests.",
+      "activation_condition": "A specific provider and embed receive content, accessibility, security and privacy approval with click-to-activate control and a complete non-embedded alternative.",
+      "decision_owner": "security",
+      "source_ref": "website-srs:FR-SEC-16:p289"
+    },
+    {
+      "id": "FR-OPS-03",
+      "title": "Loading and retry states",
+      "priority": "P2-CONDITIONAL",
+      "state": "active",
+      "rationale": "Active contact, search, upload, scheduling and release workflows contain asynchronous or failure-prone operations requiring truthful progress and retry behavior.",
+      "activation_condition": "Active for every non-instant operation; status is accessible, retries are bounded and idempotent, and failure never removes canonical public content.",
+      "decision_owner": "operations",
+      "source_ref": "website-srs:FR-OPS-03:p294"
+    }
+  ],
   "ranking_method": {
     "method": "requirements-first ordinal ranking",
     "criteria_in_order": [
