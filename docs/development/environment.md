@@ -5,7 +5,7 @@ come from managed configuration and IAM roles, not a deployed environment file.
 
 | Variable                      | Classification          |        Required | Contract                                                                 |
 | ----------------------------- | ----------------------- | --------------: | ------------------------------------------------------------------------ |
-| `APP_ENV`                     | public runtime          |             yes | `development`, `test`, `preview`, `staging` or `production`               |
+| `APP_ENV`                     | public runtime          |             yes | `development`, `test`, `preview`, `staging` or `production`              |
 | `DJANGO_SETTINGS_MODULE`      | public runtime          |             yes | selected settings module                                                 |
 | `DJANGO_DEBUG`                | public runtime          |             yes | exact `true`/`false`; false in preview, staging and production           |
 | `DJANGO_SECRET_KEY`           | secret                  |             yes | long random production value; placeholders rejected                      |
@@ -17,7 +17,7 @@ come from managed configuration and IAM roles, not a deployed environment file.
 | `POSTGRES_PASSWORD`           | secret                  |           local | local example only; managed secret in production                         |
 | `DATABASE_URL`                | secret                  |             yes | PostgreSQL URL; in-memory SQLite only for tests; deployments require TLS |
 | `DATABASE_POOL_MAX`           | public runtime          |             yes | positive integer applied to the psycopg connection pool                  |
-| `AWS_REGION`                  | public runtime          |             yes | `eu-central-1` in every deployed environment                              |
+| `AWS_REGION`                  | public runtime          |             yes | `eu-central-1` in every deployed environment                             |
 | `AWS_ACCESS_KEY_ID`           | secret                  | local/test only | required as an emulator pair; rejected in deployed environments          |
 | `AWS_SECRET_ACCESS_KEY`       | secret                  | local/test only | required as an emulator pair; rejected in deployed environments          |
 | `S3_ENDPOINT_URL`             | public runtime          |             yes | LocalStack locally; AWS endpoint in production                           |
@@ -28,7 +28,7 @@ come from managed configuration and IAM roles, not a deployed environment file.
 | `SQS_QUEUE_URL`               | sensitive configuration |             yes | jobs queue URL; credentials never embedded                               |
 | `DEFAULT_LANGUAGE`            | public content          |             yes | must appear in supported languages                                       |
 | `SUPPORTED_LANGUAGES`         | public content          |             yes | unique comma-separated BCP 47 language tags                              |
-| `CONTACT_DELIVERY_MODE`       | feature control         |             yes | preview/staging `disabled`; production `ses`                              |
+| `CONTACT_DELIVERY_MODE`       | feature control         |             yes | preview/staging `disabled`; production `ses`                             |
 | `ORCID_ENABLED`               | feature control         |             yes | exact boolean; defaults false                                            |
 | `CROSSREF_ENABLED`            | feature control         |             yes | exact boolean; defaults false                                            |
 | `LOG_LEVEL`                   | public runtime          |             yes | `DEBUG`, `INFO`, `WARNING`, `ERROR` or `CRITICAL`                        |
@@ -49,11 +49,11 @@ come from managed configuration and IAM roles, not a deployed environment file.
    three syntactically valid storage buckets remain distinct and the queue URL
    includes a queue path.
 6. English is the only deployed default/supported language. ORCID and Crossref
-   remain false. Contact delivery is disabled outside production and is `ses`
-   in production.
+   remain false. Contact delivery is disabled outside production and is `ses` in
+   production.
 7. No secret is exposed through browser-prefixed variables.
-8. Every deployed startup fails closed when required configuration is missing
-   or unsafe.
+8. Every deployed startup fails closed when required configuration is missing or
+   unsafe.
 9. Secret rotation must preserve a documented overlap or invalidation procedure.
 
 The S3, SQS, contact, ORCID and Crossref variables define the selected adapter
@@ -66,13 +66,13 @@ Run `make env-check` after every configuration change.
 
 ## Selected environment catalogue
 
-| Environment | Authoritative origin                                      | Data and access boundary                                                                 |
-| ----------- | --------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| local       | `http://localhost:8000`                                   | developer machine; LocalStack/PostgreSQL; synthetic or explicitly approved fixture data  |
-| test/CI     | `http://testserver`                                       | isolated in-memory test state; no external provider calls                                |
-| preview     | `https://pr-<id>.preview.ahmadabdullayev.com`             | ephemeral, authenticated, `noindex`; synthetic data only; contact and integrations off   |
-| staging     | `https://staging.ahmadabdullayev.com`                     | persistent preproduction, authenticated, `noindex`; sanitized data only                  |
-| production  | `https://ahmadabdullayev.com`                             | public approved snapshots; AWS `eu-central-1`; contact delivery through SES              |
+| Environment | Authoritative origin                          | Data and access boundary                                                                |
+| ----------- | --------------------------------------------- | --------------------------------------------------------------------------------------- |
+| local       | `http://localhost:8000`                       | developer machine; LocalStack/PostgreSQL; synthetic or explicitly approved fixture data |
+| test/CI     | `http://testserver`                           | isolated in-memory test state; no external provider calls                               |
+| preview     | `https://pr-<id>.preview.ahmadabdullayev.com` | ephemeral, authenticated, `noindex`; synthetic data only; contact and integrations off  |
+| staging     | `https://staging.ahmadabdullayev.com`         | persistent preproduction, authenticated, `noindex`; sanitized data only                 |
+| production  | `https://ahmadabdullayev.com`                 | public approved snapshots; AWS `eu-central-1`; contact delivery through SES             |
 
 `https://www.ahmadabdullayev.com` is a redirect-only alias to the production
 origin, never a second content origin. Preview hosts replace `<id>` with the
@@ -80,6 +80,6 @@ exact deployment identifier; wildcard application hosts are prohibited.
 
 The committed deployment templates are `.env.preview.example`,
 `.env.staging.example`, and `.env.production.example`. They document public
-configuration and managed-secret references; they are intentionally not
-runnable secret files. Deployment values are resolved from AWS Secrets Manager,
-Systems Manager Parameter Store, service discovery, and IAM task roles.
+configuration and managed-secret references; they are intentionally not runnable
+secret files. Deployment values are resolved from AWS Secrets Manager, Systems
+Manager Parameter Store, service discovery, and IAM task roles.

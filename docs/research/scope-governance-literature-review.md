@@ -33,15 +33,15 @@ evidence of provider behavior, not independent proof of legal compliance.
 Legal/provider URLs are mutable. The register records retrieval date, official
 language, translation status, currency note and proposition mapping, but this
 review did not record source-content digests and does not claim immutable
-capture. Production reliance requires fresh official retrieval plus a SHA-256
-or stable instrument/archive identity and amendment status.
+capture. Production reliance requires fresh official retrieval plus a SHA-256 or
+stable instrument/archive identity and amendment status.
 
 ## 2. Source identity and extraction controls
 
-| Source | Role | Integrity control |
-| --- | --- | --- |
-| `personal_academic_professional_website_srs.pdf` | IDs, titles, priorities, requirements, preconditions, accountable roles and project scope | SHA-256 `976ba51a785d27d37117655a4a508eb5133edb36e988966ce31e8878a78eb9e7`; 324 PDF pages; 264 detailed cards |
-| `personal_academic_website_backend_specification.pdf` | backend responsibility, activation profile and independent order/priority reconciliation | SHA-256 `1eca221859e9379cadd3d3e192bd35b68a7e0010ae15f8de53e539e1782c31b5`; 65 PDF pages; 264 Appendix A rows |
+| Source                                                | Role                                                                                      | Integrity control                                                                                             |
+| ----------------------------------------------------- | ----------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| `personal_academic_professional_website_srs.pdf`      | IDs, titles, priorities, requirements, preconditions, accountable roles and project scope | SHA-256 `976ba51a785d27d37117655a4a508eb5133edb36e988966ce31e8878a78eb9e7`; 324 PDF pages; 264 detailed cards |
+| `personal_academic_website_backend_specification.pdf` | backend responsibility, activation profile and independent order/priority reconciliation  | SHA-256 `1eca221859e9379cadd3d3e192bd35b68a7e0010ae15f8de53e539e1782c31b5`; 65 PDF pages; 264 Appendix A rows |
 
 All citations to these documents use printed page numbers. The extractor keeps
 both the SRS table-of-contents target and the physical detailed-card heading
@@ -50,21 +50,21 @@ page count, ID order, card count, priority sequence or backend trace count.
 
 ## 3. Decision synthesis by foundation item
 
-| Item | Resolved decision | Controlling evidence | Auditable result |
-| ---: | --- | --- | --- |
-| 11 | `https://ahmadabdullayev.com`; `www` redirects; local, test/CI, preview, staging and production; regional AWS resources in `eu-central-1` | SRS deployment/SEO requirements; backend deployment profile; AWS Regions documentation | product baseline, three deployment templates, settings checks |
-| 12 | English `en` is the sole active and default locale | SRS internationalization cards; RFC 5646; W3C language-declaration guidance | locale set, route policy and exact activation gate for another language |
-| 13 | named-account online administration with owner, administrator and editor roles; MFA for all | SRS administration/security cards; backend auth profile; NIST role-based access-control model | deny-by-default operations, role prohibitions, session and recovery policy |
-| 14 | all 54 P2 cards decided: 12 active and 42 inactive | SRS P2 semantics and all 54 card bodies; backend activation profile | one machine row per P2 ID with rationale, activation condition and decision owner |
-| 15 | contact form active; Amazon SES in `eu-central-1`; public email not exposed | SRS contact/security/operations cards; backend contact flow; SES security and region guidance | exact intake fields, durable acceptance point, failure semantics and production gates |
-| 16 | site-wide search active over approved public snapshots using PostgreSQL full-text search | SRS search/privacy cards; backend public-index boundary; PostgreSQL search documentation | included types, excluded states and no query analytics |
-| 17 | ORCID and Crossref synchronization inactive | SRS integration cards; backend candidate-import model; official provider API guidance | separate verified-identifier and approved-DOI activation gates |
-| 18 | analytics, optional public storage and third-party embeds inactive; admin security cookies, Atom and static social previews active | SRS security/content cards; RFC 4287; Open Graph protocol | exact state for every named capability and public-data boundary |
-| 19 | Azerbaijan is the provisional internal governance baseline pending controller-nexus and applicable-law determination; no governing law or court forum is conclusively asserted; Germany is the selected regional-resource location | Constitution, Personal Data and Private International Law, Decisions 237/149/161, EHIS, GDPR/EDPB scope guidance and AWS/SES evidence | nexus, registration/exemption, licensing, consent channel, certification/expertise, notice, rights deadlines, security, transfer and source-archive gates |
-| 20 | Ahmad Abdullayev owns editorial decisions; six approval domains; four maximum review intervals and seven event triggers | SRS governance/operations cards; backend revision/publication model; ISO 15489 records principles; W3C maintenance guidance | workflow, owners, due-date calculations, overdue actions and event responses |
-| 21 | 32-row initial inventory and 12-step migration plan | both specifications; ISO 15489; NIST secure-development evidence practices | source/right/privacy/state disposition for every content family, reconciliation and rollback |
-| 22 | linked `REV-001` and `REV-002`; six separate scope-limited approval records | SRS change-control requirements; ISO 15489; NIST SSDF | append-only fields, predecessor, impacts, restoration locator, exact domain and artifact version |
-| 23 | exact 264-row applicability/dependency/ownership matrix | all 264 SRS cards and all 264 backend Appendix A rows | 148 P0, 62 P1, 52 P2-CONDITIONAL, 2 P2-MAY; 222 applicable and 42 not applicable |
+| Item | Resolved decision                                                                                                                                                                                                                  | Controlling evidence                                                                                                                  | Auditable result                                                                                                                                          |
+| ---: | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|   11 | `https://ahmadabdullayev.com`; `www` redirects; local, test/CI, preview, staging and production; regional AWS resources in `eu-central-1`                                                                                          | SRS deployment/SEO requirements; backend deployment profile; AWS Regions documentation                                                | product baseline, three deployment templates, settings checks                                                                                             |
+|   12 | English `en` is the sole active and default locale                                                                                                                                                                                 | SRS internationalization cards; RFC 5646; W3C language-declaration guidance                                                           | locale set, route policy and exact activation gate for another language                                                                                   |
+|   13 | named-account online administration with owner, administrator and editor roles; MFA for all                                                                                                                                        | SRS administration/security cards; backend auth profile; NIST role-based access-control model                                         | deny-by-default operations, role prohibitions, session and recovery policy                                                                                |
+|   14 | all 54 P2 cards decided: 12 active and 42 inactive                                                                                                                                                                                 | SRS P2 semantics and all 54 card bodies; backend activation profile                                                                   | one machine row per P2 ID with rationale, activation condition and decision owner                                                                         |
+|   15 | contact form active; Amazon SES in `eu-central-1`; public email not exposed                                                                                                                                                        | SRS contact/security/operations cards; backend contact flow; SES security and region guidance                                         | exact intake fields, durable acceptance point, failure semantics and production gates                                                                     |
+|   16 | site-wide search active over approved public snapshots using PostgreSQL full-text search                                                                                                                                           | SRS search/privacy cards; backend public-index boundary; PostgreSQL search documentation                                              | included types, excluded states and no query analytics                                                                                                    |
+|   17 | ORCID and Crossref synchronization inactive                                                                                                                                                                                        | SRS integration cards; backend candidate-import model; official provider API guidance                                                 | separate verified-identifier and approved-DOI activation gates                                                                                            |
+|   18 | analytics, optional public storage and third-party embeds inactive; admin security cookies, Atom and static social previews active                                                                                                 | SRS security/content cards; RFC 4287; Open Graph protocol                                                                             | exact state for every named capability and public-data boundary                                                                                           |
+|   19 | Azerbaijan is the provisional internal governance baseline pending controller-nexus and applicable-law determination; no governing law or court forum is conclusively asserted; Germany is the selected regional-resource location | Constitution, Personal Data and Private International Law, Decisions 237/149/161, EHIS, GDPR/EDPB scope guidance and AWS/SES evidence | nexus, registration/exemption, licensing, consent channel, certification/expertise, notice, rights deadlines, security, transfer and source-archive gates |
+|   20 | Ahmad Abdullayev owns editorial decisions; six approval domains; four maximum review intervals and seven event triggers                                                                                                            | SRS governance/operations cards; backend revision/publication model; ISO 15489 records principles; W3C maintenance guidance           | workflow, owners, due-date calculations, overdue actions and event responses                                                                              |
+|   21 | 32-row initial inventory and 12-step migration plan                                                                                                                                                                                | both specifications; ISO 15489; NIST secure-development evidence practices                                                            | source/right/privacy/state disposition for every content family, reconciliation and rollback                                                              |
+|   22 | linked `REV-001` and `REV-002`; six separate scope-limited approval records                                                                                                                                                        | SRS change-control requirements; ISO 15489; NIST SSDF                                                                                 | append-only fields, predecessor, impacts, restoration locator, exact domain and artifact version                                                          |
+|   23 | exact 264-row applicability/dependency/ownership matrix                                                                                                                                                                            | all 264 SRS cards and all 264 backend Appendix A rows                                                                                 | 148 P0, 62 P1, 52 P2-CONDITIONAL, 2 P2-MAY; 222 applicable and 42 not applicable                                                                          |
 
 ## 4. Deployment, language and administration evidence
 
@@ -121,8 +121,8 @@ not unresolved choices:
 
 RFC 4287 supplies the Atom document and entry model. Open Graph supplies static
 page metadata for link previews. Both can be generated from approved public
-snapshots without analytics, optional visitor storage, embedded scripts or a
-new private-data flow:
+snapshots without analytics, optional visitor storage, embedded scripts or a new
+private-data flow:
 
 - <https://www.rfc-editor.org/info/rfc4287/>
 - <https://ogp.me/>
@@ -130,10 +130,10 @@ new private-data flow:
 ## 6. Jurisdiction and privacy evidence
 
 The sources do not establish the owner/controller's establishment, activity
-location, residence, citizenship, visitor targeting or monitoring. Azerbaijan
-is therefore a provisional internal engineering baseline, not a conclusive
-applicable-law or court-forum claim. Mandatory law and any contractual law-choice
-effect remain subject to the actual nexus and agreement facts:
+location, residence, citizenship, visitor targeting or monitoring. Azerbaijan is
+therefore a provisional internal engineering baseline, not a conclusive
+applicable-law or court-forum claim. Mandatory law and any contractual
+law-choice effect remain subject to the actual nexus and agreement facts:
 <https://frameworks.e-qanun.az/0/f_509.html>.
 
 The current consolidated Personal Data Law supplies the project gates. Article
@@ -152,8 +152,8 @@ registration:
 
 Decision 237 is cited from its current consolidated text, including the 29
 December 2024 clause 2.3 amendment. Exemptions require a clause-and-facts match;
-no authority-issued exemption certificate is invented. Decision 149 controls
-the registration package and is read with the 2022 authority-name amendment and
+no authority-issued exemption certificate is invented. Decision 149 controls the
+registration package and is read with the 2022 authority-name amendment and
 current Ministry registry. Decision 161 requires a current, amendment-aware
 security mapping covering threats/protection level, software and instructions,
 restoration, protection/project documentation, access and audit registers,
@@ -201,8 +201,8 @@ dictate this project's numeric review intervals:
 W3C's accessibility-statement guidance recommends identifying the evaluated
 version, evidence, assessment method, approval/complaint route and publication
 date, and notes that an accessibility-statement date older than one year may be
-considered unmaintained. The project uses the shorter applicable interval when
-a record is more volatile:
+considered unmaintained. The project uses the shorter applicable interval when a
+record is more volatile:
 <https://www.w3.org/WAI/planning/statements/generator/>.
 
 NIST SP 800-218 connects secure development to documented roles, provenance,
@@ -222,9 +222,9 @@ destination triggers immediate review regardless of the calendar.
 
 The PDF builder extracts every SRS card's ID, title, priority, normative text,
 printed page, preconditions and accountable roles, then reconciles the complete
-priority sequence with backend Appendix A. No reviewed card names another
-`FR-*` ID as a dependency; the matrix consequently preserves the 20 exact
-module-level precondition profiles and prohibits invented inter-card edges.
+priority sequence with backend Appendix A. No reviewed card names another `FR-*`
+ID as a dependency; the matrix consequently preserves the 20 exact module-level
+precondition profiles and prohibits invented inter-card edges.
 
 The closed totals are:
 
@@ -245,9 +245,10 @@ cmp config/requirements-matrix.json /tmp/requirements-matrix.json
 make scope-check
 ```
 
-`make scope-check` validates the three schemas and semantic ledgers, then rejects
-cross-artifact drift in source identity, owner, approvals, domain, region,
-locale, feature states, all P2 applicability records and deployment templates.
+`make scope-check` validates the three schemas and semantic ledgers, then
+rejects cross-artifact drift in source identity, owner, approvals, domain,
+region, locale, feature states, all P2 applicability records and deployment
+templates.
 
 ## 9. Decision boundaries and update triggers
 

@@ -64,8 +64,8 @@ SRS Chapter 8. Retired IDs remain traceable and are never reused.
 - Previous version: `62418c3`
 - Recorded: `2026-07-17T08:33:00Z`
 - Actor role: implementation agent acting under owner instruction
-- Change: deployment, language, administration and feature decisions; provisional
-  legal baseline and selected region; official evidence register;
+- Change: deployment, language, administration and feature decisions;
+  provisional legal baseline and selected region; official evidence register;
   ownership/workflow/review controls; 32-record inventory; 12-step migration;
   formal revision and six approval records; exact 264-row matrix and immutable
   bundle manifest.
@@ -99,14 +99,14 @@ All six records identify logical artifact `foundation-items-11-23@1.0.0`,
 version 1.0.0, stakeholder `STK-001`, scope items 11–23 and the explicit owner
 direction `owner-directive:2026-07-17-items-11-23`.
 
-| Decision ID             | Domain and role                              | Approved foundation decision                                                                                             | Express limit                                                                  |
-| ----------------------- | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| `APR-PRODUCT-001`       | Product — Website Owner and Product Approver | Selected scope, jurisdiction, content governance, inventory, migration, revisions and traceability foundation            | Not feature-release, production-deployment or whole-SRS conformance approval.  |
-| `APR-CONTENT-001`       | Content — Academic Content Approver          | Canonical ownership, evidence rule, four cadences, seven event triggers, 32-record inventory and hold rules              | Each future public content revision still needs its own evidence and approval. |
-| `APR-ACCESSIBILITY-001` | Accessibility — Accessibility Approver       | Accessibility evidence gate for migrated documents, media, language metadata and complete workflows                      | Does not represent any page, document or process as accessibility-conformant.  |
-| `APR-SECURITY-001`      | Security — Security Approver                 | Public/private boundary, quarantine, minimized processing, immutable evidence and provider-control gates                 | Not a threat model, penetration test or security-release approval.             |
+| Decision ID             | Domain and role                              | Approved foundation decision                                                                                                                                                                                     | Express limit                                                                                          |
+| ----------------------- | -------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| `APR-PRODUCT-001`       | Product — Website Owner and Product Approver | Selected scope, jurisdiction, content governance, inventory, migration, revisions and traceability foundation                                                                                                    | Not feature-release, production-deployment or whole-SRS conformance approval.                          |
+| `APR-CONTENT-001`       | Content — Academic Content Approver          | Canonical ownership, evidence rule, four cadences, seven event triggers, 32-record inventory and hold rules                                                                                                      | Each future public content revision still needs its own evidence and approval.                         |
+| `APR-ACCESSIBILITY-001` | Accessibility — Accessibility Approver       | Accessibility evidence gate for migrated documents, media, language metadata and complete workflows                                                                                                              | Does not represent any page, document or process as accessibility-conformant.                          |
+| `APR-SECURITY-001`      | Security — Security Approver                 | Public/private boundary, quarantine, minimized processing, immutable evidence and provider-control gates                                                                                                         | Not a threat model, penetration test or security-release approval.                                     |
 | `APR-PRIVACY-001`       | Privacy — Privacy Approver                   | Provisional Azerbaijan baseline pending nexus/applicable-law review; selected-not-deployed `eu-central-1`; registration, licensing, consent-channel, certification, transfer, notice, rights and retention gates | Does not determine applicable law, waive mandatory law or approve production personal-data collection. |
-| `APR-OPERATIONS-001`    | Operations — Technical Operations Approver   | Migration, reconciliation, atomic publication, rollback, archive and append-only revision controls                       | Not deployment, restoration-drill or production-release approval.              |
+| `APR-OPERATIONS-001`    | Operations — Technical Operations Approver   | Migration, reconciliation, atomic publication, rollback, archive and append-only revision controls                                                                                                               | Not deployment, restoration-drill or production-release approval.                                      |
 
 Each result is `approved-for-foundation-scope`, recorded at
 `2026-07-17T08:33:00Z`.
@@ -140,7 +140,7 @@ source hashes, official-source host boundaries, Azerbaijan/Germany selection,
 activation gates, schedules, calculated due dates and overdue blocking,
 inventory states and exact evidence references, migration order and safety
 controls, consecutive append-only revision and per-domain approval chains,
-temporal consistency, and presence of every machine ID in these documents.
-The separate manifest validator recomputes all 15 component digests and an
-independently pinned bundle projection. Negative tests mutate one invariant at
-a time and require rejection.
+temporal consistency, and presence of every machine ID in these documents. The
+separate manifest validator recomputes all 15 component digests and an
+independently pinned bundle projection. Negative tests mutate one invariant at a
+time and require rejection.

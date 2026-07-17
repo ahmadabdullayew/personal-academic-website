@@ -77,13 +77,24 @@
     "component": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["id", "path", "version", "digest_kind", "projection", "sha256"],
+      "required": [
+        "id",
+        "path",
+        "version",
+        "digest_kind",
+        "projection",
+        "sha256"
+      ],
       "properties": {
         "id": { "type": "string", "pattern": "^[a-z][a-z0-9-]+$" },
         "path": { "$ref": "#/$defs/nonEmptyString" },
         "version": { "$ref": "#/$defs/nonEmptyString" },
         "digest_kind": {
-          "enum": ["canonical-json-sha256", "canonical-json-projection-sha256", "raw-file-sha256"]
+          "enum": [
+            "canonical-json-sha256",
+            "canonical-json-projection-sha256",
+            "raw-file-sha256"
+          ]
         },
         "projection": {
           "oneOf": [{ "$ref": "#/$defs/nonEmptyString" }, { "type": "null" }]

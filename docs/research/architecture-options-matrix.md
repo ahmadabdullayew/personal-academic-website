@@ -129,13 +129,13 @@ and
 
 ## Hosting
 
-| Option                             |   F |   I |   S |   O |   U |   P |   C | Total | Disposition                                      |
-| ---------------------------------- | --: | --: | --: | --: | --: | --: | --: | ----: | ------------------------------------------------ |
+| Option                             |   F |   I |   S |   O |   U |   P |   C | Total | Disposition                                                 |
+| ---------------------------------- | --: | --: | --: | --: | --: | --: | --: | ----: | ----------------------------------------------------------- |
 | AWS managed stack                  |   5 |   5 |   5 |   4 |   5 |   3 |   2 |    90 | selected in `eu-central-1`; cost remains a deployment input |
-| Self-managed Kubernetes            |   5 |   5 |   4 |   1 |   5 |   5 |   1 |    81 | disproportionate one-owner burden                |
-| Render managed services            |   4 |   4 |   4 |   5 |   4 |   2 |   4 |    79 | lower-burden alternative/different exit boundary |
-| Fly.io Machines/managed PostgreSQL |   4 |   4 |   4 |   4 |   4 |   3 |   4 |    78 | viable PaaS alternative                          |
-| Self-managed VPS                   |   4 |   4 |   3 |   1 |   3 |   5 |   5 |    69 | low fee transfers patch/recovery/on-call labor   |
+| Self-managed Kubernetes            |   5 |   5 |   4 |   1 |   5 |   5 |   1 |    81 | disproportionate one-owner burden                           |
+| Render managed services            |   4 |   4 |   4 |   5 |   4 |   2 |   4 |    79 | lower-burden alternative/different exit boundary            |
+| Fly.io Machines/managed PostgreSQL |   4 |   4 |   4 |   4 |   4 |   3 |   4 |    78 | viable PaaS alternative                                     |
+| Self-managed VPS                   |   4 |   4 |   3 |   1 |   3 |   5 |   5 |    69 | low fee transfers patch/recovery/on-call labor              |
 
 Sources:
 [ECS load balancing](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html),
@@ -183,11 +183,11 @@ volume, observability retention, deployment frequency, recovery objectives and a
 value for owner maintenance time.
 
 An AWS estimate for the selected `eu-central-1` region must include ALB
-hours/capacity, Fargate runtime, RDS
-primary/standby/storage/backups, S3 storage/requests/egress, SQS, CloudFront,
-WAF, KMS, Secrets Manager, CloudWatch, ECR, networking, Route 53 and backup
-copies. Use the [AWS Pricing Calculator](https://calculator.aws/#/) only after
-those workload and retention inputs are recorded.
+hours/capacity, Fargate runtime, RDS primary/standby/storage/backups, S3
+storage/requests/egress, SQS, CloudFront, WAF, KMS, Secrets Manager, CloudWatch,
+ECR, networking, Route 53 and backup copies. Use the
+[AWS Pricing Calculator](https://calculator.aws/#/) only after those workload
+and retention inputs are recorded.
 
 PaaS headline compute can omit highly available databases, workers, private
 networking, backup retention, egress, logs and support. Self-hosted software can

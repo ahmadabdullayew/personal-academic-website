@@ -124,7 +124,7 @@ EXPECTED_COMPONENTS = (
 # bundle_projection_sha256 omitted. It is populated only after every component
 # digest and the approval/revision linkage have been reviewed together.
 EXPECTED_BUNDLE_PROJECTION_SHA256 = (
-    "938d4e0dcec2dd593c96c60b6995c17be1dc3c157c3514f5e0cee81c17603c00"
+    "1c536eb256a436a838c4870fb23f3ad11ad50425dab2fa64e7d64dee528edc34"
 )
 
 

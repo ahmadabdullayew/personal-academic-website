@@ -28,14 +28,14 @@ hosts never redirect into a state that makes their unpublished content
 canonical.
 
 The selected AWS application and durable-data region is `eu-central-1`, Europe
-(Frankfurt), Germany. Before deployment, regional production, staging and preview
-resources plus relational data, objects, queues, logs, backups and SES
+(Frankfurt), Germany. Before deployment, regional production, staging and
+preview resources plus relational data, objects, queues, logs, backups and SES
 delivery-event state must be configured there; application-managed cross-region
 replication is prohibited unless separately approved. This is a binding target
-configuration, not evidence that infrastructure has already been provisioned. Outbound email
-necessarily traverses recipient mail systems, while CloudFront, DNS,
-certificate-management and any other global, edge or out-of-region path must be
-separately inventoried and disclosed. Germany is therefore a disclosed
+configuration, not evidence that infrastructure has already been provisioned.
+Outbound email necessarily traverses recipient mail systems, while CloudFront,
+DNS, certificate-management and any other global, edge or out-of-region path
+must be separately inventoried and disclosed. Germany is therefore a disclosed
 prospective processing location, not a claim that every network hop remains
 there or that the selected region alone establishes applicable law. The actual
 controller/data-subject nexus, processor terms and any applicable transfer
@@ -159,10 +159,10 @@ states.
 ## 6. Item 15 — contact method and delivery provider
 
 The preferred route is a cookie-free form at `/contact/`; the owner's email
-address is not published. Amazon SES in `eu-central-1` is the selected production
-delivery provider; activation requires the recorded identity, privacy,
-retention, security and operational gates. An outbound message then necessarily
-traverses recipient mail infrastructure and is not represented as
+address is not published. Amazon SES in `eu-central-1` is the selected
+production delivery provider; activation requires the recorded identity,
+privacy, retention, security and operational gates. An outbound message then
+necessarily traverses recipient mail infrastructure and is not represented as
 region-confined. Inquiry type, sender name, reply email, subject, message and a
 privacy acknowledgement are required. That acknowledgement records presentation
 and acknowledgement of the collection notice only: it is not a legal basis and

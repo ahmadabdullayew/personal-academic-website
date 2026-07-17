@@ -42,10 +42,7 @@
         "The content model and publication states are configured.",
         "The acting maintainer has the required authorization."
       ],
-      "source_refs": [
-        "website-srs:FR-GOV-01:p16",
-        "website-srs:FR-GOV-08:p23"
-      ]
+      "source_refs": ["website-srs:FR-GOV-01:p16", "website-srs:FR-GOV-08:p23"]
     },
     {
       "id": "DEP-SHELL",
@@ -91,10 +88,7 @@
         "At least one research area or research activity exists.",
         "Related-output relationships are supported."
       ],
-      "source_refs": [
-        "website-srs:FR-RES-01:p53",
-        "website-srs:FR-RES-10:p63"
-      ]
+      "source_refs": ["website-srs:FR-RES-01:p53", "website-srs:FR-RES-10:p63"]
     },
     {
       "id": "DEP-PUB",
@@ -104,10 +98,7 @@
         "Minimum bibliographic fields and identifier rules are defined.",
         "The owner identity is available for authorship matching."
       ],
-      "source_refs": [
-        "website-srs:FR-PUB-01:p64",
-        "website-srs:FR-PUB-42:p111"
-      ]
+      "source_refs": ["website-srs:FR-PUB-01:p64", "website-srs:FR-PUB-42:p111"]
     },
     {
       "id": "DEP-PROJ",
@@ -302,10 +293,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Product Owner",
-          "Academic Content Owner"
-        ],
+        "accountable_roles": ["Product Owner", "Academic Content Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -343,10 +331,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Product Owner",
-          "Academic Content Owner"
-        ],
+        "accountable_roles": ["Product Owner", "Academic Content Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -384,10 +369,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Product Owner",
-          "Academic Content Owner"
-        ],
+        "accountable_roles": ["Product Owner", "Academic Content Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -425,10 +407,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Product Owner",
-          "Academic Content Owner"
-        ],
+        "accountable_roles": ["Product Owner", "Academic Content Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -466,10 +445,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Product Owner",
-          "Academic Content Owner"
-        ],
+        "accountable_roles": ["Product Owner", "Academic Content Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -478,10 +454,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -507,10 +480,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Product Owner",
-          "Academic Content Owner"
-        ],
+        "accountable_roles": ["Product Owner", "Academic Content Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -548,10 +518,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Product Owner",
-          "Academic Content Owner"
-        ],
+        "accountable_roles": ["Product Owner", "Academic Content Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -560,10 +527,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -589,10 +553,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Product Owner",
-          "Academic Content Owner"
-        ],
+        "accountable_roles": ["Product Owner", "Academic Content Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -601,10 +562,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -630,10 +588,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Frontend Lead",
-          "UX Owner"
-        ],
+        "accountable_roles": ["Frontend Lead", "UX Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -671,10 +626,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Frontend Lead",
-          "UX Owner"
-        ],
+        "accountable_roles": ["Frontend Lead", "UX Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -712,10 +664,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Frontend Lead",
-          "UX Owner"
-        ],
+        "accountable_roles": ["Frontend Lead", "UX Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -753,10 +702,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Frontend Lead",
-          "UX Owner"
-        ],
+        "accountable_roles": ["Frontend Lead", "UX Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -794,10 +740,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Frontend Lead",
-          "UX Owner"
-        ],
+        "accountable_roles": ["Frontend Lead", "UX Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -835,10 +778,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Frontend Lead",
-          "UX Owner"
-        ],
+        "accountable_roles": ["Frontend Lead", "UX Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -876,10 +816,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Frontend Lead",
-          "UX Owner"
-        ],
+        "accountable_roles": ["Frontend Lead", "UX Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -888,10 +825,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -917,10 +851,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Frontend Lead",
-          "UX Owner"
-        ],
+        "accountable_roles": ["Frontend Lead", "UX Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -958,10 +889,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Product Owner",
-          "Academic Content Owner"
-        ],
+        "accountable_roles": ["Product Owner", "Academic Content Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -999,10 +927,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Product Owner",
-          "Academic Content Owner"
-        ],
+        "accountable_roles": ["Product Owner", "Academic Content Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -1040,10 +965,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Product Owner",
-          "Academic Content Owner"
-        ],
+        "accountable_roles": ["Product Owner", "Academic Content Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -1081,10 +1003,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Product Owner",
-          "Academic Content Owner"
-        ],
+        "accountable_roles": ["Product Owner", "Academic Content Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -1093,10 +1012,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -1122,10 +1038,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Product Owner",
-          "Academic Content Owner"
-        ],
+        "accountable_roles": ["Product Owner", "Academic Content Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -1163,10 +1076,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Product Owner",
-          "Academic Content Owner"
-        ],
+        "accountable_roles": ["Product Owner", "Academic Content Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -1175,10 +1085,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -1204,10 +1111,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Product Owner",
-          "Academic Content Owner"
-        ],
+        "accountable_roles": ["Product Owner", "Academic Content Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -1216,10 +1120,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -1245,10 +1146,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Product Owner",
-          "Academic Content Owner"
-        ],
+        "accountable_roles": ["Product Owner", "Academic Content Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -1286,9 +1184,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner"
-        ],
+        "accountable_roles": ["Academic Content Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -1326,9 +1222,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner"
-        ],
+        "accountable_roles": ["Academic Content Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -1337,10 +1231,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -1366,9 +1257,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner"
-        ],
+        "accountable_roles": ["Academic Content Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -1377,10 +1266,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -1406,9 +1292,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner"
-        ],
+        "accountable_roles": ["Academic Content Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -1446,9 +1330,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner"
-        ],
+        "accountable_roles": ["Academic Content Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -1486,9 +1368,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner"
-        ],
+        "accountable_roles": ["Academic Content Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -1526,9 +1406,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner"
-        ],
+        "accountable_roles": ["Academic Content Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -1566,9 +1444,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner"
-        ],
+        "accountable_roles": ["Academic Content Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -1577,10 +1453,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -1606,9 +1479,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner"
-        ],
+        "accountable_roles": ["Academic Content Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -1646,9 +1517,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner"
-        ],
+        "accountable_roles": ["Academic Content Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -1686,10 +1555,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner",
-          "Research Lead"
-        ],
+        "accountable_roles": ["Academic Content Owner", "Research Lead"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -1727,10 +1593,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner",
-          "Research Lead"
-        ],
+        "accountable_roles": ["Academic Content Owner", "Research Lead"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -1768,10 +1631,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner",
-          "Research Lead"
-        ],
+        "accountable_roles": ["Academic Content Owner", "Research Lead"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -1780,10 +1640,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -1809,10 +1666,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner",
-          "Research Lead"
-        ],
+        "accountable_roles": ["Academic Content Owner", "Research Lead"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -1821,10 +1675,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -1850,10 +1701,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner",
-          "Research Lead"
-        ],
+        "accountable_roles": ["Academic Content Owner", "Research Lead"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -1862,10 +1710,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -1891,10 +1736,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner",
-          "Research Lead"
-        ],
+        "accountable_roles": ["Academic Content Owner", "Research Lead"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -1932,10 +1774,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner",
-          "Research Lead"
-        ],
+        "accountable_roles": ["Academic Content Owner", "Research Lead"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -1973,10 +1812,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner",
-          "Research Lead"
-        ],
+        "accountable_roles": ["Academic Content Owner", "Research Lead"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -1985,10 +1821,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -2014,10 +1847,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner",
-          "Research Lead"
-        ],
+        "accountable_roles": ["Academic Content Owner", "Research Lead"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -2055,10 +1885,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner",
-          "Research Lead"
-        ],
+        "accountable_roles": ["Academic Content Owner", "Research Lead"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -2600,10 +2427,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -2641,10 +2465,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -2682,10 +2503,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -2723,10 +2541,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -2805,10 +2620,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -2928,10 +2740,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -3256,10 +3065,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -3297,10 +3103,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -3420,10 +3223,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -3461,10 +3261,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -3584,10 +3381,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -3707,10 +3501,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -3912,10 +3703,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -4076,10 +3864,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -4199,10 +3984,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -4281,10 +4063,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -4392,9 +4171,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner"
-        ],
+        "accountable_roles": ["Academic Content Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -4432,9 +4209,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner"
-        ],
+        "accountable_roles": ["Academic Content Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -4472,9 +4247,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner"
-        ],
+        "accountable_roles": ["Academic Content Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -4512,9 +4285,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner"
-        ],
+        "accountable_roles": ["Academic Content Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -4552,9 +4323,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner"
-        ],
+        "accountable_roles": ["Academic Content Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -4592,9 +4361,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner"
-        ],
+        "accountable_roles": ["Academic Content Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -4632,9 +4399,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner"
-        ],
+        "accountable_roles": ["Academic Content Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -4672,9 +4437,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner"
-        ],
+        "accountable_roles": ["Academic Content Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -4683,10 +4446,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -4712,9 +4472,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner"
-        ],
+        "accountable_roles": ["Academic Content Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -4752,9 +4510,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner"
-        ],
+        "accountable_roles": ["Academic Content Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -4763,10 +4519,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -4792,9 +4545,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner"
-        ],
+        "accountable_roles": ["Academic Content Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -4803,10 +4554,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -4832,9 +4580,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner"
-        ],
+        "accountable_roles": ["Academic Content Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -4872,9 +4618,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner"
-        ],
+        "accountable_roles": ["Academic Content Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -4883,10 +4627,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -4912,9 +4653,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner"
-        ],
+        "accountable_roles": ["Academic Content Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -4952,9 +4691,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner"
-        ],
+        "accountable_roles": ["Academic Content Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -4992,9 +4729,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner"
-        ],
+        "accountable_roles": ["Academic Content Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -5032,9 +4767,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner"
-        ],
+        "accountable_roles": ["Academic Content Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -5072,9 +4805,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner"
-        ],
+        "accountable_roles": ["Academic Content Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -5112,9 +4843,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner"
-        ],
+        "accountable_roles": ["Academic Content Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -5152,9 +4881,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner"
-        ],
+        "accountable_roles": ["Academic Content Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -5192,9 +4919,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner"
-        ],
+        "accountable_roles": ["Academic Content Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -5232,9 +4957,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner"
-        ],
+        "accountable_roles": ["Academic Content Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -5272,9 +4995,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner"
-        ],
+        "accountable_roles": ["Academic Content Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -5312,9 +5033,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner"
-        ],
+        "accountable_roles": ["Academic Content Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -5352,9 +5071,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner"
-        ],
+        "accountable_roles": ["Academic Content Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -5363,10 +5080,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -5392,9 +5106,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner"
-        ],
+        "accountable_roles": ["Academic Content Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -5432,10 +5144,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner",
-          "Communications Owner"
-        ],
+        "accountable_roles": ["Academic Content Owner", "Communications Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -5444,10 +5153,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -5473,10 +5179,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner",
-          "Communications Owner"
-        ],
+        "accountable_roles": ["Academic Content Owner", "Communications Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -5514,10 +5217,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner",
-          "Communications Owner"
-        ],
+        "accountable_roles": ["Academic Content Owner", "Communications Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -5526,10 +5226,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -5555,10 +5252,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner",
-          "Communications Owner"
-        ],
+        "accountable_roles": ["Academic Content Owner", "Communications Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -5596,10 +5290,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner",
-          "Communications Owner"
-        ],
+        "accountable_roles": ["Academic Content Owner", "Communications Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -5608,10 +5299,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -5637,10 +5325,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner",
-          "Communications Owner"
-        ],
+        "accountable_roles": ["Academic Content Owner", "Communications Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -5649,10 +5334,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -5678,10 +5360,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner",
-          "Communications Owner"
-        ],
+        "accountable_roles": ["Academic Content Owner", "Communications Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -5719,10 +5398,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner",
-          "Communications Owner"
-        ],
+        "accountable_roles": ["Academic Content Owner", "Communications Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -5760,10 +5436,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner",
-          "Communications Owner"
-        ],
+        "accountable_roles": ["Academic Content Owner", "Communications Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -5801,10 +5474,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner",
-          "Communications Owner"
-        ],
+        "accountable_roles": ["Academic Content Owner", "Communications Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -5842,10 +5512,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner",
-          "Document Steward"
-        ],
+        "accountable_roles": ["Academic Content Owner", "Document Steward"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -5883,10 +5550,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner",
-          "Document Steward"
-        ],
+        "accountable_roles": ["Academic Content Owner", "Document Steward"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -5924,10 +5588,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner",
-          "Document Steward"
-        ],
+        "accountable_roles": ["Academic Content Owner", "Document Steward"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -5965,10 +5626,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner",
-          "Document Steward"
-        ],
+        "accountable_roles": ["Academic Content Owner", "Document Steward"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -6006,10 +5664,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner",
-          "Document Steward"
-        ],
+        "accountable_roles": ["Academic Content Owner", "Document Steward"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -6047,10 +5702,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner",
-          "Document Steward"
-        ],
+        "accountable_roles": ["Academic Content Owner", "Document Steward"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -6088,10 +5740,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner",
-          "Document Steward"
-        ],
+        "accountable_roles": ["Academic Content Owner", "Document Steward"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -6129,10 +5778,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Academic Content Owner",
-          "Document Steward"
-        ],
+        "accountable_roles": ["Academic Content Owner", "Document Steward"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -6170,11 +5816,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Product Owner",
-          "Privacy Owner",
-          "Backend Lead"
-        ],
+        "accountable_roles": ["Product Owner", "Privacy Owner", "Backend Lead"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -6212,11 +5854,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Product Owner",
-          "Privacy Owner",
-          "Backend Lead"
-        ],
+        "accountable_roles": ["Product Owner", "Privacy Owner", "Backend Lead"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -6254,11 +5892,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Product Owner",
-          "Privacy Owner",
-          "Backend Lead"
-        ],
+        "accountable_roles": ["Product Owner", "Privacy Owner", "Backend Lead"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -6296,11 +5930,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Product Owner",
-          "Privacy Owner",
-          "Backend Lead"
-        ],
+        "accountable_roles": ["Product Owner", "Privacy Owner", "Backend Lead"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -6309,10 +5939,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -6338,11 +5965,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Product Owner",
-          "Privacy Owner",
-          "Backend Lead"
-        ],
+        "accountable_roles": ["Product Owner", "Privacy Owner", "Backend Lead"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -6380,11 +6003,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Product Owner",
-          "Privacy Owner",
-          "Backend Lead"
-        ],
+        "accountable_roles": ["Product Owner", "Privacy Owner", "Backend Lead"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -6422,11 +6041,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Product Owner",
-          "Privacy Owner",
-          "Backend Lead"
-        ],
+        "accountable_roles": ["Product Owner", "Privacy Owner", "Backend Lead"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -6464,11 +6079,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Product Owner",
-          "Privacy Owner",
-          "Backend Lead"
-        ],
+        "accountable_roles": ["Product Owner", "Privacy Owner", "Backend Lead"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -6506,11 +6117,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Product Owner",
-          "Privacy Owner",
-          "Backend Lead"
-        ],
+        "accountable_roles": ["Product Owner", "Privacy Owner", "Backend Lead"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -6519,10 +6126,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -6548,11 +6152,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Product Owner",
-          "Privacy Owner",
-          "Backend Lead"
-        ],
+        "accountable_roles": ["Product Owner", "Privacy Owner", "Backend Lead"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -6590,11 +6190,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Product Owner",
-          "Privacy Owner",
-          "Backend Lead"
-        ],
+        "accountable_roles": ["Product Owner", "Privacy Owner", "Backend Lead"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -6632,11 +6228,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Product Owner",
-          "Privacy Owner",
-          "Backend Lead"
-        ],
+        "accountable_roles": ["Product Owner", "Privacy Owner", "Backend Lead"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -6645,10 +6237,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -6674,10 +6263,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Frontend Lead",
-          "Content Architecture Owner"
-        ],
+        "accountable_roles": ["Frontend Lead", "Content Architecture Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -6686,10 +6272,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -6715,10 +6298,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Frontend Lead",
-          "Content Architecture Owner"
-        ],
+        "accountable_roles": ["Frontend Lead", "Content Architecture Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -6756,10 +6336,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Frontend Lead",
-          "Content Architecture Owner"
-        ],
+        "accountable_roles": ["Frontend Lead", "Content Architecture Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -6768,10 +6345,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -6797,10 +6371,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Frontend Lead",
-          "Content Architecture Owner"
-        ],
+        "accountable_roles": ["Frontend Lead", "Content Architecture Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -6809,10 +6380,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -6838,10 +6406,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Frontend Lead",
-          "Content Architecture Owner"
-        ],
+        "accountable_roles": ["Frontend Lead", "Content Architecture Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -6850,10 +6415,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -6879,10 +6441,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Frontend Lead",
-          "Content Architecture Owner"
-        ],
+        "accountable_roles": ["Frontend Lead", "Content Architecture Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -6920,10 +6479,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Frontend Lead",
-          "Content Architecture Owner"
-        ],
+        "accountable_roles": ["Frontend Lead", "Content Architecture Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -6961,10 +6517,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Frontend Lead",
-          "Content Architecture Owner"
-        ],
+        "accountable_roles": ["Frontend Lead", "Content Architecture Owner"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -7260,10 +6813,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -7301,10 +6851,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -7383,10 +6930,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -7711,10 +7255,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -7793,10 +7334,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -7986,10 +7524,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Accessibility Owner",
-          "Frontend Lead"
-        ],
+        "accountable_roles": ["Accessibility Owner", "Frontend Lead"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -8027,10 +7562,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Accessibility Owner",
-          "Frontend Lead"
-        ],
+        "accountable_roles": ["Accessibility Owner", "Frontend Lead"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -8068,10 +7600,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Accessibility Owner",
-          "Frontend Lead"
-        ],
+        "accountable_roles": ["Accessibility Owner", "Frontend Lead"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -8109,10 +7638,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Accessibility Owner",
-          "Frontend Lead"
-        ],
+        "accountable_roles": ["Accessibility Owner", "Frontend Lead"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -8150,10 +7676,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Accessibility Owner",
-          "Frontend Lead"
-        ],
+        "accountable_roles": ["Accessibility Owner", "Frontend Lead"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -8191,10 +7714,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Accessibility Owner",
-          "Frontend Lead"
-        ],
+        "accountable_roles": ["Accessibility Owner", "Frontend Lead"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -8232,10 +7752,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Accessibility Owner",
-          "Frontend Lead"
-        ],
+        "accountable_roles": ["Accessibility Owner", "Frontend Lead"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -8273,10 +7790,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Accessibility Owner",
-          "Frontend Lead"
-        ],
+        "accountable_roles": ["Accessibility Owner", "Frontend Lead"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -8314,10 +7828,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Accessibility Owner",
-          "Frontend Lead"
-        ],
+        "accountable_roles": ["Accessibility Owner", "Frontend Lead"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -8355,10 +7866,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Accessibility Owner",
-          "Frontend Lead"
-        ],
+        "accountable_roles": ["Accessibility Owner", "Frontend Lead"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -8396,10 +7904,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Accessibility Owner",
-          "Frontend Lead"
-        ],
+        "accountable_roles": ["Accessibility Owner", "Frontend Lead"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -8437,10 +7942,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Accessibility Owner",
-          "Frontend Lead"
-        ],
+        "accountable_roles": ["Accessibility Owner", "Frontend Lead"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -8478,10 +7980,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Accessibility Owner",
-          "Frontend Lead"
-        ],
+        "accountable_roles": ["Accessibility Owner", "Frontend Lead"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -8519,10 +8018,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Accessibility Owner",
-          "Frontend Lead"
-        ],
+        "accountable_roles": ["Accessibility Owner", "Frontend Lead"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -8560,10 +8056,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Accessibility Owner",
-          "Frontend Lead"
-        ],
+        "accountable_roles": ["Accessibility Owner", "Frontend Lead"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -8601,10 +8094,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Accessibility Owner",
-          "Frontend Lead"
-        ],
+        "accountable_roles": ["Accessibility Owner", "Frontend Lead"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -8642,10 +8132,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Accessibility Owner",
-          "Frontend Lead"
-        ],
+        "accountable_roles": ["Accessibility Owner", "Frontend Lead"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -8683,10 +8170,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Accessibility Owner",
-          "Frontend Lead"
-        ],
+        "accountable_roles": ["Accessibility Owner", "Frontend Lead"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -8724,10 +8208,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Accessibility Owner",
-          "Frontend Lead"
-        ],
+        "accountable_roles": ["Accessibility Owner", "Frontend Lead"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -8765,10 +8246,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Accessibility Owner",
-          "Frontend Lead"
-        ],
+        "accountable_roles": ["Accessibility Owner", "Frontend Lead"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -8806,10 +8284,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Content Localization Owner",
-          "Frontend Lead"
-        ],
+        "accountable_roles": ["Content Localization Owner", "Frontend Lead"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -8847,10 +8322,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Content Localization Owner",
-          "Frontend Lead"
-        ],
+        "accountable_roles": ["Content Localization Owner", "Frontend Lead"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -8888,10 +8360,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Content Localization Owner",
-          "Frontend Lead"
-        ],
+        "accountable_roles": ["Content Localization Owner", "Frontend Lead"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -8929,10 +8398,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Content Localization Owner",
-          "Frontend Lead"
-        ],
+        "accountable_roles": ["Content Localization Owner", "Frontend Lead"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -8970,10 +8436,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Content Localization Owner",
-          "Frontend Lead"
-        ],
+        "accountable_roles": ["Content Localization Owner", "Frontend Lead"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -9011,10 +8474,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Content Localization Owner",
-          "Frontend Lead"
-        ],
+        "accountable_roles": ["Content Localization Owner", "Frontend Lead"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -9052,10 +8512,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Product Owner",
-          "Technical Administrator"
-        ],
+        "accountable_roles": ["Product Owner", "Technical Administrator"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -9093,10 +8550,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Product Owner",
-          "Technical Administrator"
-        ],
+        "accountable_roles": ["Product Owner", "Technical Administrator"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -9134,10 +8588,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Product Owner",
-          "Technical Administrator"
-        ],
+        "accountable_roles": ["Product Owner", "Technical Administrator"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -9175,10 +8626,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Product Owner",
-          "Technical Administrator"
-        ],
+        "accountable_roles": ["Product Owner", "Technical Administrator"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -9216,10 +8664,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Product Owner",
-          "Technical Administrator"
-        ],
+        "accountable_roles": ["Product Owner", "Technical Administrator"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -9257,10 +8702,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Product Owner",
-          "Technical Administrator"
-        ],
+        "accountable_roles": ["Product Owner", "Technical Administrator"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -9298,10 +8740,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Product Owner",
-          "Technical Administrator"
-        ],
+        "accountable_roles": ["Product Owner", "Technical Administrator"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -9339,10 +8778,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Product Owner",
-          "Technical Administrator"
-        ],
+        "accountable_roles": ["Product Owner", "Technical Administrator"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -9380,10 +8816,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Product Owner",
-          "Technical Administrator"
-        ],
+        "accountable_roles": ["Product Owner", "Technical Administrator"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -9392,10 +8825,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -9421,10 +8851,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Product Owner",
-          "Technical Administrator"
-        ],
+        "accountable_roles": ["Product Owner", "Technical Administrator"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -9433,10 +8860,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -9462,10 +8886,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Product Owner",
-          "Technical Administrator"
-        ],
+        "accountable_roles": ["Product Owner", "Technical Administrator"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -9503,10 +8924,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Product Owner",
-          "Technical Administrator"
-        ],
+        "accountable_roles": ["Product Owner", "Technical Administrator"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -9515,10 +8933,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -9544,10 +8959,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Product Owner",
-          "Technical Administrator"
-        ],
+        "accountable_roles": ["Product Owner", "Technical Administrator"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -9556,10 +8968,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -9585,10 +8994,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Product Owner",
-          "Technical Administrator"
-        ],
+        "accountable_roles": ["Product Owner", "Technical Administrator"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -9626,10 +9032,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Product Owner",
-          "Technical Administrator"
-        ],
+        "accountable_roles": ["Product Owner", "Technical Administrator"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -9638,10 +9041,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -9667,10 +9067,7 @@
         "requirement_ids": []
       },
       "ownership": {
-        "accountable_roles": [
-          "Product Owner",
-          "Technical Administrator"
-        ],
+        "accountable_roles": ["Product Owner", "Technical Administrator"],
         "assigned_person": "Ahmad Abdullayev",
         "assignment_ref": "config/product-baseline.json#owner"
       },
@@ -10435,10 +9832,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -10687,10 +10081,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -10855,10 +10246,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -10939,10 +10327,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -11023,10 +10408,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {
@@ -11065,10 +10447,7 @@
         "basis": "full-build-profile",
         "condition": "The owner-directed full-build profile retains planned P1 requirements.",
         "rationale": "The backend activation profile includes P1 requirements in the planned full build; no row-specific deferral was approved.",
-        "decision_refs": [
-          "website-srs:p1",
-          "backend-specification:p4"
-        ]
+        "decision_refs": ["website-srs:p1", "backend-specification:p4"]
       }
     },
     {

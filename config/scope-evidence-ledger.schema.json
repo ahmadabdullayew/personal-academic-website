@@ -142,7 +142,11 @@
           "format": "date-time"
         },
         "method": {
-          "enum": ["local-direct-retrieval", "web-search", "web-direct-retrieval"]
+          "enum": [
+            "local-direct-retrieval",
+            "web-search",
+            "web-direct-retrieval"
+          ]
         },
         "sites": { "$ref": "#/$defs/stringSet" },
         "query_strings": { "$ref": "#/$defs/stringSet" },
@@ -185,10 +189,7 @@
           ]
         },
         "next_review_on": {
-          "oneOf": [
-            { "type": "string", "format": "date" },
-            { "type": "null" }
-          ]
+          "oneOf": [{ "type": "string", "format": "date" }, { "type": "null" }]
         },
         "event_trigger_ids": {
           "type": "array",

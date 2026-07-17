@@ -254,8 +254,14 @@
       "provisions": ["Article 30", "Article 32"],
       "project_proposition": "Intellectual property is protected; private-life information and personal information receive constitutional protection, including correction or elimination of inaccurate or unlawfully collected information.",
       "proposition_mappings": [
-        {"provision": "Article 30", "proposition": "Intellectual property is protected."},
-        {"provision": "Article 32", "proposition": "Private life and personal information are protected, with correction or elimination remedies for inaccurate or unlawfully collected information."}
+        {
+          "provision": "Article 30",
+          "proposition": "Intellectual property is protected."
+        },
+        {
+          "provision": "Article 32",
+          "proposition": "Private life and personal information are protected, with correction or elimination remedies for inaccurate or unlawfully collected information."
+        }
       ],
       "official_language": "English",
       "translation_status": "official-English-version",
@@ -284,10 +290,22 @@
       ],
       "project_proposition": "Before production personal-data processing, the project must determine legal applicability, purpose and basis, the Article 8.6 consent channel, licensing, collection disclosures, rights channels and deadlines, security and audit controls, Article 14 transfer findings, and registration or a documented clause-specific exemption.",
       "proposition_mappings": [
-        {"provision": "Article 3.3", "proposition": "The household or personal-use exception is fact-specific and is not assumed for this public professional website."},
-        {"provision": "Articles 7.5, 11.2, and 12.4 to 12.6", "proposition": "The collection notice and rights workflow must implement statutory fields, request channels, and working-day deadlines."},
-        {"provision": "Articles 8.6 and 9.14", "proposition": "EHIS consent-channel and licensing applicability require explicit determinations before processing or operation."},
-        {"provision": "Articles 14 and 15", "proposition": "Cross-border findings and registration or clause-specific exemption evidence are release gates."}
+        {
+          "provision": "Article 3.3",
+          "proposition": "The household or personal-use exception is fact-specific and is not assumed for this public professional website."
+        },
+        {
+          "provision": "Articles 7.5, 11.2, and 12.4 to 12.6",
+          "proposition": "The collection notice and rights workflow must implement statutory fields, request channels, and working-day deadlines."
+        },
+        {
+          "provision": "Articles 8.6 and 9.14",
+          "proposition": "EHIS consent-channel and licensing applicability require explicit determinations before processing or operation."
+        },
+        {
+          "provision": "Articles 14 and 15",
+          "proposition": "Cross-border findings and registration or clause-specific exemption evidence are release gates."
+        }
       ],
       "official_language": "Azerbaijani",
       "translation_status": "project-English-paraphrase-of-official-Azerbaijani-source",
@@ -305,7 +323,10 @@
       "provisions": ["Clauses 2.1 to 2.7"],
       "project_proposition": "Registration exemptions are purpose- and fact-specific; the project records an exemption only with evidence matching the applicable clause and otherwise follows the registration path.",
       "proposition_mappings": [
-        {"provision": "Clauses 2.1 to 2.7", "proposition": "An exemption requires a documented match to the applicable purpose, subject category, subject-count and other clause conditions; project size alone is insufficient."}
+        {
+          "provision": "Clauses 2.1 to 2.7",
+          "proposition": "An exemption requires a documented match to the applicable purpose, subject category, subject-count and other clause conditions; project size alone is insufficient."
+        }
       ],
       "official_language": "Azerbaijani",
       "translation_status": "project-English-paraphrase-of-official-Azerbaijani-source",
@@ -323,7 +344,10 @@
       "provisions": ["Clauses 1.1 to 1.7", "Section 2"],
       "project_proposition": "The registration evidence package must identify the system owner, processing basis and purposes, data and subject categories, safeguards, users, transfers, audit, and rights procedures; the current Ministry name is supplied by the tracked 2022 amendment.",
       "proposition_mappings": [
-        {"provision": "Clauses 1.1 to 1.7 and Section 2", "proposition": "The project must prepare the registration application, evidence package, review inputs and change/cancellation controls before production collection."}
+        {
+          "provision": "Clauses 1.1 to 1.7 and Section 2",
+          "proposition": "The project must prepare the registration application, evidence package, review inputs and change/cancellation controls before production collection."
+        }
       ],
       "official_language": "Azerbaijani",
       "translation_status": "project-English-paraphrase-of-official-Azerbaijani-source",
@@ -341,7 +365,10 @@
       "provisions": ["Clauses 1 and 2"],
       "project_proposition": "References in Decisions No. 149 and No. 161 to the predecessor ministry are read as references to the Ministry of Digital Development and Transport.",
       "proposition_mappings": [
-        {"provision": "Clauses 1 and 2", "proposition": "The current competent-ministry name is used in registration and security governance records."}
+        {
+          "provision": "Clauses 1 and 2",
+          "proposition": "The current competent-ministry name is used in registration and security governance records."
+        }
       ],
       "official_language": "Azerbaijani",
       "translation_status": "project-English-paraphrase-of-official-Azerbaijani-source",
@@ -356,10 +383,15 @@
       "url": "https://mincom.gov.az/storage/pages/648/4b2105426aa7138d97d78c9e1cfb91c4.pdf",
       "jurisdiction": "AZ",
       "source_type": "secondary-law",
-      "provisions": ["Operative protection requirements, read with current amendments"],
+      "provisions": [
+        "Operative protection requirements, read with current amendments"
+      ],
       "project_proposition": "Production requires a clause-mapped security evidence package covering threats and protection level, approved software and instructions, restoration, system and protection documentation, access and audit registers, physical controls, authentication and authorization, encryption, certification and state expertise as applicable.",
       "proposition_mappings": [
-        {"provision": "Operative protection requirements", "proposition": "A generic security assertion is insufficient; each applicable Decision No. 161 control requires implementation evidence and amendment-aware review."}
+        {
+          "provision": "Operative protection requirements",
+          "proposition": "A generic security assertion is insufficient; each applicable Decision No. 161 control requires implementation evidence and amendment-aware review."
+        }
       ],
       "official_language": "Azerbaijani",
       "translation_status": "project-English-paraphrase-of-official-Azerbaijani-source",
@@ -377,7 +409,10 @@
       "provisions": ["Digital Consent subsystem provisions"],
       "project_proposition": "If Article 8.6 applies, the consent and withdrawal design must use the legally required EHIS or Digital Consent channel; an ordinary privacy acknowledgment is not substituted for that determination.",
       "proposition_mappings": [
-        {"provision": "Digital Consent subsystem provisions", "proposition": "EHIS/Digital Consent integration and evidence requirements are resolved before consent-dependent collection is activated."}
+        {
+          "provision": "Digital Consent subsystem provisions",
+          "proposition": "EHIS/Digital Consent integration and evidence requirements are resolved before consent-dependent collection is activated."
+        }
       ],
       "official_language": "Azerbaijani",
       "translation_status": "project-English-paraphrase-of-official-Azerbaijani-source",
@@ -392,10 +427,15 @@
       "url": "https://mincom.gov.az/az/qanunvericilik/lisenziyalasdirma/rabite-ve-informasiya-texnologiyalari-sahesinde-lisenziyalarin-verilmesi/lisenziya/ferdi-sahibkarlar-ucun",
       "jurisdiction": "AZ",
       "source_type": "official-guidance",
-      "provisions": ["Personal-data system licensing service and application requirements"],
+      "provisions": [
+        "Personal-data system licensing service and application requirements"
+      ],
       "project_proposition": "The project must determine and evidence whether its formation, creation or servicing activities require a special permission or licence; registration does not answer that separate question.",
       "proposition_mappings": [
-        {"provision": "Licensing service and application requirements", "proposition": "No personal-data information system is operated until Article 9.14 licensing applicability and any required evidence are resolved."}
+        {
+          "provision": "Licensing service and application requirements",
+          "proposition": "No personal-data information system is operated until Article 9.14 licensing applicability and any required evidence are resolved."
+        }
       ],
       "official_language": "Azerbaijani",
       "translation_status": "project-English-paraphrase-of-official-Azerbaijani-source",
@@ -413,7 +453,10 @@
       "provisions": ["Personal-data information-system registry"],
       "project_proposition": "The current competent-authority registry and registration route must be checked and archived before any registration-dependent production activation.",
       "proposition_mappings": [
-        {"provision": "Personal-data information-system registry", "proposition": "Registration evidence refers to the current Ministry registry rather than only a historical procedure PDF."}
+        {
+          "provision": "Personal-data information-system registry",
+          "proposition": "Registration evidence refers to the current Ministry registry rather than only a historical procedure PDF."
+        }
       ],
       "official_language": "Azerbaijani",
       "translation_status": "project-English-paraphrase-of-official-Azerbaijani-source",
@@ -431,7 +474,10 @@
       "provisions": ["Articles 1 and 24 to 27"],
       "project_proposition": "Azerbaijan is a provisional internal governance baseline; applicable law, contractual choice-of-law effect, mandatory rules and any court forum require a separate nexus and enforceability determination.",
       "proposition_mappings": [
-        {"provision": "Articles 1 and 24 to 27", "proposition": "The project does not convert an internal baseline or unilateral informational notice into a conclusive applicable-law or forum determination."}
+        {
+          "provision": "Articles 1 and 24 to 27",
+          "proposition": "The project does not convert an internal baseline or unilateral informational notice into a conclusive applicable-law or forum determination."
+        }
       ],
       "official_language": "Azerbaijani",
       "translation_status": "project-English-paraphrase-of-official-Azerbaijani-source",
@@ -454,8 +500,14 @@
       ],
       "project_proposition": "Publication requires a recorded rights basis, licence and attribution where applicable; possession of an asset is not treated as ownership of copyright.",
       "proposition_mappings": [
-        {"provision": "Article 5.3 to 5.4", "proposition": "Copyright protects expression rather than ideas or methods, and ownership or possession of a copy does not itself transfer copyright."},
-        {"provision": "Articles 14 to 16 and 44 to 47", "proposition": "Publication and enforcement controls require item-level authorship, licence and attribution evidence."}
+        {
+          "provision": "Article 5.3 to 5.4",
+          "proposition": "Copyright protects expression rather than ideas or methods, and ownership or possession of a copy does not itself transfer copyright."
+        },
+        {
+          "provision": "Articles 14 to 16 and 44 to 47",
+          "proposition": "Publication and enforcement controls require item-level authorship, licence and attribution evidence."
+        }
       ],
       "official_language": "Azerbaijani",
       "translation_status": "project-English-paraphrase-of-official-Azerbaijani-source",
@@ -473,8 +525,14 @@
       "provisions": ["Article 3", "Articles 5, 6, 12 to 22, 25, 28, and 32"],
       "project_proposition": "GDPR applicability to the owner or controller is contingent on the Article 3 establishment, offering-of-goods-or-services, or monitoring tests; choosing a German AWS region alone does not establish that applicability and does not itself satisfy Azerbaijan Article 14.",
       "proposition_mappings": [
-        {"provision": "Article 3", "proposition": "The GDPR territorial-scope determination remains pending; German hosting alone is not recorded as a trigger."},
-        {"provision": "Articles 5, 6, 12 to 22, 25, 28, and 32", "proposition": "If the GDPR applies, its substantive controller and processor duties enter the release control set."}
+        {
+          "provision": "Article 3",
+          "proposition": "The GDPR territorial-scope determination remains pending; German hosting alone is not recorded as a trigger."
+        },
+        {
+          "provision": "Articles 5, 6, 12 to 22, 25, 28, and 32",
+          "proposition": "If the GDPR applies, its substantive controller and processor duties enter the release control set."
+        }
       ],
       "official_language": "English",
       "translation_status": "official-English-version",
@@ -489,10 +547,15 @@
       "url": "https://www.edpb.europa.eu/documents/guideline/guidelines-32018-on-the-territorial-scope-of-the-gdpr-article-3-version-adopted_en",
       "jurisdiction": "EU",
       "source_type": "official-guidance",
-      "provisions": ["Article 3 establishment, targeting and monitoring guidance"],
+      "provisions": [
+        "Article 3 establishment, targeting and monitoring guidance"
+      ],
       "project_proposition": "The owner/controller territorial-scope analysis must use establishment, targeting and monitoring facts and may not infer GDPR scope solely from infrastructure location.",
       "proposition_mappings": [
-        {"provision": "Article 3 guidance", "proposition": "A documented factual territorial-scope analysis is a production gate if EU-facing processing is contemplated."}
+        {
+          "provision": "Article 3 guidance",
+          "proposition": "A documented factual territorial-scope analysis is a production gate if EU-facing processing is contemplated."
+        }
       ],
       "official_language": "English",
       "translation_status": "official-English-version",
@@ -510,7 +573,10 @@
       "provisions": ["eu-central-1 region entry"],
       "project_proposition": "AWS identifies eu-central-1 as Europe (Frankfurt), Germany, with three Availability Zones; this establishes region identity, not end-to-end data residency.",
       "proposition_mappings": [
-        {"provision": "eu-central-1 region entry", "proposition": "Regional resources selected by the project must use eu-central-1 and separately prove each service's actual processing paths."}
+        {
+          "provision": "eu-central-1 region entry",
+          "proposition": "Regional resources selected by the project must use eu-central-1 and separately prove each service's actual processing paths."
+        }
       ],
       "official_language": "English",
       "translation_status": "original-English",
@@ -525,10 +591,17 @@
       "url": "https://aws.amazon.com/compliance/data-privacy-faq/",
       "jurisdiction": "PROVIDER",
       "source_type": "provider-documentation",
-      "provisions": ["Customer content region choice", "Account information and resource-identifier qualifications", "Legal request qualifications"],
+      "provisions": [
+        "Customer content region choice",
+        "Account information and resource-identifier qualifications",
+        "Legal request qualifications"
+      ],
       "project_proposition": "AWS states that customers select the region for customer content, while account information, resource identifiers, service behavior and legal demands require separate treatment; the project therefore records service-specific evidence instead of asserting an absolute region lock.",
       "proposition_mappings": [
-        {"provision": "Customer-content and account-information explanations", "proposition": "Provider documentation, applicable terms and actual service configuration must be archived for each processing path."}
+        {
+          "provision": "Customer-content and account-information explanations",
+          "proposition": "Provider documentation, applicable terms and actual service configuration must be archived for each processing path."
+        }
       ],
       "official_language": "English",
       "translation_status": "original-English",
@@ -543,10 +616,15 @@
       "url": "https://docs.aws.amazon.com/ses/latest/dg/regions.html",
       "jurisdiction": "PROVIDER",
       "source_type": "provider-documentation",
-      "provisions": ["Region-specific endpoints, identities, credentials, suppression and feedback settings"],
+      "provisions": [
+        "Region-specific endpoints, identities, credentials, suppression and feedback settings"
+      ],
       "project_proposition": "SES identities, credentials and operational settings are region-specific, but outbound delivery reaches recipient infrastructure and must not be described as region-confined.",
       "proposition_mappings": [
-        {"provision": "Amazon SES regional behavior", "proposition": "Use eu-central-1 settings and inventory delivery events, feedback paths and recipient systems separately."}
+        {
+          "provision": "Amazon SES regional behavior",
+          "proposition": "Use eu-central-1 settings and inventory delivery events, feedback paths and recipient systems separately."
+        }
       ],
       "official_language": "English",
       "translation_status": "original-English",
@@ -561,10 +639,16 @@
       "url": "https://docs.aws.amazon.com/ses/latest/dg/data-protection.html",
       "jurisdiction": "PROVIDER",
       "source_type": "provider-documentation",
-      "provisions": ["Sensitive data in tags and names", "Encryption in transit and opportunistic TLS"],
+      "provisions": [
+        "Sensitive data in tags and names",
+        "Encryption in transit and opportunistic TLS"
+      ],
       "project_proposition": "Personal data is prohibited in SES tags or resource-name fields, engagement tracking is disabled, and delivery must require TLS or carry only a minimal notification whose substantive content remains in a secured administrative system.",
       "proposition_mappings": [
-        {"provision": "Sensitive metadata and encryption-in-transit guidance", "proposition": "The release evidence must prove metadata minimization and the selected delivery-TLS or minimal-notification control."}
+        {
+          "provision": "Sensitive metadata and encryption-in-transit guidance",
+          "proposition": "The release evidence must prove metadata minimization and the selected delivery-TLS or minimal-notification control."
+        }
       ],
       "official_language": "English",
       "translation_status": "original-English",

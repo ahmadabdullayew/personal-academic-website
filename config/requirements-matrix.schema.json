@@ -239,7 +239,13 @@
         "applicability": {
           "type": "object",
           "additionalProperties": false,
-          "required": ["state", "basis", "condition", "rationale", "decision_refs"],
+          "required": [
+            "state",
+            "basis",
+            "condition",
+            "rationale",
+            "decision_refs"
+          ],
           "properties": {
             "state": { "enum": ["applicable", "not_applicable"] },
             "basis": {
@@ -270,7 +276,9 @@
           ],
           "properties": {
             "profile_id": { "type": "string", "pattern": "^DEP-[A-Z0-9]+$" },
-            "activation_approval_precondition": { "$ref": "#/$defs/nonEmptyString" },
+            "activation_approval_precondition": {
+              "$ref": "#/$defs/nonEmptyString"
+            },
             "requirement_ids": {
               "type": "array",
               "uniqueItems": true,
@@ -284,7 +292,11 @@
         "ownership": {
           "type": "object",
           "additionalProperties": false,
-          "required": ["accountable_roles", "assigned_person", "assignment_ref"],
+          "required": [
+            "accountable_roles",
+            "assigned_person",
+            "assignment_ref"
+          ],
           "properties": {
             "accountable_roles": {
               "type": "array",

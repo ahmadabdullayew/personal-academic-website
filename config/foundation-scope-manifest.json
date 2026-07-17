@@ -5,21 +5,7 @@
   "artifact_version": "1.0.0",
   "effective_at": "2026-07-17T08:33:00Z",
   "status": "approved-for-foundation-scope",
-  "scope_items": [
-    11,
-    12,
-    13,
-    14,
-    15,
-    16,
-    17,
-    18,
-    19,
-    20,
-    21,
-    22,
-    23
-  ],
+  "scope_items": [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23],
   "source_documents": [
     {
       "id": "website-srs",
@@ -79,7 +65,7 @@
       "version": "1.0.0",
       "digest_kind": "raw-file-sha256",
       "projection": null,
-      "sha256": "4c3b98563729443deb560e8d79c4b222bdd56702aa4856f6aeaf2fc3b12c31de"
+      "sha256": "ec17b722f13605cd91342ddfc17538d95a848e42315301a3d568a379e7501198"
     },
     {
       "id": "scope-evidence-ledger",
@@ -95,7 +81,7 @@
       "version": "1.0.0",
       "digest_kind": "raw-file-sha256",
       "projection": null,
-      "sha256": "dfb4e04e4877203837e48b42b3af67d18e399c7aa6d57623902d2edb20925a77"
+      "sha256": "e49d9fb7e671503f5a47f792361e9d8e15fc6a5c757ee419d4f6e028116bbf02"
     },
     {
       "id": "env-preview-template",
@@ -164,5 +150,5 @@
     "APR-OPERATIONS-001"
   ],
   "scope_limit": "This manifest approves only foundation scope items 11-23. It does not assert downstream implementation, production deployment, or release completion.",
-  "bundle_projection_sha256": "938d4e0dcec2dd593c96c60b6995c17be1dc3c157c3514f5e0cee81c17603c00"
+  "bundle_projection_sha256": "1c536eb256a436a838c4870fb23f3ad11ad50425dab2fa64e7d64dee528edc34"
 }
